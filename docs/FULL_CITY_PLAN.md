@@ -64,7 +64,7 @@ The next developer should make the city enumerable before making it decorative. 
 
 ### 3.1 Proposed artifact layout
 
-These paths are a contract proposal. As of 2026-11-08 `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` and `districts/north_clock_town.md` exist (REF-01/02/03/05); every other path is **not yet implemented**. Confirm the remaining layout and freeze the ID/schema proposals in PIPE-01. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
+These paths are a contract proposal. As of 2026-11-08 `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` and the five exterior dossiers under `districts/` exist (REF-01/02/03/04/05/06/07/08); every other path is **not yet implemented**. Confirm the remaining layout and freeze the ID/schema proposals in PIPE-01. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
 
 ```text
 docs/city/
@@ -392,11 +392,11 @@ All rows below start **planned**, except recovered inputs explicitly cited elsew
 | REF-01 | Next dev / M | **Done 2026-11-08**, [LOCATION_REGISTER.md](city/LOCATION_REGISTER.md). `LOCATION_REGISTER`: five exteriors plus every venue/annex and all declared rooms | REC-01 | Every location in section 6 accounted for; shared source scenes and variants explained |
 | REF-02 | Next dev / M | **Done 2026-11-08**, [PORTAL_REGISTER.md](city/PORTAL_REGISTER.md); source level only, every row `not_run`. `PORTAL_REGISTER`: source endpoints, destinations, conditions, reverse links and unknowns | REF-01 | Eight known South boundaries retained; every exterior/interior edge identified or explicitly unresolved |
 | REF-03 | Next dev / M | **Done 2026-11-08**, [SOURCE_REGISTER.md](city/SOURCE_REGISTER.md); no captures exist yet. Common capture matrix and source-profile register | REF-01 | Reproducible day/time/form/flags, camera names and region coverage; no mixed-version captures |
-| REF-04 | Next dev / M | South remaining collision/actor/material inventory and changed-input audit | REC-01 | Room versus actor collision and all unverified routes isolated; current exporter inputs identified |
+| REF-04 | Next dev / M | **Done 2026-11-08**, [districts/south_clock_town.md](city/districts/south_clock_town.md); verdict: no Unity artifact has established provenance (REC-03). South remaining collision/actor/material inventory and changed-input audit | REC-01 | Room versus actor collision and all unverified routes isolated; current exporter inputs identified |
 | REF-05 | Next dev / M | **Done 2026-11-08**, [districts/north_clock_town.md](city/districts/north_clock_town.md); extraction of its object banks not run. North complete room/actor/bank/header inventory | REF-01–03 | Source-backed component list sufficient to assemble selected profile |
-| REF-06 | Next dev / M | West complete inventory and N64 venue/bank mapping | REF-01–03 | Every storefront/route tied to evidence; no 3DS relocation |
-| REF-07 | Next dev / M | East complete inventory and multi-level/venue mapping | REF-01–03 | Every visible destination/access classified and traced |
-| REF-08 | Next dev / M | Laundry complete inventory, shoreline and secondary-room mapping | REF-01–03 | Water/collision ownership and private destination clarified |
+| REF-06 | Next dev / M | **Done 2026-11-08**, [districts/west_clock_town.md](city/districts/west_clock_town.md); bank is the `En_Ginko_Man` counter at (-1559,133,-438), N64 placement. West complete inventory and N64 venue/bank mapping | REF-01–03 | Every storefront/route tied to evidence; no 3DS relocation |
+| REF-07 | Next dev / M | **Done 2026-11-08**, [districts/east_clock_town.md](city/districts/east_clock_town.md); wall polygon 169 ruled not a portal. East complete inventory and multi-level/venue mapping | REF-01–03 | Every visible destination/access classified and traced |
+| REF-08 | Next dev / M | **Done 2026-11-08**, [districts/laundry_pool.md](city/districts/laundry_pool.md); one water box, no swim surface flags, back-room door is the Curiosity Shop `ENDOOR_SCH_TYPE_LAUNDRY_POOL` door. Laundry complete inventory, shoreline and secondary-room mapping | REF-01–03 | Water/collision ownership and private destination clarified |
 | REF-09 | Next dev / L | Interior dossiers; one child packet per INT-01–17 | REF-01–03 | All rooms/doors/variants and special mechanics indexed; no first-room-only inventory |
 | PIPE-01 | Integrator / M | Freeze schema/IDs/coordinate/source-output ownership and validate examples | REF-04/05 initial data | South and North sample records accepted; malformed/unknown data fails visibly |
 | PIPE-02 | Integrator / M | Generalize importer using South plus North adapters | PIPE-01, REF-05 | Region-scoped repeatable import; current South output/IDs preserved |

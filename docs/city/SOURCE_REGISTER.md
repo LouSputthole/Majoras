@@ -197,7 +197,7 @@ These conventions apply to every row:
 | `cam.south_clock_town.reverse_square` | `loc.south_clock_town` | Reverse from the tower base across the square | `prof.d1.noon.normal`, `prof.d1.night.normal` | A1/B +O | U-TBD |
 | `cam.south_clock_town.upper_landing` | `loc.south_clock_town` | Upper landing reached by the recorded two-ramp route | `prof.d1.noon.normal` | A1/B +O | U-TBD |
 | `cam.south_clock_town.west_lower_approach` | `loc.south_clock_town` | Lower West boundary approach (exit 0xD410, polygons 165/166, CITY_PLAYBOOK section 3) | `prof.d1.noon.normal` | A1/B +O | U-TBD |
-| `cam.south_clock_town.east_lower_approach` | `loc.south_clock_town` | Lower East boundary approach (exit 0xD210, polygons 184/185) | `prof.d1.noon.normal` | A1/B +O | U-TBD |
+| `cam.south_clock_town.east_lower_approach` | `loc.south_clock_town` | Lower East boundary approach (exit 0xD210, polygons 180/181; corrected 2026-11-08 per REF-02) | `prof.d1.noon.normal` | A1/B +O | U-TBD |
 | `cam.south_clock_town.stall_underside` | `loc.south_clock_town` | Stall underside: supports, joints and ground contact | `prof.d1.noon.normal`, `prof.d1.dusk.normal` | A1/B +O | U-TBD |
 | `cam.south_clock_town.clock_closeup` | `loc.south_clock_town` | Pose of the ring, center/hand, face and sun/moon panel | `prof.d1.noon.normal`, `prof.d1.night.normal`, `prof.d3.final.normal` | A1/B +O | U-TBD |
 
