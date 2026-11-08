@@ -2,6 +2,8 @@
 
 Planning baseline: 2026-11-08. Repository: `LouSputthole/Majoras`. User-selected visual direction: **faithful stylized remake**, with enhanced and expanded graphics/artwork. This is the execution index; the linked specialist documents carry the detailed contracts.
 
+**Full-city handoff update, 2026-11-08:** the owner requested a detailed plan for another developer after a computer lockup. Start at [HANDOFF.md](docs/HANDOFF.md) and [FULL_CITY_PLAN.md](docs/FULL_CITY_PLAN.md). The latter extends scope to five exterior areas, city interiors and annexes, with City A/B/C delivery gates, task ownership and a dependency queue. The original South/Link milestone IDs below remain useful; they are not all completed. [MVP_REVIEW.md](docs/MVP_REVIEW.md) is the recovered evidence ledger. Preserve the current dirty/untracked implementation before resuming; no new Unity run occurred in the handoff update. Current priority is recovery, source inventory and the North pilot. Renderer/input migration is a separate gated decision before bulk production art.
+
 ## 1. Intended deliverable
 
 Deliver a standalone Windows Unity slice where the player can explore a recognizably faithful South Clock Town as young human Link, encounter a bounded set of local interactions and scheduled actors, see the cycle change the environment, observe the exterior tower opening, and exercise the defined reset/save behavior. Replace the original presentation with authored modern geometry, textures, animation, materials and lighting.
@@ -12,6 +14,8 @@ Expanded detail initially means believable construction, depth, materials, backs
 
 ## 2. What is actually done
 
+**2026-11-08 environment-MVP update:** a separate local South Clock Town scene has first-person movement, four repainted texture families, enhanced clock/entrance/stall details, source/enhanced comparison, day/dusk and eight bounded exits. Saved editor checks cover square movement, a source wall stop, an ascent through two successive side-ramp segments to Y=2, the lower East boundary stop, pause/reset and presentation toggles. A successful Windows build report exists; visible-player verification failed to connect, and earlier headless tests are not hash-linked to that later build. See [MVP_REVIEW.md](docs/MVP_REVIEW.md) for precise evidence and limits. This environment preview is a smaller reviewable milestone than the young-Link/gameplay slice below. [CITY_PLAYBOOK.md](docs/CITY_PLAYBOOK.md) and [ITERATION_LOG.md](docs/ITERATION_LOG.md) carry the reusable city workflow and measured lessons.
+
 | Item | State | Evidence / limit |
 |---|---|---|
 | New repository identified and local checkout connected | Complete locally | `origin` is the user's `LouSputthole/Majoras`; remote publication is recorded by the final commit/push |
@@ -20,13 +24,13 @@ Expanded detail initially means believable construction, depth, materials, backs
 | Shared layout and stable IDs | Implemented as proxies | 17 assemblies, five markers; **all placements/dimensions unmeasured** |
 | Unity project seed and importer | Compiled and executed | Initial generation, save/reopen and regeneration pass all 17 ID/transform/material and 13 collider checks |
 | Unity basic toolchain | Verified for the proxy | Unity `6000.5.11f1`, ready Pipeline, advancing Play Mode, successful Windows development build and batch-mode runtime/camera smoke test; `evidence/environment.json` |
-| Production rendering/input and real art import | Pending | Built-in Standard proxy only; URP/Input System, GLB/FBX calibration and character traversal not verified |
+| Environment presentation and exploration | Implemented and editor verified | Built-in combiner + Standard lighting, first-person controller, source collision, A/B and day/dusk; URP/Input System and character pipeline remain pending |
 | Reference game and original scene assets | Imported locally | Verified US revision 0 ROM; actual town, collision and separate clock/door/platform meshes render in Unity. Camera/state matching and physical-scale calibration remain pending; see `docs/ROM_REFERENCE.md` |
-| Finished environment art | Pending | The review volumes are not finished architecture or a faithful clock face |
+| Finished environment art | Partial first pass | Four source-informed texture repaints and authored tower/stall details; most source geometry/art remains, no complete modern environment claim |
 | Link concept/model/rig/animation | Pending | No generated concept asset or 3D character has been accepted |
 | Original simulation or C# gameplay systems | Not implemented | Native bridge is a research alternative, not an existing integration |
 
-Current progress is **foundation work supporting M0/M1**, not a passed M0 or playable M1. Unit/browser passes do not satisfy Unity, gameplay, visual-fidelity or performance gates.
+Current progress includes a walkable environment preview supporting M0/M1. The full young-Link M1/gameplay milestone is not passed. Unit/browser passes do not satisfy Unity, gameplay, visual-fidelity or performance gates.
 
 ## 3. Decisions and unresolved gates
 
@@ -86,9 +90,9 @@ Status vocabulary: `done` = evidence exists for that limited task; `partial` = n
 | F-03 | done | Browser views, light presets, wireframe, markers, GLB download | F-02 | Headless renderer/control/export run; engineering |
 | F-04 | done | Detailed engine, art, area, pipeline and acceptance plans | — | Cross-review resolves format/origin/state inconsistencies; lead |
 | F-05 | done | Install/pin compatible editor and prove basic proxy toolchain | User activation/terms and approved patch completed | Ready editor, clean compile, Windows build with zero build warnings/errors and actual batch-mode execution; evidence/environment.json |
-| F-06 | ready | Pin Blender/exporter and art storage convention | Tool availability | Document actual versions, source/derivative retention and binary policy; technical art |
-| R-01 | blocked | Identify local user-provided N64 reference dump and revision | Local reference path | Hash/version/profile recorded without committing game data; reference research |
-| R-02 | planned | Pin zeldaret/mm and 2Ship source commits; build unchanged reference if used | R-01 | Exact revisions and unmodified behavior capture; engineering |
+| F-06 | partial | Blender 5.2.3 recorded for local reference import; qualify authored exporter and art storage convention | Reference import exists | Authored export/rig calibration and binary-storage choice remain; technical art |
+| R-01 | done | Local user-provided N64 US revision 0 reference identified | Recorded local source | Hash/version/profile in docs/ROM_REFERENCE.md; original data remains ignored |
+| R-02 | partial | zeldaret/mm and Fast64 pinned for local import; 2Ship/reference-runtime branch remains separate | R-01 | Recorded source pins do not establish an unchanged playable reference build or a native bridge |
 | R-03 | ready | Reference capture register and shot/route checklist | — | Fields include platform, build, day/time, form/story flags, camera uncertainty; research |
 | R-04 | planned | Capture six fixed views plus complete district traversal | R-01,R-03 | Source captures reproducible and labeled; research |
 | R-05 | planned | Survey tower, outline, elevations, thresholds and route widths | R-04 | Original units/normalized data, transform and uncertainty attached; level design |
@@ -101,7 +105,7 @@ Status vocabulary: `done` = evidence exists for that limited task; `partial` = n
 | ID | State | Task / deliverable | Depends on | Acceptance / owner |
 |---|---|---|---|---|
 | E-01 | done | Unity seed and JSON-envelope importer authored, compiled and executed | F-02 | Initial/reopened/regenerated proxy inspection passed; engineering |
-| E-02 | partial | JSON proxy generation/Windows target verified; configure URP/Input System next | F-05 complete | Built-in material/transform checks and lock exist; URP/input migration and revalidation remain; engineering |
+| E-02 | partial | JSON proxy and Built-in city preview exist; qualify renderer/input choices in separate packets | F-05 complete | Preserve the working preview; production renderer/input decision and any migration require revalidation; engineering |
 | E-03 | planned | Asymmetric calibration fixture with skin, clip, alpha and normal map | F-06 | One-meter measurements and source export record; technical art |
 | E-04 | planned | Compare GLB/glTFast and FBX Unity import paths | E-02,E-03 | No mirror, double Z flip, bone or tangent error; reimport preserves bindings; technical art |
 | E-05 | planned | Add GLB load/review to web tool, report asset ID/revision | E-03 | Same source/export hash reviewed; missing assets fail visibly; engineering |
@@ -220,11 +224,11 @@ Use the acceptance IDs in [ACCEPTANCE.md](docs/ACCEPTANCE.md). P0/P1 defects blo
 
 ## 9. Immediate next work
 
-1. Complete E-02: configure URP/Input System, explicitly migrate generated material shaders and repeat rendering/build checks. Basic editor and Windows proxy proof already passed F-05.
-2. Identify the local reference-game path and release/profile when available. Neither credentials nor game data goes into GitHub.
-3. Run F-06/E-03/E-04 on the calibration fixture before building polished Link/town assets.
-4. Run R-01–R-08 and replace the current authored proxy with measured layout data.
-5. Build E-07–E-12 as the first playable South Clock Town graybox.
-6. Review L-02 and A-01 as the first art-direction checkpoints, then produce M2.
+1. Complete REC-01 in [FULL_CITY_PLAN.md](docs/FULL_CITY_PLAN.md): preserve the dirty/untracked checkpoint and ignored local input/build/log inventory. The current work is newer than HEAD `15a46cd`.
+2. Assign REF-01–03 and REF-05 to the next developer: complete location/room/portal inventory, reproducible capture plan and a source-backed North pilot dossier. The local ROM identity is already recorded; do not repeat discovery as if it were missing.
+3. Investigate the visible Windows launch in a bounded REC-02 packet and link fresh runtime checks to exact source/build/target identity. The lockup cause is unknown; earlier no-graphics passes do not prove visible stability.
+4. Finish South's benchmark and untested routes while PIPE-01–03 establish region records and repeatable North import. Preserve the existing source frame and stable IDs.
+5. Qualify authored export/character calibration (F-06/E-03/E-04; city PIPE-04) and resolve the production renderer/material contract before mass art production. Do not make a broad URP migration the first recovery action.
+6. Prove South–North–South transitions, then proceed through West, East, Laundry, all city interiors/annexes and the shared-state gates in the full-city queue. Young Link and living-city behavior remain separate verified deliverables.
 
-Unity automation is available. Reference planning, source-behavior research, art catalogs and browser import validation can continue alongside production render/input setup. The verified static proxy is a toolchain checkpoint; the measured scene, Link, traversal, game systems and finished presentation remain future work.
+This documentation pass did not launch Unity or change implementation files. Source indexing and other bounded legwork can proceed while graphics recovery is unresolved. Use [HANDOFF.md](docs/HANDOFF.md) as the next developer's entry point and update [ITERATION_LOG.md](docs/ITERATION_LOG.md) after each actual execution pass.

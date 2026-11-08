@@ -1,0 +1,30 @@
+﻿[
+    {
+        "file":  "Unity/Assets/LocalReference/SouthClockTown/Enhanced/Textures/stone_bricks.png",
+        "sha256":  "5ee7e278403c81c9c8cfbaf4b13688cfe5f6c0ced52fa0f59f1f3f6e38dc89f3",
+        "bytes":  2306239,
+        "method":  "AI repaint from local source texture; not exact source recovery",
+        "storedInGit":  false
+    },
+    {
+        "file":  "Unity/Assets/LocalReference/SouthClockTown/Enhanced/Textures/plaza_pavers.png",
+        "sha256":  "707b2087ea00a41790564443cee115d1a7e9412c52187905dade247e80cd9c7e",
+        "bytes":  2333423,
+        "method":  "AI repaint from local source texture; not exact source recovery",
+        "storedInGit":  false
+    },
+    {
+        "file":  "Unity/Assets/LocalReference/SouthClockTown/Enhanced/Textures/wall_relief.png",
+        "sha256":  "db24f97f598ac2068a80550d6f20307c1c2844722f4230b2a3773a1fd036d1fd",
+        "bytes":  2934001,
+        "method":  "AI repaint from local source texture; not exact source recovery",
+        "storedInGit":  false
+    },
+    {
+        "file":  "Unity/Assets/LocalReference/SouthClockTown/Enhanced/Textures/golden_pavers.png",
+        "sha256":  "856c63e9e90baa02cbd36c2276d239239250fb8b45bcdda8a4e78cd8c1ace41b",
+        "bytes":  1870917,
+        "method":  "AI repaint from local source texture; not exact source recovery",
+        "storedInGit":  false
+    }
+]

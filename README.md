@@ -2,7 +2,9 @@
 
 A faithful, stylized Majora's Mask remake study, beginning with **South Clock Town and young Link**. The intended result is a playable Unity scene with modern authored models, materials, lighting and animation, preserving the area's identity and selected N64 behavior.
 
-**Current state: original N64 reference imported into Unity.** The user's existing US ROM has been verified and South Clock Town's actual textured geometry, collision mesh, clock assembly, gears, doors and Day 1 platform have been imported locally. The reference scene renders in Unity; the former boxes are retained only as an engine smoke test. There is no Link model, movement controller, original simulation, finished replacement art or playable remake yet. See [reference research](docs/ROM_REFERENCE.md) and [local conversion instructions](tools/reference/README.md).
+**Current state: South Clock Town environment preview with recorded editor movement checks; visible Windows launch remains unresolved.** The original N64 layout has first-person exploration, four high-resolution texture treatments, source-aligned clock/entrance/stall details, daylight/dusk and an original/enhanced comparison toggle. Recorded tests cover the square and an ascent through two successive side-ramp segments. This is an environment MVP; Link, NPCs, quests and the original time simulation remain future work. Start with [MVP review and controls](docs/MVP_REVIEW.md), [city playbook](docs/CITY_PLAYBOOK.md) and [iteration notes](docs/ITERATION_LOG.md).
+
+**Resuming after the lockup or joining as the next developer:** read [HANDOFF.md](docs/HANDOFF.md), then the [detailed full-city execution plan](docs/FULL_CITY_PLAN.md). The plan covers all five exterior areas, interiors and annexes, shared systems, work ownership and the dependency-ordered task queue. The current checkout includes uncommitted implementation and ignored local reference inputs; cloning the last commit alone does not reproduce it.
 
 ## Start here
 
@@ -48,10 +50,10 @@ In another terminal, run `npm run verify` from `prototype`. Local verification u
 
 **Unity owns the future game. Three.js owns the review tool.** The browser will not acquire a second copy of player physics, NPC schedules, quests or save logic. Production target is Unity 6/URP on Windows, subject to the toolchain/import spike. Original C code is a behavioral reference or a separately gated native-bridge experiment, not code that can automatically be pasted into Unity.
 
-Unity **6000.5.11f1** (`5c3a1087d8e4`) is pinned and verified with Pipeline `0.10.0-exp.1`. The approved patch resolved the older editor's automation failure. Initial scene generation, save/reopen, regeneration, Play Mode progression and a Windows development build passed. The packaged application's off-screen capture matched the editor capture. URP, Input System, a player controller and calibrated asset imports remain pending. See [Unity setup, actual screenshot and local build](Unity/README.md).
+Unity **6000.5.11f1** (`5c3a1087d8e4`) is pinned with Pipeline `0.10.0-exp.1`. The environment preview deliberately retains the working Built-in renderer and legacy keyboard/mouse input. URP and the new Input System remain future decisions. Current build/runtime evidence is separated from the older proxy results in [MVP review](docs/MVP_REVIEW.md).
 
 ## Source and data boundaries
 
 N64 layout/gameplay is the working baseline; labeled 3DS references may inform artwork. No original ROM, extracted assets, save data or source-game runtime is in this repository. Reference captures used locally are not automatically publishable art. Future copied upstream code needs exact source revisions and notices recorded. New art remains tracked separately from reference evidence.
 
-The current scene uses meter-based **proxy dimensions**, not measured game dimensions. The authoritative file is [shared/scenes/south-clock-town.blockout.json](shared/scenes/south-clock-town.blockout.json). Preserve its stable IDs while replacing geometry. See [evidence/verification.json](evidence/verification.json) and [environment record](evidence/environment.json) for the limits of current verification.
+The older browser/proxy scene still uses [unmeasured proxy dimensions](shared/scenes/south-clock-town.blockout.json); its stable IDs remain intact. The separate local reference/MVP uses exported N64 coordinates converted once to Unity at 0.01 units per source unit. This preserves source proportions but is not a claim of physical scale calibration against real-world architecture.

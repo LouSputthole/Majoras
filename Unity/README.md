@@ -1,5 +1,17 @@
 # Unity scene and local N64 reference
 
+## Current environment MVP
+
+After the reported lockup, start with the [developer handoff](../docs/HANDOFF.md) and [full-city plan](../docs/FULL_CITY_PLAN.md). The current implementation includes uncommitted source and ignored local inputs. The build exists, but visible Windows launch/physical input remain unresolved; read the evidence limits before restarting a verification run.
+
+Open `Assets/LocalReference/SouthClockTown/Enhanced/SouthClockTown_MVP.unity` and press Play. Use **Begin exploring**, WASD/mouse, Shift to run, Space to jump, Tab to compare, 1/2 for day/dusk, R to reset, Esc to pause, F1 for the HUD. The local build is `Builds/CityMVP/MajorasCityMVP.exe`; its precise launch status is in [MVP_REVIEW.md](../docs/MVP_REVIEW.md).
+
+**Majoras > Build Local City MVP** regenerates the disposable enhanced scene from the preserved source reference and four local painted textures. The generator refuses dirty scenes and active Play Mode. Source assets, enhanced assets, screenshots and Windows binaries stay local and ignored. The tracked generator/shaders/controllers and verification scripts are reusable. See [city playbook](../docs/CITY_PLAYBOOK.md) and [iteration log](../docs/ITERATION_LOG.md).
+
+The historical proxy instructions below apply only to the old engine smoke test. They do not describe the current walkable preview.
+
+## Original reference and historical proxy
+
 The current scene is the imported original South Clock Town reference, saved locally at `Assets/LocalReference/SouthClockTown/Generated/SouthClockTown_RomReference.unity`. Use **Majoras > Import Local ROM Reference** to regenerate it from the prepared local inputs. It includes the original room, clock assembly, doors and Day 1 platform; 21 render meshes and the room collision passed the editor/Play Mode checks. This is the baseline for rebuilding the art, with no character controls yet. [Conversion instructions](../tools/reference/README.md) explain dependencies, source pins and remaining fidelity limits. ROM-derived assets and captures are ignored by Git.
 
 The earlier proxy's checks and Windows build are recorded below; that executable still displays the old boxes and does not contain the new reference scene.

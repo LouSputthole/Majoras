@@ -37,6 +37,7 @@ def tex(t):
 for m in used:
     f=m.f3d_mat
     materials.append({'name':m.name,'texture0':tex(f.tex0),'texture1':tex(f.tex1),
+        'sourceTexture0':f.tex0.tex.name if f.tex0.tex else '', 'sourceTexture1':f.tex1.tex.name if f.tex1.tex else '',
         'prim':rgba(f.prim_color),'env':rgba(f.env_color),
         'primLodFrac':f.prim_lod_frac,
         'uvBasisSize':uv(texture_size(f.tex0) if f.tex0.tex or f.tex0.use_tex_reference else texture_size(f.tex1)),
@@ -82,4 +83,5 @@ for ob in source_objects:
     meshes.append({'name':ob.name,'collision':collision,'vertices':positions,'normals':normals,'colors':colors,'uv':uvs,'submeshes':submeshes})
 doc={'version':1,'coordinateSystem':'Unity X=N64 X, Y=N64 Y, Z=-N64 Z; 100 source units per Unity unit (provisional physical scale)', 'materials':materials,'meshes':meshes}
 (DEST/'reference.json').write_text(json.dumps(doc,separators=(',',':')))
+(DEST/'texture-sources.json').write_text(json.dumps(images,indent=2))
 print('REFERENCE_EXPORT',json.dumps({'meshes':len(meshes),'materials':len(materials),'textures':len(images),'triangles':sum(len(s['indices'])//3 for m in meshes for s in m['submeshes'])}),flush=True)

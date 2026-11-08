@@ -1,0 +1,12 @@
+﻿{
+  "success": false,
+  "command": "command",
+  "data": null,
+  "errors": [
+    {
+      "code": "COMMAND_FAILED",
+      "message": "No Pipeline runtime instance found at: C:\\Users\\cargi\\code\\Majoras\\Unity\\Builds\\CityMVP. Make sure the path contains a .unity-pipeline-runtime-port file from a running Unity Player build."
+    }
+  ],
+  "warnings": []
+}

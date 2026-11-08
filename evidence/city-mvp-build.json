@@ -1,0 +1,19 @@
+﻿{
+    "status":  "completed",
+    "buildId":  "build_596d6bfe28c1",
+    "result":  "Succeeded",
+    "platform":  "StandaloneWindows64",
+    "outputPath":  "C:/Users/cargi/code/Majoras/Unity/Builds/CityMVP/MajorasCityMVP.exe",
+    "totalSizeBytes":  204332779,
+    "buildTimeMs":  6184,
+    "buildStartedAt":  "2026-11-09T00:01:41.5231405Z",
+    "buildEndedAt":  "2026-11-09T00:01:47.7075309Z",
+    "totalErrors":  0,
+    "totalWarnings":  0,
+    "errors":  [
+
+               ],
+    "warnings":  [
+
+                 ]
+}
