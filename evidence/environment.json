@@ -1,47 +1,119 @@
 {
   "date": "2026-11-08",
-  "installedUnityEditors": ["6000.4.11f1", "6000.5.0f1"],
-  "editorVersion": "6000.5.0f1",
-  "editorRevision": "88b47c5e7076",
+  "installedUnityEditors": [
+    "6000.4.11f1",
+    "6000.5.0f1",
+    "6000.5.11f1"
+  ],
+  "editorVersion": "6000.5.11f1",
+  "editorRevision": "5c3a1087d8e4",
   "cliVersion": "1.0.0-beta.17",
-  "cliUpdateCheck": "current version matches latest",
-  "license": { "active": true, "type": "Unity Personal" },
+  "license": {
+    "active": true,
+    "type": "Unity Personal"
+  },
   "projectOpen": "succeeded",
+  "softwareTerms": "accepted by user; editor reached ready",
   "pipelinePackage": "0.10.0-exp.1",
   "pipelineConnection": {
-    "result": "blocked",
-    "code": "STATUS_PIPELINE_LOAD_PENDING",
-    "reason": "CLI confirmed Pipeline cannot start on Unity 6000.5.0f1; requires 6000.5.3f1 or later",
-    "proposedEditorPatch": "6000.5.11f1",
+    "result": "ready",
+    "prior6000_5_0StartupDefect": "resolved by approved patch update"
+  },
+  "installation": {
+    "result": "succeeded; editor structure verified",
     "upgradeApproval": "user approved side-by-side installation",
-    "installation": {
-      "result": "awaiting local Windows elevation",
-      "firstAttemptCode": "ELEVATION_CANCELLED",
-      "firstAttemptMessage": "The Windows elevation prompt was cancelled or timed out.",
-      "downloadOnlyResult": "succeeded",
-      "downloadBytes": 4061928008,
-      "downloadMd5": "758fbba4214f574f30c7d5bacac28a53",
-      "downloadChecksumMatchesRelease": true,
-      "existingEditorsRemoved": false
+    "existingEditorsRemoved": false,
+    "downloadBytes": 4061928008,
+    "downloadMd5": "758fbba4214f574f30c7d5bacac28a53",
+    "downloadChecksumMatchesRelease": true
+  },
+  "historicalBlockers": [
+    {
+      "code": "exit 198",
+      "cause": "No valid Unity Editor license",
+      "status": "resolved after user activation"
+    },
+    {
+      "code": "STATUS_PIPELINE_LOAD_PENDING",
+      "cause": "Pipeline startup incompatible with 6000.5.0f1",
+      "status": "resolved by 6000.5.11f1"
+    },
+    {
+      "code": "ELEVATION_CANCELLED",
+      "cause": "First Windows administrator prompt cancelled or timed out",
+      "status": "resolved when user approved retry"
+    },
+    {
+      "code": "STATUS_BLOCKED_BY_DIALOG_SOFTWARE_TERMS",
+      "status": "resolved by user acceptance"
     }
-  },
-  "historicalBootstrap": {
-    "attempt": "batch project initialization before user license activation",
-    "exitCode": 198,
-    "message": "No valid Unity Editor license found. Please activate your license.",
-    "status": "resolved by subsequent active license and successful editor open"
-  },
+  ],
   "nodeVersion": "24.14.1",
   "unityCompilation": {
-    "result": "seed assemblies generated",
-    "assemblies": ["Assembly-CSharp.dll", "Assembly-CSharp-Editor.dll"],
-    "csharpCompilerErrorCount": 0,
-    "limit": "Compilation only; Pipeline startup has a separate editor compatibility error"
+    "result": "passed",
+    "csharpCompilerErrorCount": 0
   },
-  "unitySceneGeneration": "not run",
-  "proxyInspectionScript": "prepared and source-reviewed; not compiled or executed via Pipeline yet",
-  "unityPlayMode": "not run",
-  "unityPlayerBuild": "not run",
+  "unitySceneGeneration": {
+    "result": "passed initial generation, save/reopen and regeneration",
+    "identityCount": 17,
+    "colliderCount": 13,
+    "groundRaycastPassed": true,
+    "reports": [
+      "unity-proxy-initial.json",
+      "unity-proxy-reopened.json",
+      "unity-proxy-regenerated.json"
+    ]
+  },
+  "unityPlayMode": {
+    "result": "passed",
+    "framesAndSimulationTimeAdvanced": true,
+    "editorConsoleErrorCount": 0,
+    "reports": [
+      "unity-playmode-frames.json",
+      "unity-playmode-time.json"
+    ],
+    "inspectedCapture": "unity-proxy-playmode.png"
+  },
+  "unityPlayerBuild": {
+    "result": "Succeeded",
+    "target": "StandaloneWindows64",
+    "configuration": "Development with temporary development-only Pipeline instrumentation",
+    "output": "Unity/Builds/Windows/MajorasProxy.exe",
+    "totalSizeBytes": 166385747,
+    "buildWarnings": 0,
+    "buildErrors": 0,
+    "report": "unity-windows-build.json"
+  },
+  "unityPlayerExecution": {
+    "result": "passed local graphics-enabled batch-mode smoke test",
+    "scene": "SouthClockTown_Proxy",
+    "identityCount": 17,
+    "framesAndSimulationTimeAdvanced": true,
+    "report": "unity-windows-runtime.json",
+    "inspectedCapture": "unity-proxy-windows.png",
+    "captureMatchesEditorSha256": "ab7970315dcb13ce8be98a4c188b5c543a8c2660cf2bb0d823d956067b73373d",
+    "consoleNote": "Final fresh-process smoke test completed with zero console errors. An earlier discovery attempt used unsupported editor-only capture commands; the recorded final pass uses the verified C# capture script.",
+    "consoleErrorCount": 0,
+    "consoleReport": "unity-windows-console.json",
+    "shutdown": "graceful quit scheduled with code 0; process exit observed"
+  },
+  "cleanup": {
+    "editorPlayMode": "stopped",
+    "backgroundPlayOverride": "restored",
+    "autoTick": "disabled",
+    "developmentRuntimePipeline": "restored to disabled and saved",
+    "releaseRuntimePipeline": "disabled throughout"
+  },
+  "editorWarnings": [
+    "Legacy Input Manager deprecation",
+    "Dynamic Batching deprecation"
+  ],
+  "limits": [
+    "Built-in Standard materials; URP and Input System configuration pending",
+    "All layout positions remain unmeasured proxies",
+    "No player movement, Link character, gameplay systems or final art",
+    "Standalone proof is a local batch-mode run and off-screen camera capture, not interactive traversal, performance qualification or a fresh-checkout build"
+  ],
   "blenderVersion": null,
   "referenceGame": null
 }

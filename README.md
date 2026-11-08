@@ -2,7 +2,7 @@
 
 A faithful, stylized Majora's Mask remake study, beginning with **South Clock Town and young Link**. The intended result is a playable Unity scene with modern authored models, materials, lighting and animation, preserving the area's identity and selected N64 behavior.
 
-**Current state: planning and foundation.** There is a working Three.js layout reviewer, an unmeasured shared blockout, and a Unity seed whose scripts compile. Unity scene generation, play mode and player builds remain unverified. There is no finished Link model, imported original simulation, or playable Unity remake yet.
+**Current state: planning and verified engine foundation.** The Three.js layout reviewer works, and the shared unmeasured blockout now generates in Unity, passes inspection, runs in Play Mode and builds as a Windows application. The packaged proxy passed an unattended smoke test and camera capture. There is no Link model, movement controller, imported original simulation, finished art or playable remake yet.
 
 ## Start here
 
@@ -48,7 +48,7 @@ In another terminal, run `npm run verify` from `prototype`. Local verification u
 
 **Unity owns the future game. Three.js owns the review tool.** The browser will not acquire a second copy of player physics, NPC schedules, quests or save logic. Production target is Unity 6/URP on Windows, subject to the toolchain/import spike. Original C code is a behavioral reference or a separately gated native-bridge experiment, not code that can automatically be pasted into Unity.
 
-Unity Personal is now active, and the project opened with `6000.5.0f1`. Its seed scripts compiled and Unity generated the project settings, metadata and package lock. Pipeline `0.10.0-exp.1` is installed, but the CLI confirmed that this editor version cannot start its automation server. A patch upgrade to `6000.5.3f1` or later is required. The user approved `6000.5.11f1`, and its installer is downloaded; installation is waiting for the local Windows administrator prompt after the first prompt expired or was cancelled. URP, scene import, play mode and Windows player checks remain pending. See [Unity setup and next checks](Unity/README.md).
+Unity **6000.5.11f1** (`5c3a1087d8e4`) is pinned and verified with Pipeline `0.10.0-exp.1`. The approved patch resolved the older editor's automation failure. Initial scene generation, save/reopen, regeneration, Play Mode progression and a Windows development build passed. The packaged application's off-screen capture matched the editor capture. URP, Input System, a player controller and calibrated asset imports remain pending. See [Unity setup, actual screenshot and local build](Unity/README.md).
 
 ## Source and data boundaries
 

@@ -1,0 +1,16 @@
+{
+    "entries":  [
+
+                ],
+    "cursor":  1,
+    "session":  "88db08c2ff0848fba2886749f3a90859",
+    "returned":  0,
+    "dropped":  false,
+    "reset":  false,
+    "counts":  {
+                   "error":  0,
+                   "warn":  0,
+                   "log":  1
+               },
+    "groundTruth":  null
+}

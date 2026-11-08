@@ -18,8 +18,9 @@ Expanded detail initially means believable construction, depth, materials, backs
 | Engine/art/area/acceptance planning | Written and cross-reviewed | Five specialist documents below plus this backlog; plans are not implementations |
 | Three.js layout reviewer | Implemented, locally verified | Production build, five contract tests, headless browser controls/export checks; `evidence/verification.json` |
 | Shared layout and stable IDs | Implemented as proxies | 17 assemblies, five markers; **all placements/dimensions unmeasured** |
-| Unity project seed and importer | Compiled in the editor | Both seed assemblies generated; no C# compiler errors; proxy generation/runtime checks still pending |
-| Unity runtime/toolchain | Partially verified; automation blocked | Active Personal license and successful project open; Pipeline cannot start on `6000.5.0f1`; approved patch downloaded, Windows elevation pending |
+| Unity project seed and importer | Compiled and executed | Initial generation, save/reopen and regeneration pass all 17 ID/transform/material and 13 collider checks |
+| Unity basic toolchain | Verified for the proxy | Unity `6000.5.11f1`, ready Pipeline, advancing Play Mode, successful Windows development build and batch-mode runtime/camera smoke test; `evidence/environment.json` |
+| Production rendering/input and real art import | Pending | Built-in Standard proxy only; URP/Input System, GLB/FBX calibration and character traversal not verified |
 | Reference game, exact coordinates and original state traces | Pending | No local game dump/reference session selected |
 | Finished environment art | Pending | The review volumes are not finished architecture or a faithful clock face |
 | Link concept/model/rig/animation | Pending | No generated concept asset or 3D character has been accepted |
@@ -31,7 +32,7 @@ Current progress is **foundation work supporting M0/M1**, not a passed M0 or pla
 
 | Decision | Working choice | Revisit / evidence required |
 |---|---|---|
-| Production engine | Unity 6, URP, desktop Windows first | License active; update incompatible editor patch, prove scene import and standalone build; lock supported version/packages |
+| Production engine | Unity 6, URP, desktop Windows first | Basic proxy toolchain pinned/verified on `6000.5.11f1`; configure URP/input and complete asset calibration; long-term support choice remains open |
 | Browser role | Thin Three.js art/layout review and interchange | Never duplicate gameplay authority in JavaScript |
 | Editable 3D sources | Blender, version to be pinned | Install availability and calibration export must be checked; not currently established |
 | Portable review format | GLB | Validate format and orientation, then test Unity glTFast versus explicit FBX before production |
@@ -44,7 +45,7 @@ Current progress is **foundation work supporting M0/M1**, not a passed M0 or pla
 | Scope expansion | Visual detail inside existing routes | Record any geography/mechanics change in deviation ledger before implementation |
 | Large art storage | Pending | Choose Git LFS/artifact storage before adding production binary history |
 
-The current Unity seed uses built-in materials solely to avoid asserting that URP is configured. The installed `6000.5.0f1` compiled the seed but has a confirmed Pipeline startup defect. CLI `1.0.0-beta.17` requires editor `6000.5.3f1` or later. The user approved side-by-side patch `6000.5.11f1`; its download succeeded, but installation awaits Windows elevation after the first prompt expired or was cancelled. A compatible patch is not a long-term version endorsement. License activation is already complete; see `evidence/environment.json` for the current and historical results. `Unity/Tools/VerifyProxy.cs` is prepared and source-reviewed; runtime execution remains pending.
+The user-approved side-by-side update to `6000.5.11f1` resolved the Pipeline startup defect in `6000.5.0f1`. License, terms, compilation, generation, save/reopen, regeneration, Play Mode and a Windows proxy build/runtime smoke test are verified. The current seed still uses built-in Standard materials; URP is not configured. `Unity/Tools/VerifyProxy.cs` passed in the live editor, and the built player's camera capture matched the editor capture. See `evidence/environment.json` for evidence and limits. This is not interactive traversal, art fidelity, a performance qualification or a long-term editor-support endorsement.
 
 ## 4. Milestone map and dependency order
 
@@ -74,7 +75,7 @@ Art can progress alongside local systems after the M1 contracts are stable. Do n
 
 ## 5. Executable backlog
 
-Status vocabulary: `done` = evidence exists for that limited task; `ready` = can begin independently; `blocked` = named dependency missing; `planned` = sequenced after prerequisites. Role is work ownership, not an assertion a human specialist has been hired. Every implementation task should land with its evidence/limitations and update this index.
+Status vocabulary: `done` = evidence exists for that limited task; `partial` = named portions verified with remaining work; `ready` = can begin independently; `blocked` = named dependency missing; `planned` = sequenced after prerequisites. Role is work ownership, not an assertion a human specialist has been hired. Every implementation task should land with its evidence/limitations and update this index.
 
 ### Foundation and reference
 
@@ -84,7 +85,7 @@ Status vocabulary: `done` = evidence exists for that limited task; `ready` = can
 | F-02 | done | Proxy manifest, stable IDs, meter/axis adapter | — | Five contract checks pass; engineering |
 | F-03 | done | Browser views, light presets, wireframe, markers, GLB download | F-02 | Headless renderer/control/export run; engineering |
 | F-04 | done | Detailed engine, art, area, pipeline and acceptance plans | — | Cross-review resolves format/origin/state inconsistencies; lead |
-| F-05 | blocked | Install approved compatible patch; license/open/seed compile verified | Local Windows elevation; installer already downloaded | Clean open/compile and standalone cube/character build; engineering |
+| F-05 | done | Install/pin compatible editor and prove basic proxy toolchain | User activation/terms and approved patch completed | Ready editor, clean compile, Windows build with zero build warnings/errors and actual batch-mode execution; evidence/environment.json |
 | F-06 | ready | Pin Blender/exporter and art storage convention | Tool availability | Document actual versions, source/derivative retention and binary policy; technical art |
 | R-01 | blocked | Identify local user-provided N64 reference dump and revision | Local reference path | Hash/version/profile recorded without committing game data; reference research |
 | R-02 | planned | Pin zeldaret/mm and 2Ship source commits; build unchanged reference if used | R-01 | Exact revisions and unmodified behavior capture; engineering |
@@ -99,8 +100,8 @@ Status vocabulary: `done` = evidence exists for that limited task; `ready` = can
 
 | ID | State | Task / deliverable | Depends on | Acceptance / owner |
 |---|---|---|---|---|
-| E-01 | done | Unity seed and JSON-envelope importer authored and compiled | F-02 | Source review and editor assembly generation; scene generation still pending; engineering |
-| E-02 | blocked | Execute seed import; configure URP/input and Windows target | F-05 | No console errors; materials/scale correct; package lock committed; engineering |
+| E-01 | done | Unity seed and JSON-envelope importer authored, compiled and executed | F-02 | Initial/reopened/regenerated proxy inspection passed; engineering |
+| E-02 | partial | JSON proxy generation/Windows target verified; configure URP/Input System next | F-05 complete | Built-in material/transform checks and lock exist; URP/input migration and revalidation remain; engineering |
 | E-03 | planned | Asymmetric calibration fixture with skin, clip, alpha and normal map | F-06 | One-meter measurements and source export record; technical art |
 | E-04 | planned | Compare GLB/glTFast and FBX Unity import paths | E-02,E-03 | No mirror, double Z flip, bone or tangent error; reimport preserves bindings; technical art |
 | E-05 | planned | Add GLB load/review to web tool, report asset ID/revision | E-03 | Same source/export hash reviewed; missing assets fail visibly; engineering |
@@ -219,11 +220,11 @@ Use the acceptance IDs in [ACCEPTANCE.md](docs/ACCEPTANCE.md). P0/P1 defects blo
 
 ## 9. Immediate next work
 
-1. Resolve the confirmed editor/Pipeline compatibility issue with an approved patch update; the Personal license is already active. A local reference-game path is still needed when available. Neither credentials nor game data goes into GitHub.
-2. Run F-05/E-02 to prove a real Unity project and Windows player; record version/packages.
+1. Complete E-02: configure URP/Input System, explicitly migrate generated material shaders and repeat rendering/build checks. Basic editor and Windows proxy proof already passed F-05.
+2. Identify the local reference-game path and release/profile when available. Neither credentials nor game data goes into GitHub.
 3. Run F-06/E-03/E-04 on the calibration fixture before building polished Link/town assets.
 4. Run R-01–R-08 and replace the current authored proxy with measured layout data.
 5. Build E-07–E-12 as the first playable South Clock Town graybox.
 6. Review L-02 and A-01 as the first art-direction checkpoints, then produce M2.
 
-Independent work while Unity automation is blocked: reference planning/capture indexing, source-behavior research, art references and catalog, browser import validation, and reviewed native-bridge dependency mapping. A compiled seed does not establish successful scene generation, play mode or a player build.
+Unity automation is available. Reference planning, source-behavior research, art catalogs and browser import validation can continue alongside production render/input setup. The verified static proxy is a toolchain checkpoint; the measured scene, Link, traversal, game systems and finished presentation remain future work.

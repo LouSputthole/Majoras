@@ -1,0 +1,20 @@
+{
+    "output":  null,
+    "diagnostics":  [
+
+                    ],
+    "success":  true,
+    "result":  {
+                   "platform":  "WindowsPlayer",
+                   "version":  "6000.5.11f1",
+                   "scene":  "SouthClockTown_Proxy",
+                   "batchMode":  true,
+                   "playing":  true,
+                   "beforeFrame":  584112,
+                   "afterFrame":  584143,
+                   "beforeTime":  29.10384,
+                   "afterTime":  29.9371853,
+                   "advanced":  true,
+                   "identities":  17
+               }
+}

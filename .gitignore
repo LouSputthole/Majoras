@@ -23,6 +23,10 @@ local-reference/
 *.sav
 *.srm
 Unity/Assets/Generated/
+Unity/Assets/Generated.meta
 Unity/Assets/Scenes/SouthClockTown_Proxy.unity*
+Unity/Assets/Settings/Pipeline/Resources/RuntimePipelineConfig.asset*
+Unity/Assets/Settings/Pipeline/Resources/RuntimePipelineBuildInfo.asset*
+.unity-pipeline*-port*
 Unity/Builds/
 .DS_Store

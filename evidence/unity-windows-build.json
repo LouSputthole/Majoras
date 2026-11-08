@@ -1,0 +1,19 @@
+{
+    "status":  "completed",
+    "buildId":  "build_6b9c8db05550",
+    "result":  "Succeeded",
+    "platform":  "StandaloneWindows64",
+    "totalSizeBytes":  166385747,
+    "buildTimeMs":  29541,
+    "buildStartedAt":  "2026-11-08T22:21:38.1024578Z",
+    "buildEndedAt":  "2026-11-08T22:22:07.6439575Z",
+    "totalWarnings":  0,
+    "totalErrors":  0,
+    "errors":  [
+
+               ],
+    "warnings":  [
+
+                 ],
+    "executableSha256":  "95D2E699E1429223213E3D38FC53544C7BBF28334B1F54BA7B00180E77548479"
+}
