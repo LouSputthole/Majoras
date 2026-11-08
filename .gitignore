@@ -12,6 +12,8 @@ evidence/*.glb
 evidence/ci/
 docs/south-clock-town-reference.png
 local-reference/
+Unity/Assets/LocalReference/
+Unity/Assets/LocalReference.meta
 *.z64
 *.n64
 *.v64

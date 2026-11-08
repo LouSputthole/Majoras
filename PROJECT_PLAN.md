@@ -6,7 +6,7 @@ Planning baseline: 2026-11-08. Repository: `LouSputthole/Majoras`. User-selected
 
 Deliver a standalone Windows Unity slice where the player can explore a recognizably faithful South Clock Town as young human Link, encounter a bounded set of local interactions and scheduled actors, see the cycle change the environment, observe the exterior tower opening, and exercise the defined reset/save behavior. Replace the original presentation with authored modern geometry, textures, animation, materials and lighting.
 
-The first profile is **post-introduction exploration**, not the opening story sequence. Exact N64 release/revision remains to be selected. Default geography/gameplay comes from N64; 3DS images are labeled visual references. Neighbor districts, tower interior/rooftop, combat, dungeons, transformations, a complete quest system, multiplayer, console support and browser gameplay are outside this first slice.
+The first profile is **post-introduction exploration**, not the opening story sequence. The selected source is N64 US revision 0; see [verified ROM identity](docs/ROM_REFERENCE.md). Default geography/gameplay comes from N64; 3DS images are labeled visual references. Neighbor districts, tower interior/rooftop, combat, dungeons, transformations, a complete quest system, multiplayer, console support and browser gameplay are outside this first slice.
 
 Expanded detail initially means believable construction, depth, materials, backs of objects, richer animation and environmental dressing within the original route envelope. New interiors, relocated landmarks, wider streets, extra quests and new traversal are separate approved deviations, not hidden changes under a graphical upgrade.
 
@@ -21,7 +21,7 @@ Expanded detail initially means believable construction, depth, materials, backs
 | Unity project seed and importer | Compiled and executed | Initial generation, save/reopen and regeneration pass all 17 ID/transform/material and 13 collider checks |
 | Unity basic toolchain | Verified for the proxy | Unity `6000.5.11f1`, ready Pipeline, advancing Play Mode, successful Windows development build and batch-mode runtime/camera smoke test; `evidence/environment.json` |
 | Production rendering/input and real art import | Pending | Built-in Standard proxy only; URP/Input System, GLB/FBX calibration and character traversal not verified |
-| Reference game, exact coordinates and original state traces | Pending | No local game dump/reference session selected |
+| Reference game and original scene assets | Imported locally | Verified US revision 0 ROM; actual town, collision and separate clock/door/platform meshes render in Unity. Camera/state matching and physical-scale calibration remain pending; see `docs/ROM_REFERENCE.md` |
 | Finished environment art | Pending | The review volumes are not finished architecture or a faithful clock face |
 | Link concept/model/rig/animation | Pending | No generated concept asset or 3D character has been accepted |
 | Original simulation or C# gameplay systems | Not implemented | Native bridge is a research alternative, not an existing integration |

@@ -1,0 +1,70 @@
+diff --git a/tools/ZAPD/ZAPD/ImageBackend.cpp b/tools/ZAPD/ZAPD/ImageBackend.cpp
+index 307945b..7ebb291 100644
+--- a/tools/ZAPD/ZAPD/ImageBackend.cpp
++++ b/tools/ZAPD/ZAPD/ImageBackend.cpp
+@@ -147,7 +147,7 @@ void ImageBackend::ReadPng(const char* filename)
+ 
+ void ImageBackend::ReadPng(const fs::path& filename)
+ {
+-	ReadPng(filename.c_str());
++	ReadPng(filename.string().c_str());
+ }
+ 
+ void ImageBackend::WritePng(const char* filename)
+diff --git a/tools/ZAPD/ZAPD/Main.cpp b/tools/ZAPD/ZAPD/Main.cpp
+index 19d10d7..78cf452 100644
+--- a/tools/ZAPD/ZAPD/Main.cpp
++++ b/tools/ZAPD/ZAPD/Main.cpp
+@@ -190,7 +190,7 @@ bool Parse(const fs::path& xmlFilePath, const fs::path& basePath, const fs::path
+ 
+ 			if (Globals::Instance->verbosity >= VerbosityLevel::VERBOSITY_INFO)
+ 			{
+-				printf("Parsing external file: '%s'\n", externalXmlFilePath.c_str());
++				printf("Parsing external file: '%s'\n", externalXmlFilePath.string().c_str());
+ 			}
+ 
+ 			// Recursion. What can go wrong?
+@@ -473,7 +473,7 @@ int HandleExtract(ZFileMode fileMode, ExporterSet* exporterSet)
+ 				Globals::Instance->cfg.externalXmlFolder / extFile.xmlPath;
+ 
+ 			if (Globals::Instance->verbosity >= VerbosityLevel::VERBOSITY_INFO)
+-				printf("Parsing external file from config: '%s'\n", externalXmlFilePath.c_str());
++				printf("Parsing external file from config: '%s'\n", externalXmlFilePath.string().c_str());
+ 
+ 			parseSuccessful = Parse(externalXmlFilePath, Globals::Instance->baseRomPath,
+ 									extFile.outPath, ZFileMode::ExternalFile);
+diff --git a/tools/ZAPD/ZAPD/WarningHandler.cpp b/tools/ZAPD/ZAPD/WarningHandler.cpp
+index f416a5b..ce8eff8 100644
+--- a/tools/ZAPD/ZAPD/WarningHandler.cpp
++++ b/tools/ZAPD/ZAPD/WarningHandler.cpp
+@@ -218,7 +218,7 @@ void WarningHandler::FunctionPreamble(const char* filename, int32_t line, const
+  */
+ void WarningHandler::ProcessedFilePreamble() {
+     if (Globals::Instance->inputPath != "") {
+-        fprintf(stderr, "When processing file %s: ", Globals::Instance->inputPath.c_str());
++        fprintf(stderr, "When processing file %s: ", Globals::Instance->inputPath.string().c_str());
+     }
+ }
+ 
+diff --git a/tools/ZAPD/ZAPD/ZFile.cpp b/tools/ZAPD/ZAPD/ZFile.cpp
+index db2d251..2ab91ab 100644
+--- a/tools/ZAPD/ZAPD/ZFile.cpp
++++ b/tools/ZAPD/ZAPD/ZFile.cpp
+@@ -846,7 +846,7 @@ void ZFile::GenerateSourceFiles()
+ 	fs::path outPath = GetSourceOutputFolderPath() / outName.stem().concat(".c");
+ 
+ 	if (Globals::Instance->verbosity >= VerbosityLevel::VERBOSITY_INFO)
+-		printf("Writing C file: %s\n", outPath.c_str());
++		printf("Writing C file: %s\n", outPath.string().c_str());
+ 
+ 	OutputFormatter formatter;
+ 	formatter.Write(sourceOutput);
+@@ -886,7 +886,7 @@ void ZFile::GenerateSourceHeaderFiles()
+ 	fs::path headerFilename = GetSourceOutputFolderPath() / outName.stem().concat(".h");
+ 
+ 	if (Globals::Instance->verbosity >= VerbosityLevel::VERBOSITY_INFO)
+-		printf("Writing H file: %s\n", headerFilename.c_str());
++		printf("Writing H file: %s\n", headerFilename.string().c_str());
+ 
+ 	File::WriteAllText(headerFilename, formatter.GetOutput());
+ }

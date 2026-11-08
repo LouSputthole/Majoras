@@ -1,4 +1,8 @@
-# Unity proxy — editor and Windows smoke test verified
+# Unity scene and local N64 reference
+
+The current scene is the imported original South Clock Town reference, saved locally at `Assets/LocalReference/SouthClockTown/Generated/SouthClockTown_RomReference.unity`. Use **Majoras > Import Local ROM Reference** to regenerate it from the prepared local inputs. It includes the original room, clock assembly, doors and Day 1 platform; 21 render meshes and the room collision passed the editor/Play Mode checks. This is the baseline for rebuilding the art, with no character controls yet. [Conversion instructions](../tools/reference/README.md) explain dependencies, source pins and remaining fidelity limits. ROM-derived assets and captures are ignored by Git.
+
+The earlier proxy's checks and Windows build are recorded below; that executable still displays the old boxes and does not contain the new reference scene.
 
 Verified on 2026-11-08 with Unity **6000.5.11f1** (`5c3a1087d8e4`), CLI `1.0.0-beta.17` and Pipeline `0.10.0-exp.1`. The approved side-by-side patch fixed the Pipeline startup defect in `6000.5.0f1`; the older editors remain installed. The user activated Unity Personal and accepted the updated editor terms.
 

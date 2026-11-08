@@ -2,7 +2,7 @@
 
 A faithful, stylized Majora's Mask remake study, beginning with **South Clock Town and young Link**. The intended result is a playable Unity scene with modern authored models, materials, lighting and animation, preserving the area's identity and selected N64 behavior.
 
-**Current state: planning and verified engine foundation.** The Three.js layout reviewer works, and the shared unmeasured blockout now generates in Unity, passes inspection, runs in Play Mode and builds as a Windows application. The packaged proxy passed an unattended smoke test and camera capture. There is no Link model, movement controller, imported original simulation, finished art or playable remake yet.
+**Current state: original N64 reference imported into Unity.** The user's existing US ROM has been verified and South Clock Town's actual textured geometry, collision mesh, clock assembly, gears, doors and Day 1 platform have been imported locally. The reference scene renders in Unity; the former boxes are retained only as an engine smoke test. There is no Link model, movement controller, original simulation, finished replacement art or playable remake yet. See [reference research](docs/ROM_REFERENCE.md) and [local conversion instructions](tools/reference/README.md).
 
 ## Start here
 
