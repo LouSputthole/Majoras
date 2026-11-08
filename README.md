@@ -2,7 +2,7 @@
 
 A faithful, stylized Majora's Mask remake study, beginning with **South Clock Town and young Link**. The intended result is a playable Unity scene with modern authored models, materials, lighting and animation, preserving the area's identity and selected N64 behavior.
 
-**Current state: planning and foundation.** There is a working Three.js layout reviewer, an unmeasured shared blockout, and an uncompiled Unity seed. There is no finished Link model, imported original simulation, or playable Unity remake yet.
+**Current state: planning and foundation.** There is a working Three.js layout reviewer, an unmeasured shared blockout, and a Unity seed whose scripts compile. Unity scene generation, play mode and player builds remain unverified. There is no finished Link model, imported original simulation, or playable Unity remake yet.
 
 ## Start here
 
@@ -48,7 +48,7 @@ In another terminal, run `npm run verify` from `prototype`. Local verification u
 
 **Unity owns the future game. Three.js owns the review tool.** The browser will not acquire a second copy of player physics, NPC schedules, quests or save logic. Production target is Unity 6/URP on Windows, subject to the toolchain/import spike. Original C code is a behavioral reference or a separately gated native-bridge experiment, not code that can automatically be pasted into Unity.
 
-Unity `6000.5.0f1` is provisionally recorded in the seed because it is installed locally. The actual bootstrap failed with `No valid Unity Editor license found` (exit 198). Activate the editor through Unity Hub before running Unity checks. Editor support/version and URP packages must be locked after that succeeds.
+Unity Personal is now active, and the project opened with `6000.5.0f1`. Its seed scripts compiled and Unity generated the project settings, metadata and package lock. Pipeline `0.10.0-exp.1` is installed, but the CLI confirmed that this editor version cannot start its automation server. A patch upgrade to `6000.5.3f1` or later is required; `6000.5.11f1` is the proposed patch in the installed release line, pending user approval. URP, scene import, play mode and Windows player checks remain pending. See [Unity setup and next checks](Unity/README.md).
 
 ## Source and data boundaries
 

@@ -1,6 +1,6 @@
 # Asset pipeline: source to review viewer to Unity
 
-Status: proposed production contract, 2026-11-08. The target is an authored 3D remake; the current Three.js work is a thin scene reviewer. This document specifies future assets and gates, not completed character art or a working Unity game. Unity runtime/import verification remains pending until the local editor can run with a valid license.
+Status: proposed production contract, 2026-11-08. The target is an authored 3D remake; the current Three.js work is a thin scene reviewer. This document specifies future assets and gates, not completed character art or a working Unity game. The local editor is licensed and the seed scripts compiled. Scene generation and runtime/import verification remain pending a compatible editor patch for Pipeline automation; see `../evidence/environment.json`.
 
 Read [ART_DIRECTION.md](ART_DIRECTION.md) for visual constraints and the prioritized South Clock Town backlog. Use portable glTF/GLB deliverables for review, editable Blender sources for authorship, and explicitly exported Unity interchange files. A successful image generation or concept review is not a delivered mesh.
 

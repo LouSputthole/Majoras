@@ -18,8 +18,8 @@ Expanded detail initially means believable construction, depth, materials, backs
 | Engine/art/area/acceptance planning | Written and cross-reviewed | Five specialist documents below plus this backlog; plans are not implementations |
 | Three.js layout reviewer | Implemented, locally verified | Production build, five contract tests, headless browser controls/export checks; `evidence/verification.json` |
 | Shared layout and stable IDs | Implemented as proxies | 17 assemblies, five markers; **all placements/dimensions unmeasured** |
-| Unity project seed and importer | Authored, source-reviewed | Provisional editor version, metadata component and menu importer; **not compiled/imported** |
-| Unity runtime/toolchain | Blocked | Existing editor returned exit 198: no active license |
+| Unity project seed and importer | Compiled in the editor | Both seed assemblies generated; no C# compiler errors; proxy generation/runtime checks still pending |
+| Unity runtime/toolchain | Partially verified; automation blocked | Active Personal license and successful project open; Pipeline cannot start on `6000.5.0f1`; compatible patch approval pending |
 | Reference game, exact coordinates and original state traces | Pending | No local game dump/reference session selected |
 | Finished environment art | Pending | The review volumes are not finished architecture or a faithful clock face |
 | Link concept/model/rig/animation | Pending | No generated concept asset or 3D character has been accepted |
@@ -31,7 +31,7 @@ Current progress is **foundation work supporting M0/M1**, not a passed M0 or pla
 
 | Decision | Working choice | Revisit / evidence required |
 |---|---|---|
-| Production engine | Unity 6, URP, desktop Windows first | Activate editor; prove clean import and standalone build; lock supported version/packages |
+| Production engine | Unity 6, URP, desktop Windows first | License active; update incompatible editor patch, prove scene import and standalone build; lock supported version/packages |
 | Browser role | Thin Three.js art/layout review and interchange | Never duplicate gameplay authority in JavaScript |
 | Editable 3D sources | Blender, version to be pinned | Install availability and calibration export must be checked; not currently established |
 | Portable review format | GLB | Validate format and orientation, then test Unity glTFast versus explicit FBX before production |
@@ -44,14 +44,14 @@ Current progress is **foundation work supporting M0/M1**, not a passed M0 or pla
 | Scope expansion | Visual detail inside existing routes | Record any geography/mechanics change in deviation ledger before implementation |
 | Large art storage | Pending | Choose Git LFS/artifact storage before adding production binary history |
 
-The current Unity seed uses built-in materials solely to avoid asserting that URP is configured. The installed `6000.5.0f1` is a **provisional import target**, not a long-term version endorsement. Unity activation is a user action; routine local implementation and checks continue where independent.
+The current Unity seed uses built-in materials solely to avoid asserting that URP is configured. The installed `6000.5.0f1` compiled the seed but has a confirmed Pipeline startup defect. CLI `1.0.0-beta.17` requires editor `6000.5.3f1` or later; the proposed side-by-side patch is `6000.5.11f1`, pending user approval. A compatible patch is not a long-term version endorsement. License activation is already complete; see `evidence/environment.json` for the current and historical results.
 
 ## 4. Milestone map and dependency order
 
 ```mermaid
 flowchart LR
   F[Foundation: docs, shared IDs, review viewer] --> R[M0: reference and survey]
-  F --> U[Engine activation and import calibration]
+  F --> U[Engine compatibility and import calibration]
   R --> B[M1: measured playable graybox]
   U --> B
   B --> A[M2: Link and hero-art sample]
@@ -84,7 +84,7 @@ Status vocabulary: `done` = evidence exists for that limited task; `ready` = can
 | F-02 | done | Proxy manifest, stable IDs, meter/axis adapter | — | Five contract checks pass; engineering |
 | F-03 | done | Browser views, light presets, wireframe, markers, GLB download | F-02 | Headless renderer/control/export run; engineering |
 | F-04 | done | Detailed engine, art, area, pipeline and acceptance plans | — | Cross-review resolves format/origin/state inconsistencies; lead |
-| F-05 | blocked | Activate Unity; select supported editor and packages | User activation | Clean open/compile and standalone cube/character build; engineering |
+| F-05 | blocked | Select compatible editor and packages; license/open/seed compile verified | Approval for compatible editor patch | Clean open/compile and standalone cube/character build; engineering |
 | F-06 | ready | Pin Blender/exporter and art storage convention | Tool availability | Document actual versions, source/derivative retention and binary policy; technical art |
 | R-01 | blocked | Identify local user-provided N64 reference dump and revision | Local reference path | Hash/version/profile recorded without committing game data; reference research |
 | R-02 | planned | Pin zeldaret/mm and 2Ship source commits; build unchanged reference if used | R-01 | Exact revisions and unmodified behavior capture; engineering |
@@ -99,7 +99,7 @@ Status vocabulary: `done` = evidence exists for that limited task; `ready` = can
 
 | ID | State | Task / deliverable | Depends on | Acceptance / owner |
 |---|---|---|---|---|
-| E-01 | done | Unity seed and JSON-envelope importer authored | F-02 | Source review only; compile status stays pending; engineering |
+| E-01 | done | Unity seed and JSON-envelope importer authored and compiled | F-02 | Source review and editor assembly generation; scene generation still pending; engineering |
 | E-02 | blocked | Execute seed import; configure URP/input and Windows target | F-05 | No console errors; materials/scale correct; package lock committed; engineering |
 | E-03 | planned | Asymmetric calibration fixture with skin, clip, alpha and normal map | F-06 | One-meter measurements and source export record; technical art |
 | E-04 | planned | Compare GLB/glTFast and FBX Unity import paths | E-02,E-03 | No mirror, double Z flip, bone or tangent error; reimport preserves bindings; technical art |
@@ -215,15 +215,15 @@ At the start of each implementation batch: select a small dependency-complete gr
 
 An engineering task is ready when reference/contract inputs exist or are explicitly provisional. It is done when the code and required runtime behavior are verified with reproducible evidence. An art task is ready when identity, scale and import constraints are established. It is done when source files, exports, metadata, actual Unity render/deformation checks and the required visual review all exist.
 
-Use the acceptance IDs in [ACCEPTANCE.md](docs/ACCEPTANCE.md). P0/P1 defects block a candidate. Visual fidelity, gameplay parity, package reproducibility and performance are separate decisions. Avoid estimated calendar promises until reference access, Unity activation and the asset spike establish actual throughput.
+Use the acceptance IDs in [ACCEPTANCE.md](docs/ACCEPTANCE.md). P0/P1 defects block a candidate. Visual fidelity, gameplay parity, package reproducibility and performance are separate decisions. Avoid estimated calendar promises until reference access, Unity runtime validation and the asset spike establish actual throughput.
 
 ## 9. Immediate next work
 
-1. User activates Unity in Hub and provides a local reference-game path when available. Neither credential entry nor game data goes into GitHub.
+1. Resolve the confirmed editor/Pipeline compatibility issue with an approved patch update; the Personal license is already active. A local reference-game path is still needed when available. Neither credentials nor game data goes into GitHub.
 2. Run F-05/E-02 to prove a real Unity project and Windows player; record version/packages.
 3. Run F-06/E-03/E-04 on the calibration fixture before building polished Link/town assets.
 4. Run R-01–R-08 and replace the current authored proxy with measured layout data.
 5. Build E-07–E-12 as the first playable South Clock Town graybox.
 6. Review L-02 and A-01 as the first art-direction checkpoints, then produce M2.
 
-Independent work while Unity is unavailable: reference planning/capture indexing, source-behavior research, art references and catalog, browser import validation, and reviewed native-bridge dependency mapping. No activation wait should be disguised as completed Unity work.
+Independent work while Unity automation is blocked: reference planning/capture indexing, source-behavior research, art references and catalog, browser import validation, and reviewed native-bridge dependency mapping. A compiled seed does not establish successful scene generation, play mode or a player build.

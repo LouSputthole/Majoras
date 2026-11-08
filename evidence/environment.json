@@ -1,13 +1,34 @@
 {
   "date": "2026-11-08",
   "installedUnityEditors": ["6000.4.11f1", "6000.5.0f1"],
-  "attemptedEditor": "6000.5.0f1",
-  "attempt": "batch project initialization",
-  "result": "blocked",
-  "exitCode": 198,
-  "message": "No valid Unity Editor license found. Please activate your license.",
+  "editorVersion": "6000.5.0f1",
+  "editorRevision": "88b47c5e7076",
+  "cliVersion": "1.0.0-beta.17",
+  "cliUpdateCheck": "current version matches latest",
+  "license": { "active": true, "type": "Unity Personal" },
+  "projectOpen": "succeeded",
+  "pipelinePackage": "0.10.0-exp.1",
+  "pipelineConnection": {
+    "result": "blocked",
+    "code": "STATUS_PIPELINE_LOAD_PENDING",
+    "reason": "CLI confirmed Pipeline cannot start on Unity 6000.5.0f1; requires 6000.5.3f1 or later",
+    "proposedEditorPatch": "6000.5.11f1",
+    "upgradeApproval": "pending"
+  },
+  "historicalBootstrap": {
+    "attempt": "batch project initialization before user license activation",
+    "exitCode": 198,
+    "message": "No valid Unity Editor license found. Please activate your license.",
+    "status": "resolved by subsequent active license and successful editor open"
+  },
   "nodeVersion": "24.14.1",
-  "unityCompilation": "not run",
+  "unityCompilation": {
+    "result": "seed assemblies generated",
+    "assemblies": ["Assembly-CSharp.dll", "Assembly-CSharp-Editor.dll"],
+    "csharpCompilerErrorCount": 0,
+    "limit": "Compilation only; Pipeline startup has a separate editor compatibility error"
+  },
+  "unitySceneGeneration": "not run",
   "unityPlayMode": "not run",
   "unityPlayerBuild": "not run",
   "blenderVersion": null,

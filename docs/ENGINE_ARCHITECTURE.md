@@ -14,9 +14,9 @@ South Clock Town is the first complete vertical slice. Its first reviewable mile
 
 | Observation | Evidence | Consequence |
 | --- | --- | --- |
-| The workspace has a `Unity/Assets` directory, but successful project initialization has not been demonstrated. | Local directory inspection during this task. | Treat Unity settings, imported packages, scene compilation, and build output as unverified. |
-| The bootstrap attempt used an editor under `6000.5.0f1` and terminated with `No valid Unity Editor license found` and return code 198. | Root `bootstrap.log`, inspected during this task. | Editor compilation, play mode, package compatibility, rendering, and player builds are blocked until a valid local editor session is available. Authentication and license activation remain user actions. |
-| The assigned environment inventory reports editors `6000.4.11f1` and `6000.5.0f1`. | Parent task's local inventory; not independently repeated here. | Do not silently install another editor or let multiple editors rewrite the project. Select and pin one verified version. |
+| The Unity project opened and generated settings, source metadata, a package lock and both seed script assemblies. | Local editor output and assembly inspection; sanitized record in `evidence/environment.json`, 2026-11-08. | Seed compilation is verified; proxy scene generation, play mode and player build remain unverified. |
+| The earlier bootstrap license failure (exit 198) is resolved. The CLI now reports an active Unity Personal license. | `unity license status` and successful project open, 2026-11-08. | No additional authentication is needed for the current session; runtime gates still require actual checks. |
+| Editors `6000.4.11f1` and `6000.5.0f1` are installed. Pipeline `0.10.0-exp.1` cannot start its server on `6000.5.0f1`. | Refreshed CLI inventory and `STATUS_PIPELINE_LOAD_PENDING` diagnostic, 2026-11-08. | The CLI requires `6000.5.3f1` or later; side-by-side patch `6000.5.11f1` is proposed, pending user approval. Do not let multiple editors rewrite the project concurrently. |
 | `prototype/package.json` pins Three.js `0.181.1`, Vite `7.3.7`, and Playwright `1.56.1`. | Local manifest; reviewer test results are in `evidence/verification.json`. | Browser checks establish the reviewer only, not Unity gameplay. |
 | Unity exposes native C/C++ integration, but that is a language boundary, not a ready-made game integration. | [Unity native plug-ins](https://docs.unity3d.com/6000.0/Documentation/Manual/plug-ins-native.html). | A 2Ship bridge would require substantial adaptation and verification. |
 | 2Ship has its own C/C++ CMake build, `libultraship` dependency, and asset-extraction workflow. Its `PlayState` code also references graphics, interaction, and interpolation systems. | [2Ship build instructions](https://github.com/2ship2harkinian/2ship2harkinian/blob/develop/docs/BUILDING.md), [CMakeLists](https://github.com/2ship2harkinian/2ship2harkinian/blob/develop/CMakeLists.txt), [play-state source](https://github.com/2ship2harkinian/2ship2harkinian/blob/develop/mm/src/code/z_play.c). | Source cannot simply be dropped into Unity as C# gameplay. No stable headless stepping/snapshot ABI has been established in this project. |
@@ -24,7 +24,7 @@ South Clock Town is the first complete vertical slice. Its first reviewable mile
 
 Public documentation changes. Record exact upstream commits and actual installed package versions when implementing; the links above are discovery references, not immutable dependency locks.
 
-Current seed: `Unity/ProjectSettings/ProjectVersion.txt` provisionally targets installed `6000.5.0f1`. `Unity/Assets/Editor/ImportSouthClockTown.cs` reads `shared/scenes/south-clock-town.blockout.json` and creates proxy envelopes using a built-in Standard material fallback; URP is not installed/configured. `Unity/Assets/Scripts/ProxyAssetIdentity.cs` retains IDs and provenance. The seed is source-reviewed, not compiled/imported. A sanitized failure record is in `evidence/environment.json`; the full local bootstrap log is ignored. The proposed production tree below is future work, separate from these actual seed paths.
+Current seed: `Unity/ProjectSettings/ProjectVersion.txt` records `6000.5.0f1` revision `88b47c5e7076`. `Unity/Assets/Editor/ImportSouthClockTown.cs` reads `shared/scenes/south-clock-town.blockout.json` and creates proxy envelopes using a built-in Standard material fallback; URP is not installed/configured. `Unity/Assets/Scripts/ProxyAssetIdentity.cs` retains IDs and provenance. The seed is source-reviewed and compiled, but its scene generator has not run. Project settings, source metadata and the package lock are tracked. Sanitized results are in `evidence/environment.json`; raw local logs are ignored. The proposed production tree below is future work, separate from these actual seed paths.
 
 ## 3. Architecture decisions
 
@@ -34,7 +34,7 @@ Current seed: `Unity/ProjectSettings/ProjectVersion.txt` provisionally targets i
 
 **Why:** a character-driven, authored adventure benefits from integrated animation, camera tooling, lighting, scene editing, profiling, and controller support. Those are production workflow reasons, not evidence that Unity automatically reproduces the original game's feel.
 
-**Version gate:** once licensing is available, test the installed `6000.5.0f1` with the smallest URP project, glTF import, input, a character, and a Windows build. Pin `ProjectVersion.txt`, package manifest, package lock, and a successful smoke-build record. If choosing a currently supported LTS editor instead, make that an explicit recorded change before significant scene authoring. The Unity documentation currently labels `6000.3` as LTS and `6000.4`/`6000.5` as legacy; verify support again at version selection. Do not equate an installed editor with the best long-term version. [Unity versioned documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/plug-ins-native.html)
+**Version gate:** licensing is available and the seed compiled, but `6000.5.0f1` failed the Pipeline connection check. Update to an approved compatible editor patch, then test the smallest URP project, glTF import, input, a character, and a Windows build. Pin `ProjectVersion.txt`, package manifest, package lock, and a successful smoke-build record. If choosing a currently supported LTS editor instead, make that an explicit recorded change before significant scene authoring. Recheck official support information when selecting the long-term editor; the proposed compatibility patch does not establish that choice. Do not equate an installed editor with the best long-term version. [Unity versioned documentation](https://docs.unity3d.com/6000.0/Documentation/Manual/plug-ins-native.html)
 
 **Exit condition:** a fresh checkout opens without import/compile errors and produces a runnable Windows development build with the pinned editor. Until then the engine choice is architectural intent, not a verified toolchain.
 
@@ -42,7 +42,7 @@ Current seed: `Unity/ProjectSettings/ProjectVersion.txt` provisionally targets i
 
 **Proposed decision:** a Unity-hosted game session owns authoritative state. The web viewer is read-only with respect to the game. It may scrub an art-review time-of-day slider, play an animation clip, display authored collision proxies, and move a review camera. These are inspection controls; they do not implement NPC schedules, quests, save files, or player physics.
 
-If a browser walkthrough is needed during the license block, label its controls and output as environment preview. Keep any temporary navigation code isolated and disposable. Do not grow it into the game's baseline controller.
+If a browser walkthrough is needed before Unity runtime validation, label its controls and output as environment preview. Keep any temporary navigation code isolated and disposable. Do not grow it into the game's baseline controller.
 
 **Exit condition:** the browser can review the same asset revision Unity imports, while no gameplay state or rule is implemented twice.
 
@@ -334,7 +334,7 @@ Provisional performance target: 60 fps at 1920x1080 on a named Windows reference
 
 | Risk or open decision | Next bounded action | Exit criterion |
 | --- | --- | --- |
-| Unity unavailable due to license state. | User activates/opens the intended editor; then run E0 smoke checks. Continue reference survey and asset schemas meanwhile. | Real editor import and Windows player evidence, not another directory creation. |
+| Unity Pipeline startup blocked by editor `6000.5.0f1` compatibility; license is active. | After approval, install a compatible editor patch and reopen the project; then run E0 smoke checks. Continue reference survey and asset schemas meanwhile. | Ready automation connection, actual scene import and Windows player evidence. |
 | Reference target is ambiguous. | Choose original release/region/revision, supported copy, baseline settings, and whether enhancements are enabled. Record source-game hash privately if needed. | One reproducible reference profile; N64 and 3DS behavior are not mixed accidentally. |
 | Reimplementation scope grows without parity. | Implement one route/interaction/reset chain before a broad framework. | Its reference trace and lifecycle checks pass. |
 | Source bridge is mistaken for ready-made integration. | Execute only the bounded experiment in section 10 if pursuing it. | Explicit stop/go decision with measured prototype evidence. |
