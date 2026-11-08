@@ -7,8 +7,16 @@ const root = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "../..",
 );
-const output = path.join(root, "evidence");
+const output = path.resolve(root, process.env.VERIFY_OUTPUT || "evidence");
 await mkdir(output, { recursive: true });
+await writeFile(
+  path.join(output, "verification.json"),
+  JSON.stringify(
+    { status: "started", timestamp: new Date().toISOString() },
+    null,
+    2,
+  ) + "\n",
+);
 const browser = await chromium.launch(
   process.env.CI ? { headless: true } : { channel: "chrome", headless: true },
 );
@@ -90,6 +98,10 @@ try {
   const result = {
     status: "passed",
     timestamp: new Date().toISOString(),
+    sourceRevision: process.env.GITHUB_SHA || null,
+    platform: process.platform,
+    nodeVersion: process.version,
+    browserVersion: await browser.version(),
     checks: [
       "WebGL render",
       "view presets",
@@ -117,6 +129,21 @@ try {
     JSON.stringify(result, null, 2) + "\n",
   );
   console.log(JSON.stringify(result, null, 2));
+} catch (error) {
+  await writeFile(
+    path.join(output, "verification.json"),
+    JSON.stringify(
+      {
+        status: "failed",
+        timestamp: new Date().toISOString(),
+        error: error.message,
+        consoleErrors: errors,
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  throw error;
 } finally {
   await browser.close();
 }

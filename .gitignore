@@ -9,6 +9,7 @@ Temp/
 UserSettings/
 *.log
 evidence/*.glb
+evidence/ci/
 docs/south-clock-town-reference.png
 local-reference/
 *.z64

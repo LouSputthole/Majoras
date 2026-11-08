@@ -1,6 +1,10 @@
 {
   "status": "passed",
-  "timestamp": "2026-11-08T08:09:10.617Z",
+  "timestamp": "2026-11-08T08:17:51.875Z",
+  "sourceRevision": null,
+  "platform": "win32",
+  "nodeVersion": "v24.14.1",
+  "browserVersion": "156.0.8078.80",
   "checks": [
     "WebGL render",
     "view presets",

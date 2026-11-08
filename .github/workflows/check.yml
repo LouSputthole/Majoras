@@ -4,7 +4,9 @@ permissions:
   contents: read
 jobs:
   viewer:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      VERIFY_OUTPUT: evidence/ci
     defaults:
       run:
         working-directory: prototype
@@ -29,4 +31,4 @@ jobs:
         if: always()
         with:
           name: foundation-evidence
-          path: evidence/
+          path: evidence/ci/

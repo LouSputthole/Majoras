@@ -42,7 +42,7 @@ npm run build
 npm run preview
 ```
 
-In another terminal, run `npm run verify` from `prototype`. Local verification uses installed Chrome headless. CI installs Playwright Chromium instead. The verifier checks WebGL output, controls, export hierarchy, units/axis conversion, console errors and compact layout. Results and screenshots go to `evidence/`. The Khronos semantic GLB validator and Unity round trip are future import-spike work; the current export check validates the binary envelope, JSON structure and selected transforms only.
+In another terminal, run `npm run verify` from `prototype`. Local verification uses installed Chrome headless. CI installs Playwright Chromium on a pinned Ubuntu 24.04 runner. The verifier checks WebGL output, controls, export hierarchy, units/axis conversion, console errors and compact layout. Local results and screenshots go to `evidence/`; CI writes only to `evidence/ci/` and uploads that run's artifacts. A failed run cannot reuse a committed local pass report. The Khronos semantic GLB validator and Unity round trip are future import-spike work; the current export check validates the binary envelope, JSON structure and selected transforms only.
 
 ## Engine choice
 
