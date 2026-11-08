@@ -1,12 +1,12 @@
 # Majora's / full Clock Town developer handoff
 
-Updated 2026-11-08 after the user's computer lockup. **Start here.** This is the persistent project handoff requested by the owner. The detailed work specification is [FULL_CITY_PLAN.md](FULL_CITY_PLAN.md); the reusable source/art procedure is [CITY_PLAYBOOK.md](CITY_PLAYBOOK.md). This update plans and documents work; it does not implement additional districts or repeat a Unity run.
+Updated 2026-11-08 (evening) after REC-01 and the first four reference packets. **Start here.** This is the persistent project handoff requested by the owner. The detailed work specification is [FULL_CITY_PLAN.md](FULL_CITY_PLAN.md); the reusable source/art procedure is [CITY_PLAYBOOK.md](CITY_PLAYBOOK.md). This update plans and documents work; it does not implement additional districts or repeat a Unity run.
 
 ## 1. Owner direction and immediate assignment
 
 The owner wants the entire faithful, stylized Clock Town developed, and will assign another developer much of the reference, indexing, asset preparation and repetitive production work. The city and recognizable source geography are the priority. Continue the existing South work; do not replace it with a generic procedural town or restart from the older boxes.
 
-The next developer should complete **REC-01, REF-01, REF-02 and REF-03** in the [execution queue](FULL_CITY_PLAN.md#12-dependency-ordered-work-queue) first: preserve the checkpoint, establish the full location/room inventory, catalog source actors and entrances, and prepare repeatable captures. These are useful independently of resolving the Windows graphics launch. Do not begin by extracting every object bank, bulk-generating final art, changing render pipelines, or implementing a second game in the browser.
+**REC-01, REF-01, REF-02, REF-03 and REF-05 were completed on 2026-11-08** (source inspection only, no Unity run): the checkpoint is committed, all 22 city scenes are extracted to readable C, and `docs/city/` holds the location, portal and source registers plus the North dossier. The next developer continues the [execution queue](FULL_CITY_PLAN.md#12-dependency-ordered-work-queue) with REF-04 (South collision/actor audit), REF-06/07/08 (West, East, Laundry dossiers, same recipe as North) and the REF-09 interior dossiers, while the integrator freezes IDs and schemas in PIPE-01 from the four registers' proposals. Do not begin by extracting every object bank, bulk-generating final art, changing render pipelines, or implementing a second game in the browser.
 
 ## 2. Where everything lives
 
@@ -15,6 +15,8 @@ The next developer should complete **REC-01, REF-01, REF-02 and REF-03** in the 
 | Working repository | `C:\Users\cargi\code\Majoras` |
 | This handoff | `C:\Users\cargi\code\Majoras\docs\HANDOFF.md` |
 | Detailed full-city execution plan | [FULL_CITY_PLAN.md](FULL_CITY_PLAN.md) |
+| City registers (REF-01/02/03) and district dossiers (REF-05) | [docs/city/LOCATION_REGISTER.md](city/LOCATION_REGISTER.md), [PORTAL_REGISTER.md](city/PORTAL_REGISTER.md), [SOURCE_REGISTER.md](city/SOURCE_REGISTER.md), [districts/north_clock_town.md](city/districts/north_clock_town.md); header-count helper `tools/reference/city_index.py` |
+| Extracted readable C for all 22 city scenes | `local-reference/mm-decomp/extracted/n64-us/assets/scenes/<SCENE>/` (ignored; recipe in [tools/reference/README.md](../tools/reference/README.md)) |
 | Current preview, controls and verification limits | [MVP_REVIEW.md](MVP_REVIEW.md) |
 | Existing master plan | [PROJECT_PLAN.md](../PROJECT_PLAN.md); retains original South/Link milestone IDs |
 | Source/import/art lessons | [CITY_PLAYBOOK.md](CITY_PLAYBOOK.md), [ITERATION_LOG.md](ITERATION_LOG.md), [ROM_REFERENCE.md](ROM_REFERENCE.md) |
@@ -29,7 +31,7 @@ These are local files, not a newly published web page or a pushed handoff. Share
 
 ## 3. Recovered checkpoint: facts and limits
 
-Read on disk during this handoff: branch `main`, HEAD `15a46cd8cbd05395715b4042d4115f8a22667415` (`Import local N64 South Clock Town reference and document conversion`). The working tree contains substantial newer, uncommitted work. Refresh `git status` before touching it.
+State after REC-01 (2026-11-08): branch `main`, HEAD `d0bc29f3ccf38e53ed7f92559cb2d62c3ebd1e1b` (`Checkpoint South city MVP code, docs and evidence (REC-01)`) followed by the registers commit recorded in [ITERATION_LOG.md](ITERATION_LOG.md). Everything that was dirty on top of `15a46cd` is now committed; nothing is pushed. The table below describes what that checkpoint contains. Refresh `git status` before touching it.
 
 | Area | What survived | What that establishes |
 | --- | --- | --- |
@@ -97,4 +99,4 @@ Invoke only what the packet needs; inspect each skill before using it.
 
 ## 9. End-of-session rule
 
-Update [ITERATION_LOG.md](ITERATION_LOG.md) with results and failures, update task state in the city plan, and leave one exact next action here. **Current next action: REC-01, then the complete location/room register (REF-01).** Graphics recovery can be investigated in its own bounded packet while reference/index work proceeds.
+Update [ITERATION_LOG.md](ITERATION_LOG.md) with results and failures, update task state in the city plan, and leave one exact next action here. **Current next action: PIPE-01 (freeze `loc.*`/`portal.*`/`prof.*`/`cam.*` IDs and the region/portal/camera schemas from the four registers), with REF-04 and REF-06/07/08 running in parallel from the extracted C.** Owner decisions pending: capture mechanism (SOURCE_REGISTER section 6), whether the baseline save holds the Ocarina (clock speed 3 versus 5), whether to push, and whether to run REC-02 (visible player launch) at all on this machine.

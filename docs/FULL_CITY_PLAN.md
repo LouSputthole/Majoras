@@ -64,7 +64,7 @@ The next developer should make the city enumerable before making it decorative. 
 
 ### 3.1 Proposed artifact layout
 
-These paths are a contract proposal, **not files already implemented**. Confirm them in PIPE-01. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
+These paths are a contract proposal. As of 2026-11-08 `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` and `districts/north_clock_town.md` exist (REF-01/02/03/05); every other path is **not yet implemented**. Confirm the remaining layout and freeze the ID/schema proposals in PIPE-01. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
 
 ```text
 docs/city/
@@ -382,18 +382,18 @@ Every packet has a small reviewable end. A multi-week task called “make East b
 
 ## 12. Dependency-ordered work queue
 
-All rows below start **planned**, except recovered inputs explicitly cited elsewhere. `Ready` here means dependency-free preparation can start after preserving the checkpoint, not that the work has been done. Sizes are planning buckets, not promises: S = bounded investigation/change; M = a multi-step packet; L = split into reviewable child packets before implementation. Record actual effort after South/North pilots before forecasting the rest.
+All rows below start **planned**, except recovered inputs explicitly cited elsewhere and rows marked **Done** with a date and evidence. `Ready` here means dependency-free preparation can start after preserving the checkpoint, not that the work has been done. Sizes are planning buckets, not promises: S = bounded investigation/change; M = a multi-step packet; L = split into reviewable child packets before implementation. Record actual effort after South/North pilots before forecasting the rest.
 
 | ID | Owner / size | Task and concrete output | Depends on | Pass condition |
 | --- | --- | --- | --- | --- |
-| REC-01 | Integrator / S | Preserve tracked diff, untracked sources, local inputs/logs and reviewed handoff checkpoint | None | Another developer can identify exactly which sources and local assets are required; no dirty work lost |
+| REC-01 | Integrator / S | **Done 2026-11-08**, commit `d0bc29f`. Preserve tracked diff, untracked sources, local inputs/logs and reviewed handoff checkpoint | None | Another developer can identify exactly which sources and local assets are required; no dirty work lost |
 | REC-02 | Integrator / M | Investigate visible player launch; record process/build/graphics identity and bounded attempts | REC-01 | Visible exact-build launch/input evidence, or precise reproducible blocker with preserved logs; unrelated legwork continues |
 | REC-03 | Integrator / S | Fingerprint executable/data and rerun current-scene smoke/route checks | REC-02 when graphical; headless evidence separately scoped | Tests linked to exact build/source and correct runtime target; no timestamp-only attribution |
-| REF-01 | Next dev / M | `LOCATION_REGISTER`: five exteriors plus every venue/annex and all declared rooms | REC-01 | Every location in section 6 accounted for; shared source scenes and variants explained |
-| REF-02 | Next dev / M | `PORTAL_REGISTER`: source endpoints, destinations, conditions, reverse links and unknowns | REF-01 | Eight known South boundaries retained; every exterior/interior edge identified or explicitly unresolved |
-| REF-03 | Next dev / M | Common capture matrix and source-profile register | REF-01 | Reproducible day/time/form/flags, camera names and region coverage; no mixed-version captures |
+| REF-01 | Next dev / M | **Done 2026-11-08**, [LOCATION_REGISTER.md](city/LOCATION_REGISTER.md). `LOCATION_REGISTER`: five exteriors plus every venue/annex and all declared rooms | REC-01 | Every location in section 6 accounted for; shared source scenes and variants explained |
+| REF-02 | Next dev / M | **Done 2026-11-08**, [PORTAL_REGISTER.md](city/PORTAL_REGISTER.md); source level only, every row `not_run`. `PORTAL_REGISTER`: source endpoints, destinations, conditions, reverse links and unknowns | REF-01 | Eight known South boundaries retained; every exterior/interior edge identified or explicitly unresolved |
+| REF-03 | Next dev / M | **Done 2026-11-08**, [SOURCE_REGISTER.md](city/SOURCE_REGISTER.md); no captures exist yet. Common capture matrix and source-profile register | REF-01 | Reproducible day/time/form/flags, camera names and region coverage; no mixed-version captures |
 | REF-04 | Next dev / M | South remaining collision/actor/material inventory and changed-input audit | REC-01 | Room versus actor collision and all unverified routes isolated; current exporter inputs identified |
-| REF-05 | Next dev / M | North complete room/actor/bank/header inventory | REF-01–03 | Source-backed component list sufficient to assemble selected profile |
+| REF-05 | Next dev / M | **Done 2026-11-08**, [districts/north_clock_town.md](city/districts/north_clock_town.md); extraction of its object banks not run. North complete room/actor/bank/header inventory | REF-01–03 | Source-backed component list sufficient to assemble selected profile |
 | REF-06 | Next dev / M | West complete inventory and N64 venue/bank mapping | REF-01–03 | Every storefront/route tied to evidence; no 3DS relocation |
 | REF-07 | Next dev / M | East complete inventory and multi-level/venue mapping | REF-01–03 | Every visible destination/access classified and traced |
 | REF-08 | Next dev / M | Laundry complete inventory, shoreline and secondary-room mapping | REF-01–03 | Water/collision ownership and private destination clarified |

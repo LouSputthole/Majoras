@@ -36,6 +36,8 @@ foreach ($bank in @('object_obj_tokeidai','object_tokei_turret','object_tokei_st
 
 The prepared native extractor passed a synthetic PNG round trip and these five extractions. Its SHA256 is `36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd`. Build provenance is local at `local-reference/zapd-build-provenance.json`.
 
+On 2026-11-08 the same `e` command was run for all 22 Clock Town scenes (the five exteriors plus the 17 venue/annex scenes in [FULL_CITY_PLAN.md](../../docs/FULL_CITY_PLAN.md#6-interiors-underground-routes-and-city-annex)), substituting each `Z2_*` name into the scene command above. Output is readable C under `extracted/n64-us/assets/scenes/<SCENE>/` (scene commands, actor/object lists, exit/spawn lists, transition actors, collision) and is the input for the `docs/city/` registers. It stays ignored; only object banks needed by an assembly are extracted separately.
+
 For native rebuilding, copy `zapd-windows/CMakeLists.txt` into the pinned decomp's `tools/ZAPD/native-msvc/`, apply `zapd-windows/windows-path-fixes.patch` from the decomp root (check whether already applied), and restore the solution's packages with MSBuild `/t:Restore /p:RestorePackagesConfig=true`. The wrapper uses the restored libpng.static 1.6.37 and zlib.static 1.2.5 sources. Configure with the existing VS18 BuildTools CMake, generator `Visual Studio 18 2026`, x64, then build Release. No WSL is required. Upstream source/licenses remain in the local checkouts; these patches are not a bundled extractor binary.
 
 ## Blender and Unity

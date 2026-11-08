@@ -82,16 +82,18 @@ The MVP configures eight preview boundaries using the original exit surfaces. So
 
 | Destination / approach | Source collision polygons | Exit-list value | Entrance-table scene index |
 | --- | --- | --- | --- |
-| North Clock Town | 8, 9 | `0xD620` | `0x6B` |
+| North Clock Town | 18, 19 | `0xD620` | `0x6B` |
 | Termina Field | 176, 177 | `0x5460` | `0x2A` |
 | East Clock Town, upper | 24, 25 | `0xD230` | `0x69` |
-| East Clock Town, lower | 184, 185 | `0xD210` | `0x69` |
-| West Clock Town, upper | 18, 19 | `0xD420` | `0x6A` |
+| East Clock Town, lower | 180, 181 | `0xD210` | `0x69` |
+| West Clock Town, upper | 184, 185 | `0xD420` | `0x6A` |
 | West Clock Town, lower | 165, 166 | `0xD410` | `0x6A` |
 | Laundry Pool | 158, 159 | `0xDA00` | `0x6D` |
-| Clock Tower interior | 180, 181 | `0xC010` | `0x60` |
+| Clock Tower interior | 8, 9 | `0xC010` | `0x60` |
 
 Do not convert every remaining exit-list value into another open Day 1 district portal. Preview notices and safe fallbacks are the current boundary behavior; destination loading and every approach's traversal need separate checks.
+
+Correction 2026-11-08 (REF-02, recomputed independently by the integrator from `Z2_CLOCKTOWERCollisionHeader_005560` surface types and polygon types): the polygon pairs for North, East lower, West upper and tower interior were transposed in the earlier version of this table. Exit values and entrance indices were already correct, and the preview boundary bounds in `BuildCityMvp.cs` match source. The default exit list has 10 entries, not 8: index 8 `0x2C00` (Clock Tower rooftop, 22 tower-top polygons, not reachable in the Day 1 profile) and index 9 `0xD650` (North entrance 5, no polygon, actor-triggered). Full directed graph: [docs/city/PORTAL_REGISTER.md](city/PORTAL_REGISTER.md).
 
 ## 4. Reusable authored material library
 
