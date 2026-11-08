@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "timestamp": "2026-11-08T08:09:10.617Z",
+  "checks": [
+    "WebGL render",
+    "view presets",
+    "lighting controls",
+    "wireframe",
+    "markers",
+    "meter grid",
+    "GLB binary and hierarchy",
+    "Z reflection in exported tower",
+    "compact layout"
+  ],
+  "scene": {
+    "stage": "proxy-unmeasured",
+    "nodeCount": 17,
+    "meshes": 78,
+    "triangles": 2552,
+    "wireframe": false,
+    "markers": true,
+    "grid": false
+  },
+  "glbBytes": 152724,
+  "consoleErrors": [],
+  "limitations": [
+    "Unity not executed",
+    "No original gameplay",
+    "Proxy layout unmeasured",
+    "No finished Link model",
+    "Not a performance benchmark"
+  ]
+}

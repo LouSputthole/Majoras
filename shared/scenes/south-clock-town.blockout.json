@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "id": "scene.south_clock_town",
+  "label": "South Clock Town",
+  "stage": "proxy-unmeasured",
+  "baseline": "N64 layout and gameplay; 3DS visual reference only",
+  "units": "meters",
+  "coordinates": "Unity: +X east, +Y up, +Z north; left-handed",
+  "warning": "All dimensions and placements are design proxies. NOT extracted geometry or a validated reconstruction.",
+  "materials": [
+    {
+      "id": "stone",
+      "color": "#8d927e",
+      "roughness": 0.94
+    },
+    {
+      "id": "ground",
+      "color": "#b6a381",
+      "roughness": 0.94
+    },
+    {
+      "id": "trim",
+      "color": "#627f79",
+      "roughness": 0.94
+    },
+    {
+      "id": "wood",
+      "color": "#695045",
+      "roughness": 0.94
+    },
+    {
+      "id": "thatch",
+      "color": "#ad8e53",
+      "roughness": 0.94
+    },
+    {
+      "id": "brass",
+      "color": "#c09a55",
+      "roughness": 0.62
+    },
+    {
+      "id": "clock",
+      "color": "#334b51",
+      "roughness": 0.94
+    },
+    {
+      "id": "cloth",
+      "color": "#985d67",
+      "roughness": 0.94
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sct.env.ground",
+      "name": "Courtyard footprint",
+      "kind": "box",
+      "position": [0, -0.3, 0],
+      "size": [42, 0.6, 54],
+      "yawDegrees": 0,
+      "material": "ground",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.clock_tower",
+      "name": "Clock Tower base",
+      "kind": "box",
+      "position": [0, 5, 15],
+      "size": [8, 10, 8],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.clock_tower.shaft",
+      "name": "Clock Tower shaft",
+      "kind": "box",
+      "position": [0, 16.5, 16],
+      "size": [4.6, 13, 5],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.clock_tower.crown",
+      "name": "Tower crown",
+      "kind": "cylinder",
+      "position": [0, 23.8, 16],
+      "size": [7, 2, 7],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.clock_tower.face",
+      "name": "Clock face volume",
+      "kind": "clockFace",
+      "position": [0, 13.1, 10.6],
+      "size": [11, 11, 0.65],
+      "yawDegrees": 0,
+      "material": "brass",
+      "collision": false,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_west",
+      "name": "West wall, north segment",
+      "kind": "box",
+      "position": [-20, 4.2, 12],
+      "size": [2, 8.4, 30],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_west.south",
+      "name": "West wall, south segment",
+      "kind": "box",
+      "position": [-20, 4.2, -20],
+      "size": [2, 8.4, 14],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_east",
+      "name": "East wall, north segment",
+      "kind": "box",
+      "position": [20, 4.2, 15],
+      "size": [2, 8.4, 24],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_east.south",
+      "name": "East wall, south segment",
+      "kind": "box",
+      "position": [20, 4.2, -17],
+      "size": [2, 8.4, 20],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_north",
+      "name": "North wall, west segment",
+      "kind": "box",
+      "position": [-11.5, 5, 26],
+      "size": [17, 10, 2],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_north.east",
+      "name": "North wall, east segment",
+      "kind": "box",
+      "position": [13, 5, 26],
+      "size": [14, 10, 2],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_south",
+      "name": "South wall, west segment",
+      "kind": "box",
+      "position": [-12.5, 3.5, -26],
+      "size": [15, 7, 2],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.env.perimeter_south.east",
+      "name": "South wall, east segment",
+      "kind": "box",
+      "position": [12.5, 3.5, -26],
+      "size": [15, 7, 2],
+      "yawDegrees": 0,
+      "material": "stone",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.prop.market_stall_west",
+      "name": "West thatch shelter envelope",
+      "kind": "shelter",
+      "position": [-11, 0, 3],
+      "size": [8, 4.8, 6],
+      "yawDegrees": 0,
+      "material": "thatch",
+      "collision": false,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.prop.market_stall_east",
+      "name": "East thatch shelter envelope",
+      "kind": "shelter",
+      "position": [11, 0, -12],
+      "size": [7, 4.5, 5],
+      "yawDegrees": 0,
+      "material": "thatch",
+      "collision": false,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.prop.construction_platform",
+      "name": "Construction platform envelope",
+      "kind": "box",
+      "position": [11, 3.2, 10],
+      "size": [8, 0.35, 8],
+      "yawDegrees": 0,
+      "material": "wood",
+      "collision": true,
+      "provenance": "proxy-unmeasured"
+    },
+    {
+      "id": "sct.prop.bunting",
+      "name": "Festival bunting guide",
+      "kind": "bunting",
+      "position": [0, 5.6, 2],
+      "size": [28, 1.2, 0.05],
+      "yawDegrees": 0,
+      "material": "cloth",
+      "collision": false,
+      "provenance": "proxy-unmeasured"
+    }
+  ],
+  "markers": [
+    {
+      "id": "marker.spawn_south",
+      "label": "South approach / scale figure",
+      "position": [0, 0, -19],
+      "kind": "spawn"
+    },
+    {
+      "id": "marker.exit_west",
+      "label": "west connection — survey pending",
+      "position": [-20, 0, -8],
+      "kind": "exit"
+    },
+    {
+      "id": "marker.exit_east",
+      "label": "east connection — survey pending",
+      "position": [20, 0, -2],
+      "kind": "exit"
+    },
+    {
+      "id": "marker.exit_north",
+      "label": "north connection — survey pending",
+      "position": [1.5, 0, 26],
+      "kind": "exit"
+    },
+    {
+      "id": "marker.exit_south",
+      "label": "south connection — survey pending",
+      "position": [0, 0, -26],
+      "kind": "exit"
+    }
+  ]
+}

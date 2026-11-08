@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-08",
+  "installedUnityEditors": ["6000.4.11f1", "6000.5.0f1"],
+  "attemptedEditor": "6000.5.0f1",
+  "attempt": "batch project initialization",
+  "result": "blocked",
+  "exitCode": 198,
+  "message": "No valid Unity Editor license found. Please activate your license.",
+  "nodeVersion": "24.14.1",
+  "unityCompilation": "not run",
+  "unityPlayMode": "not run",
+  "unityPlayerBuild": "not run",
+  "blenderVersion": null,
+  "referenceGame": null
+}

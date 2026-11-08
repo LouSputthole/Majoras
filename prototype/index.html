@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#18272a" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%2318272a'/%3E%3Ctext x='8' y='30' font-size='28' fill='%23c5b580'%3EM%3C/text%3E%3C/svg%3E"
+    />
+    <title>Majoras · South Clock Town study</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas
+        id="viewport"
+        aria-label="Interactive South Clock Town blockout. Drag to orbit, scroll to zoom."
+      ></canvas>
+      <header>
+        <div class="sigil">M</div>
+        <div>
+          <span class="eyebrow">MAJORAS / ENVIRONMENT STUDY 001</span>
+          <h1>South Clock Town</h1>
+        </div>
+        <span class="status">FOUNDATION · v0.1</span>
+      </header>
+      <aside id="panel">
+        <span class="eyebrow">THE FIRST AREA</span>
+        <h2>A town on borrowed time.</h2>
+        <p class="description">
+          A spatial study for a faithful, stylized remake. Begin with the tower,
+          the courtyard, and the routes that give this place its rhythm.
+        </p>
+        <div class="notice">
+          <b>Unmeasured blockout</b>
+          <p>
+            Proxy geometry. Layout fidelity, finished artwork, and gameplay are
+            still pending.
+          </p>
+        </div>
+        <label>VIEWPOINT</label>
+        <div class="buttons">
+          <button data-view="overview" class="selected">Overview</button
+          ><button data-view="approach">South approach</button
+          ><button data-view="tower">Clock Tower</button
+          ><button data-view="plan">Plan view</button>
+        </div>
+        <label>LIGHT STUDY</label>
+        <div class="segmented">
+          <button data-light="day">Day</button
+          ><button data-light="dusk" class="selected">Dusk</button
+          ><button data-light="night">Night</button>
+        </div>
+        <label class="toggle"
+          ><input type="checkbox" id="wireframe" /> Wireframe</label
+        ><label class="toggle"
+          ><input type="checkbox" id="markers" checked /> Connection
+          markers</label
+        ><label class="toggle"
+          ><input type="checkbox" id="grid" /> Meter grid</label
+        >
+        <button id="export" class="export">
+          Export scene .glb <span>↗</span>
+        </button>
+        <p class="caption">
+          Portable visual geometry. Gameplay and colliders are separate; see the
+          handoff contract.
+        </p>
+        <div id="selection">Select a structure to inspect its asset ID.</div>
+      </aside>
+      <footer>
+        <span>● &nbsp; <b id="scene-state">Preparing scene</b></span
+        ><span
+          >DRAG · ORBIT &nbsp; / &nbsp; SCROLL · ZOOM &nbsp; / &nbsp; RIGHT DRAG
+          · PAN</span
+        ><button id="reset">Reset view</button>
+      </footer>
+      <div id="error" role="alert" hidden></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
