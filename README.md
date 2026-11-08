@@ -48,7 +48,7 @@ In another terminal, run `npm run verify` from `prototype`. Local verification u
 
 **Unity owns the future game. Three.js owns the review tool.** The browser will not acquire a second copy of player physics, NPC schedules, quests or save logic. Production target is Unity 6/URP on Windows, subject to the toolchain/import spike. Original C code is a behavioral reference or a separately gated native-bridge experiment, not code that can automatically be pasted into Unity.
 
-Unity Personal is now active, and the project opened with `6000.5.0f1`. Its seed scripts compiled and Unity generated the project settings, metadata and package lock. Pipeline `0.10.0-exp.1` is installed, but the CLI confirmed that this editor version cannot start its automation server. A patch upgrade to `6000.5.3f1` or later is required; `6000.5.11f1` is the proposed patch in the installed release line, pending user approval. URP, scene import, play mode and Windows player checks remain pending. See [Unity setup and next checks](Unity/README.md).
+Unity Personal is now active, and the project opened with `6000.5.0f1`. Its seed scripts compiled and Unity generated the project settings, metadata and package lock. Pipeline `0.10.0-exp.1` is installed, but the CLI confirmed that this editor version cannot start its automation server. A patch upgrade to `6000.5.3f1` or later is required. The user approved `6000.5.11f1`, and its installer is downloaded; installation is waiting for the local Windows administrator prompt after the first prompt expired or was cancelled. URP, scene import, play mode and Windows player checks remain pending. See [Unity setup and next checks](Unity/README.md).
 
 ## Source and data boundaries
 

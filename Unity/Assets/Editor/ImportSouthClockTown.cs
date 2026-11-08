@@ -8,7 +8,7 @@ using Majoras.Foundation;
 
 namespace Majoras.Editor
 {
-    // Unvalidated until the Unity activation gate is cleared. Creates proxy envelopes,
+    // Runtime validation is tracked in evidence/environment.json. Creates proxy envelopes,
     // not finished meshes. Canonical JSON is already Unity-handed; do NOT reflect Z.
     public static class ImportSouthClockTown
     {

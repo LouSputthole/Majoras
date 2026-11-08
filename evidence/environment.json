@@ -13,7 +13,17 @@
     "code": "STATUS_PIPELINE_LOAD_PENDING",
     "reason": "CLI confirmed Pipeline cannot start on Unity 6000.5.0f1; requires 6000.5.3f1 or later",
     "proposedEditorPatch": "6000.5.11f1",
-    "upgradeApproval": "pending"
+    "upgradeApproval": "user approved side-by-side installation",
+    "installation": {
+      "result": "awaiting local Windows elevation",
+      "firstAttemptCode": "ELEVATION_CANCELLED",
+      "firstAttemptMessage": "The Windows elevation prompt was cancelled or timed out.",
+      "downloadOnlyResult": "succeeded",
+      "downloadBytes": 4061928008,
+      "downloadMd5": "758fbba4214f574f30c7d5bacac28a53",
+      "downloadChecksumMatchesRelease": true,
+      "existingEditorsRemoved": false
+    }
   },
   "historicalBootstrap": {
     "attempt": "batch project initialization before user license activation",
@@ -29,6 +39,7 @@
     "limit": "Compilation only; Pipeline startup has a separate editor compatibility error"
   },
   "unitySceneGeneration": "not run",
+  "proxyInspectionScript": "prepared and source-reviewed; not compiled or executed via Pipeline yet",
   "unityPlayMode": "not run",
   "unityPlayerBuild": "not run",
   "blenderVersion": null,

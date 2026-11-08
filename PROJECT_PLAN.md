@@ -19,7 +19,7 @@ Expanded detail initially means believable construction, depth, materials, backs
 | Three.js layout reviewer | Implemented, locally verified | Production build, five contract tests, headless browser controls/export checks; `evidence/verification.json` |
 | Shared layout and stable IDs | Implemented as proxies | 17 assemblies, five markers; **all placements/dimensions unmeasured** |
 | Unity project seed and importer | Compiled in the editor | Both seed assemblies generated; no C# compiler errors; proxy generation/runtime checks still pending |
-| Unity runtime/toolchain | Partially verified; automation blocked | Active Personal license and successful project open; Pipeline cannot start on `6000.5.0f1`; compatible patch approval pending |
+| Unity runtime/toolchain | Partially verified; automation blocked | Active Personal license and successful project open; Pipeline cannot start on `6000.5.0f1`; approved patch downloaded, Windows elevation pending |
 | Reference game, exact coordinates and original state traces | Pending | No local game dump/reference session selected |
 | Finished environment art | Pending | The review volumes are not finished architecture or a faithful clock face |
 | Link concept/model/rig/animation | Pending | No generated concept asset or 3D character has been accepted |
@@ -44,7 +44,7 @@ Current progress is **foundation work supporting M0/M1**, not a passed M0 or pla
 | Scope expansion | Visual detail inside existing routes | Record any geography/mechanics change in deviation ledger before implementation |
 | Large art storage | Pending | Choose Git LFS/artifact storage before adding production binary history |
 
-The current Unity seed uses built-in materials solely to avoid asserting that URP is configured. The installed `6000.5.0f1` compiled the seed but has a confirmed Pipeline startup defect. CLI `1.0.0-beta.17` requires editor `6000.5.3f1` or later; the proposed side-by-side patch is `6000.5.11f1`, pending user approval. A compatible patch is not a long-term version endorsement. License activation is already complete; see `evidence/environment.json` for the current and historical results.
+The current Unity seed uses built-in materials solely to avoid asserting that URP is configured. The installed `6000.5.0f1` compiled the seed but has a confirmed Pipeline startup defect. CLI `1.0.0-beta.17` requires editor `6000.5.3f1` or later. The user approved side-by-side patch `6000.5.11f1`; its download succeeded, but installation awaits Windows elevation after the first prompt expired or was cancelled. A compatible patch is not a long-term version endorsement. License activation is already complete; see `evidence/environment.json` for the current and historical results. `Unity/Tools/VerifyProxy.cs` is prepared and source-reviewed; runtime execution remains pending.
 
 ## 4. Milestone map and dependency order
 
@@ -84,7 +84,7 @@ Status vocabulary: `done` = evidence exists for that limited task; `ready` = can
 | F-02 | done | Proxy manifest, stable IDs, meter/axis adapter | — | Five contract checks pass; engineering |
 | F-03 | done | Browser views, light presets, wireframe, markers, GLB download | F-02 | Headless renderer/control/export run; engineering |
 | F-04 | done | Detailed engine, art, area, pipeline and acceptance plans | — | Cross-review resolves format/origin/state inconsistencies; lead |
-| F-05 | blocked | Select compatible editor and packages; license/open/seed compile verified | Approval for compatible editor patch | Clean open/compile and standalone cube/character build; engineering |
+| F-05 | blocked | Install approved compatible patch; license/open/seed compile verified | Local Windows elevation; installer already downloaded | Clean open/compile and standalone cube/character build; engineering |
 | F-06 | ready | Pin Blender/exporter and art storage convention | Tool availability | Document actual versions, source/derivative retention and binary policy; technical art |
 | R-01 | blocked | Identify local user-provided N64 reference dump and revision | Local reference path | Hash/version/profile recorded without committing game data; reference research |
 | R-02 | planned | Pin zeldaret/mm and 2Ship source commits; build unchanged reference if used | R-01 | Exact revisions and unmodified behavior capture; engineering |
