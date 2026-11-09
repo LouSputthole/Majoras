@@ -1,0 +1,405 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.swordsmans_school",
+  "displayLabel": "Swordsman's School",
+  "source": {
+    "sceneSymbol": "Z2_DOUJOU",
+    "sceneEnum": "SCENE_DOUJOU",
+    "sceneTableIndex": "0x54",
+    "entranceTableSceneIndex": "0x51",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human, no mask",
+      "WEEKEVENTREG_RECEIVED_SWORDSMANS_SCHOOL_HEART_PIECE clear",
+      "no course in progress (no En_Maruta logs)"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_DOUJOU",
+      "bytes": 30000,
+      "sha256": "8fa7f225794f65282a96bc385662c6f38724850dd5d98307479c2af3188559a7"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_DOUJOU_room_00",
+      "bytes": 25824,
+      "sha256": "daf0bc0ceb2fd8cf54a5e9e783ccd711f4e36c1f2b1d3cde18f88c81f5b50da2"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_DOUJOU/Z2_DOUJOU.c",
+      "bytes": 20192,
+      "sha256": "10da327ef29da660d57fb27eb6be1be32f4b1cb902b20f9cab51c379fbea1efb"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_DOUJOU/Z2_DOUJOU_room_00.c",
+      "bytes": 47014,
+      "sha256": "eb393d32995885cb5cb4d29800b54c527324bc7730968d8214208625aad3507c"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_DOUJOU/Z2_DOUJOU.xml",
+      "bytes": 518,
+      "sha256": "8b7d6f207e62f11e96efc4f5159d91db4472875c53bf3036b5b44c522eaf261a"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior local frame: school door TA0 at (0, 0, 420) versus West TA1 at (-1870, 200, -1420); exit and arrival coordinates do not coincide (dossier 2.4)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -195,
+        0,
+        -525
+      ],
+      "max": [
+        196,
+        187,
+        555
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -195,
+        0,
+        -442
+      ],
+      "max": [
+        195,
+        187,
+        555
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -1.95,
+        0.0,
+        -5.55
+      ],
+      "max": [
+        1.95,
+        1.87,
+        4.42
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.sws.spawn0_from_west",
+      "source": [
+        -1,
+        0,
+        380
+      ],
+      "unity": [
+        -0.01,
+        0.0,
+        -3.8
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.sws.door_ta0",
+      "source": [
+        0,
+        0,
+        420
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -4.2
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.sws.instructor_a00",
+      "source": [
+        -3,
+        30,
+        -45
+      ],
+      "unity": [
+        -0.03,
+        0.3,
+        0.45
+      ],
+      "status": "proposed",
+      "note": "dais top Y 30"
+    },
+    {
+      "id": "anchor.sws.log_point0",
+      "source": [
+        0,
+        4,
+        92
+      ],
+      "unity": [
+        0.0,
+        0.04,
+        -0.92
+      ],
+      "status": "proposed",
+      "note": "novice log pad, path 0 point 0"
+    },
+    {
+      "id": "anchor.sws.expert_start",
+      "source": [
+        -3,
+        0,
+        255
+      ],
+      "unity": [
+        -0.03,
+        0.0,
+        -2.55
+      ],
+      "status": "proposed",
+      "note": "a00 + (0, 0, 300) on the hall floor"
+    },
+    {
+      "id": "anchor.sws.back_room_pot_a06",
+      "source": [
+        94,
+        45,
+        -346
+      ],
+      "unity": [
+        0.94,
+        0.45,
+        3.46
+      ],
+      "status": "proposed",
+      "note": "back-room floor Y 45"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.swordsmans_school.room_00",
+      "sourceRoom": "Z2_DOUJOU_room_00",
+      "header": 0,
+      "roomShape": "cullable, 11 entries",
+      "displayLists": 14
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_DOUJOU/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x0280",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "object_wdor03:0x548"
+      ],
+      "status": "selected",
+      "note": "closed rest pose; schedule type SWORDSMANS_SCHOOL"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a04",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "small wall clock, scale 0.01, noon pose"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a03",
+      "actorId": "0x207",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_dora:0x3FD0",
+        "object_dora:0x4160"
+      ],
+      "status": "selected",
+      "note": "gong rest pose"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a02",
+      "actorId": "0x209",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_dora:0x180"
+      ],
+      "status": "selected",
+      "note": "intact board at the passage mouth"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a12",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a06",
+      "actorId": "0x082",
+      "params": "0x0202",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected",
+      "note": "pot, scale 0.197, behind the training clamp"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a07",
+      "actorId": "0x082",
+      "params": "0x0602",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected",
+      "note": "pot"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a08",
+      "actorId": "0x082",
+      "params": "0x0802",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected",
+      "note": "pot"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a09",
+      "actorId": "0x082",
+      "params": "0x0A02",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected",
+      "note": "pot"
+    },
+    {
+      "sourceKey": "Z2_DOUJOU/h0/room_00/a10",
+      "actorId": "0x082",
+      "params": "0x0C02",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected",
+      "note": "pot"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_DOUJOUCollisionHeader_000CB8 (121 polys, 0 water boxes)",
+    "waterBoxes": 0,
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "a00 instructor r18 h30",
+      "a02 board r33 h80 plus 2 tris",
+      "a03 gong 6 tris",
+      "a06-a10 pots r12 h32",
+      "En_Maruta logs r12 h65 (course only)"
+    ],
+    "note": "training-area clamp z >= 25 is actor logic (a00), not collision"
+  },
+  "portalIds": [
+    "portal.swordsmans_school.west_clock_town",
+    "portal.swordsmans_school.west_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a00 En_Kendo_Js (gSwordmasterSkel, default anim)",
+    "En_Maruta logs and cut pieces (course only)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a01",
+      "a05"
+    ],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "a11"
+    ]
+  },
+  "unsupported": [
+    "skeletal instructor pose",
+    "door skeleton rest pose",
+    "wall clock live time",
+    "gong swing and half-hour rupee",
+    "log rise, cut and retract",
+    "board tumble",
+    "course rules, score HUD and CIRCLE3 course camera",
+    "z >= 25 training-area clamp"
+  ],
+  "evidence": [
+    "docs/city/interiors/swordsmans_school.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.lottery_shop",
+  "displayLabel": "Lottery Shop",
+  "source": {
+    "sceneSymbol": "Z2_TAKARAKUJI",
+    "sceneEnum": "SCENE_TAKARAKUJI",
+    "sceneTableIndex": "0x39",
+    "entranceTableSceneIndex": "0x36",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event flags",
+      "WEEKEVENTREG_33_10 clear (no Day 1 ticket): a03 shape yaw 0x7555",
+      "player form Human",
+      "clock 12:00: venue open (door schedule 06:00-23:00), wall clock a02 in noon pose",
+      "scene has no alternate headers"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TAKARAKUJI",
+      "bytes": 9744,
+      "sha256": "0dac00574b646c70833f24776c3f3cf06f41782d1423342a1d221c0de3cde814"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TAKARAKUJI_room_00",
+      "bytes": 11856,
+      "sha256": "d667f3accfc24d6c34449e9d379afb48bfae5f0aef917b0f18a077710dbdc615"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TAKARAKUJI/Z2_TAKARAKUJI.c",
+      "bytes": 18022,
+      "sha256": "bdbbb29510fc89f10d43b92abd4a1063f852afc82e1a3e90478ee2963f6ce0aa"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TAKARAKUJI/Z2_TAKARAKUJI_room_00.c",
+      "bytes": 21241,
+      "sha256": "3610cf955d6041578d517755a50d86ec78b8c17c8626fc7d062ab9e1977677e4"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_TAKARAKUJI/Z2_TAKARAKUJI.xml",
+      "bytes": 416,
+      "sha256": "0e97c34d0d4af35f441fea5090d178e4604e033b79251b15eaa680e1dc15e786"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior local frame around the origin (collision x -110..114, z -15..480); joined to West Clock Town only by the door transition (West TA2 at (-1432, 200, -796))"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -110,
+        0,
+        -15
+      ],
+      "max": [
+        114,
+        180,
+        480
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -110,
+        0,
+        -15
+      ],
+      "max": [
+        114,
+        180,
+        480
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -1.1,
+        0.0,
+        -4.8
+      ],
+      "max": [
+        1.14,
+        1.8,
+        0.15
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.lot.spawn0_from_west",
+      "source": [
+        0,
+        0,
+        320
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -3.2
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lot.door_ta00",
+      "source": [
+        0,
+        0,
+        345
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -3.45
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lot.booth_a03",
+      "source": [
+        0,
+        0,
+        105
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -1.05
+      ],
+      "status": "proposed",
+      "note": "behind the booth wall at z 135"
+    },
+    {
+      "id": "anchor.lot.wall_clock_a02",
+      "source": [
+        0,
+        125,
+        321
+      ],
+      "unity": [
+        0.0,
+        1.25,
+        -3.21
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lot.exit_stub",
+      "source": [
+        0,
+        0,
+        420
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -4.2
+      ],
+      "status": "proposed",
+      "note": "mean vertex of exit polygons 24, 25"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.lottery_shop.room_00",
+      "sourceRoom": "Z2_TAKARAKUJI_room_00",
+      "header": 0,
+      "roomShape": "cullable, 4 entries",
+      "displayLists": 7
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_TAKARAKUJI/h0/room_00/a03",
+      "actorId": "0x239",
+      "params": "0x00FF",
+      "class": "static-mesh",
+      "dls": [
+        "object_kujiya:0x2A80",
+        "object_kujiya:0x3030",
+        "object_kujiya:0x3248",
+        "object_kujiya:0x3358",
+        "object_kujiya:0x34A8",
+        "object_kujiya:0x35B8",
+        "object_kujiya:0x36B0",
+        "object_kujiya:0x37C0",
+        "object_kujiya:0x3C80",
+        "object_kujiya:0x3D58"
+      ],
+      "status": "selected",
+      "note": "shape yaw 0x7555 with no Day 1 ticket; texture scroll and billboard mask approximated"
+    },
+    {
+      "sourceKey": "Z2_TAKARAKUJI/h0/room_00/a02",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "small wall clock, scale 0.01, noon pose"
+    },
+    {
+      "sourceKey": "Z2_TAKARAKUJI/h0/room_00/a04",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected",
+      "note": "rest pose"
+    },
+    {
+      "sourceKey": "Z2_TAKARAKUJI/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x0282",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "object_wdor01:0x548"
+      ],
+      "status": "selected",
+      "note": "rest pose approximated"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_TAKARAKUJICollisionHeader_000B60 (100 polys, 0 water boxes)",
+    "waterBoxes": 0,
+    "actorDynapoly": [],
+    "actorCylinders": [],
+    "note": "no collider or dynapoly in En_Kujiya, Obj_Tokeidai, Obj_Hariko or the schedule En_Door; the booth front is room collision"
+  },
+  "portalIds": [
+    "portal.lottery_shop.west_clock_town",
+    "portal.lottery_shop.west_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a03 texture scroll gLotteryShopTexAnim",
+    "a03 billboard mask orientation",
+    "a03 yaw 0 ticket-held variant",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "a00 En_Test4",
+      "a01 En_Time_Tag",
+      "a05 Obj_Sound"
+    ]
+  },
+  "unsupported": [
+    "door skeleton rest pose",
+    "texture scroll",
+    "billboard DL",
+    "positional BGM (a05)",
+    "time-driven booth turn and cutscenes",
+    "lottery rules (section 5)"
+  ],
+  "evidence": [
+    "docs/city/interiors/lottery_shop.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}
