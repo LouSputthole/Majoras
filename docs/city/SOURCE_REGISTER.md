@@ -144,10 +144,10 @@ Derived day-3 moon drop at base scale 0.16: 1,675 units at 12:00, 4,187.5 at 21:
 | U-04 | Effect of the day >= 2 light delta on the exteriors | Which caller passes `arg1` 4 to 7 to `func_800F6CEC`? Do the `Z2_*` LightSettings arrays (South has 29, `ext:Z2_CLOCKTOWER/Z2_CLOCKTOWER.c:25`) cover settings 12 to 19? |
 | U-05 | Initial weather and whether it persists across loads | Where is `gWeatherMode` reset (grep `gWeatherMode =` in `mm:src/code`)? Does `En_Test4` start at `THREEDAY_WEATHER_CLEAR` from a zeroed instance? |
 | U-06 | Sky over time for skybox config 10 | Decode `sTimeBasedSkyboxConfigs[10]` (`mm:src/code/z_kankyo.c:171` onward). |
-| U-07 | Ocarina possession in the baseline | OWNER/INTEGRATOR choice. Known effect: speed 5 versus 3 (`z_scene.c:399-402`). Next: grep `SLOT_OCARINA` in the overlays of the actors in the five default actor lists. |
+| U-07 | Ocarina possession in the baseline | RESOLVED 2026-11-08 (owner): the baseline save holds the Ocarina (clock speed 3, `z_scene.c:399-402`) and the Deku Mask (closes the Great Fairy dossier's U-07). |
 | U-08 | Which flags define "no story progress beyond arrival" | Which weekEventReg/eventInf bits do new-file init and `Sram_ClearFlagsAtDawnOfTheFirstDay` (`z_daytelop.c:239-241`) set, and which of them do district actors read? |
 | U-09 | Moon actor in North, West, East and Laundry | Grep `ACTOR_EN_FALL` in each `ext:` default room actor list (REF-05 to REF-08). |
-| U-10 | Venue access at 12:00 on each day | Door and transition actor params and time predicates for each venue (REF-02, REF-09). |
+| U-10 | Venue access at 12:00 on each day | RESOLVED for the 12 REF-09 venues accepted so far: at Day 1 12:00 every door is open except the Curiosity Shop (both doors closed, INT-03 5.1 and 5.5); per-door hours are in PORTAL_REGISTER 4.2 and 4.3 Conditions. Open: INT-10/11/12/14/17. |
 | U-11 | `timeSpeedOffset == 0x12`, tested in `z_message.c:2661` | Grep `timeSpeedOffset =` across all of `mm:src`, including overlays. |
 | U-12 | Which transition cutscenes `En_Test4` plays in each exterior (this selects the day-advance path) | Decode the cutscene ID of each exterior `En_Test4` entry and the scene actor-cutscene list that feeds `sCsIdList` (`z_en_test4.c:322-337`). |
 
@@ -157,7 +157,7 @@ ID tokens (proposed, PIPE-01): `prof.d<save.day>.<time>.<layer>`. Time tokens: `
 
 | Profile | Day | Clock | Half-day bit | Layer / header | Story / cutscene state | Link form | Weather (expected) | Moon, tower, light |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `prof.d1.noon.normal` (baseline) | 1 | 12:00, 0x8000 | 0x080 DAY1_DAWN | 0: default scene and room headers | `cutsceneIndex < 0xFFF0`, no cutscene; tower-opened flag clear; owl statue closed (ROM_REFERENCE choice); other flags U-08; Ocarina U-07 | human (4) | clear | moon 0.384 at home Y; tower closed; light row 0, setting 1 |
+| `prof.d1.noon.normal` (baseline) | 1 | 12:00, 0x8000 | 0x080 DAY1_DAWN | 0: default scene and room headers | `cutsceneIndex < 0xFFF0`, no cutscene; tower-opened flag clear; owl statue closed (ROM_REFERENCE choice); other flags U-08; Ocarina and Deku Mask held (owner decision 2026-11-08) | human (4) | clear | moon 0.384 at home Y; tower closed; light row 0, setting 1 |
 | `prof.d1.dusk.normal` | 1 | 17:15, 0xB800 | 0x080 | 0 | same as baseline | human | clear | same as baseline; light row 0, blend 2 to 3 |
 | `prof.d1.night.normal` | 1 | 21:00, 0xE000 | 0x040 DAY1_NIGHT | 0 | same as baseline | human | clear | moon 0.384; closed; row 0, setting 3; `isNight` |
 | `prof.d2.noon.normal` | 2 | 12:00 | 0x020 | 0 | one 06:00 advance | human | rain (07:00 to 17:30 branch) | moon 0.576 at home Y; closed; row 3, setting 13; South turret day-2 variant (ROM_REFERENCE) |
@@ -166,6 +166,7 @@ ID tokens (proposed, PIPE-01): `prof.d<save.day>.<time>.<layer>`. Time tokens: `
 | `prof.d3.night.normal` | 3 | 21:00 | 0x004 | 0 | before midnight | human | clear | moon lowered 4,187.5; closed (t >= 06:00); row 4, setting 19 |
 | `prof.d3.final.normal` (tower open) | 3 | 01:00, 0x0AAA | 0x004 | 0 | final hours; loading on layer 0 gives the opened idle state, not the opening cutscene | human | clear | moon lowered about 5,304; tower opened, staircase drawn, flag set at init; row 4, setting 19; Final Hours sequence |
 | `prof.d3.midnight.l2` (optional index) | 3 | 00:00 entry; L2 room speed 0 | 0x004 | South sceneLayer 2 (`Z2_CLOCKTOWER_room_00.c:330`) | `cutsceneIndex` 0xFFF1 by formula (writer is U-03); cutscene script 0 | human | clear | tower-opening sequence |
+| `prof.d1.late.normal` (REF-09 addition) | 1 | 23:00, 0xF555 | 0x040 DAY1_NIGHT | 0 | same as baseline; Curiosity Shop open (22:00-04:59), Milk Bar members' hour, Trading Post and Post Office open, Lottery, Shooting Gallery, Treasure Chest and Honey and Darling closed | human; Romani's Mask worn for the Milk Bar capture (owner field) | clear | moon 0.384; closed; row 0, setting 3; `isNight` |
 
 | Profile | Verified | Not verified |
 | --- | --- | --- |
@@ -178,6 +179,7 @@ ID tokens (proposed, PIPE-01): `prof.d<save.day>.<time>.<layer>`. Time tokens: `
 | `prof.d3.night.normal` | Bit and tower-closed rule | Same as d3 noon |
 | `prof.d3.final.normal` | Tower-opened rule, final-hours test and sequence request | Opened-tower transforms never assembled; rooftop access not surveyed (REF-02) |
 | `prof.d3.midnight.l2` | Layer-2 tower-opening check | The event that writes 0xFFF1, and its spawn: U-03 |
+| `prof.d1.late.normal` | Bit and the two door schedules (`scheduleScripts.schl:124`, `:192`) | No render; proposed by INT-03 and INT-09 |
 
 ## 4. Capture matrix
 
@@ -281,13 +283,13 @@ The minimum set per venue is: `entry` (from just inside the entrance door), `rev
 | --- | --- | --- |
 | `loc.trading_post` | `Z2_8ITEMSHOP`, 1 (:15) | `cam.trading_post.entry`, `cam.trading_post.reverse_door`, `cam.trading_post.fixture` |
 | `loc.bomb_shop` | `Z2_BOMYA`, 1 (:15) | `cam.bomb_shop.entry`, `cam.bomb_shop.reverse_door`, `cam.bomb_shop.fixture` |
-| `loc.curiosity_shop` | `Z2_AYASHIISHOP`, 2 (:17) | `cam.curiosity_shop.entry`, `cam.curiosity_shop.reverse_door`, `cam.curiosity_shop.fixture`, `cam.curiosity_shop.room_01` |
+| `loc.curiosity_shop` | `Z2_AYASHIISHOP`, 2 (:17) | `cam.curiosity_shop.entry`, `cam.curiosity_shop.reverse_door`, `cam.curiosity_shop.fixture`, `cam.curiosity_shop.room_01`, `cam.curiosity_shop.peephole` (spawn 2 telescope eye, INT-03); add `prof.d1.late.normal` to `entry` and `fixture`; `peephole` on `prof.d2.night.normal` with the Kafei letter flags |
 | `loc.post_office` | `Z2_POSTHOUSE`, 1 (:15) | `cam.post_office.entry`, `cam.post_office.reverse_door`, `cam.post_office.fixture` |
 | `loc.swordsmans_school` | `Z2_DOUJOU`, 1 (:16) | `cam.swordsmans_school.entry`, `cam.swordsmans_school.reverse_door`, `cam.swordsmans_school.fixture` |
 | `loc.lottery_shop` | `Z2_TAKARAKUJI`, 1 (:15) | `cam.lottery_shop.entry`, `cam.lottery_shop.reverse_door`, `cam.lottery_shop.fixture` |
 | `loc.stock_pot_inn` | `Z2_YADOYA`, 5 (:21) | `cam.stock_pot_inn.entry`, `cam.stock_pot_inn.reverse_door`, `cam.stock_pot_inn.fixture`, `cam.stock_pot_inn.room_01`, `cam.stock_pot_inn.room_02`, `cam.stock_pot_inn.room_03`, `cam.stock_pot_inn.room_04`; add `prof.d1.night.normal` to `entry` |
 | `loc.mayors_residence` | `Z2_SONCHONOIE`, 4 (:19) | `cam.mayors_residence.entry`, `cam.mayors_residence.reverse_door`, `cam.mayors_residence.fixture`, `cam.mayors_residence.room_01`, `cam.mayors_residence.room_02`, `cam.mayors_residence.room_03` |
-| `loc.milk_bar` | `Z2_MILK_BAR`, 1 (:16) | `cam.milk_bar.entry`, `cam.milk_bar.reverse_door`, `cam.milk_bar.fixture`; add `prof.d1.night.normal` to `fixture` |
+| `loc.milk_bar` | `Z2_MILK_BAR`, 1 (:16) | `cam.milk_bar.entry`, `cam.milk_bar.reverse_door`, `cam.milk_bar.fixture`; add `prof.d1.late.normal` (Romani's Mask worn) to `fixture`; `prof.d1.night.normal` at 21:00 is the closed hour and the kickout minute (INT-09 U-09) |
 | `loc.honey_darling` | `Z2_BOWLING`, 1 (:15) | `cam.honey_darling.entry`, `cam.honey_darling.reverse_door`, `cam.honey_darling.fixture` |
 | `loc.treasure_chest_shop` | `Z2_TAKARAYA`, 1 (:15) | `cam.treasure_chest_shop.entry`, `cam.treasure_chest_shop.reverse_door`, `cam.treasure_chest_shop.fixture` |
 | `loc.town_shooting_gallery` | `Z2_SYATEKI_MIZU`, 1 (:15) | `cam.town_shooting_gallery.entry`, `cam.town_shooting_gallery.reverse_door`, `cam.town_shooting_gallery.fixture` |
@@ -308,8 +310,8 @@ Intent per suffix: `entry` shows the room as first seen through the door; `rever
 | West | 15 | 18 |
 | East | 15 | 19 |
 | Laundry | 10 | 12 |
-| Interiors (17 venues) | 61 | 63 |
-| **Total** | **118** | **141** |
+| Interiors (17 venues) | 62 | 66 |
+| **Total** | **119** | **144** |
 
 ## 5. Capture record schema and file naming
 

@@ -288,7 +288,9 @@
     "portal.curiosity_shop.west_clock_town",
     "portal.curiosity_shop.west_clock_town.kickout",
     "portal.curiosity_shop.laundry_pool",
-    "portal.curiosity_shop.laundry_pool.kickout"
+    "portal.curiosity_shop.laundry_pool.kickout",
+    "portal.curiosity_shop.curiosity_shop.r1_r0",
+    "portal.curiosity_shop.curiosity_shop.r0_r1"
   ],
   "materialBindings": null,
   "cameraIds": [

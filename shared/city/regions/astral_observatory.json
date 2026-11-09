@@ -887,7 +887,8 @@
     "portal.astral_observatory.east_clock_town",
     "portal.astral_observatory.z2_00keikoku",
     "portal.astral_observatory.astral_observatory.r0_r1",
-    "portal.astral_observatory.astral_observatory.r1_r0"
+    "portal.astral_observatory.astral_observatory.r1_r0",
+    "portal.astral_observatory.z2_00keikoku.telescope"
   ],
   "materialBindings": null,
   "cameraIds": [

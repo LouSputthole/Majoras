@@ -402,7 +402,7 @@ foreach ($bank in @('object_hariko','object_wdor01','gameplay_keep')) {
 
 ## 10. Proposed region record
 
-**Proposal, schema not frozen (PIPE-01).** Same key set as North section 9, written so `tools/reference/region_from_dossier.py` maps it onto region schema 1 without edits; `sourceFrame.sharedFrame` is given directly (`not_shared`). Unregistered IDs (the two peephole portals, `prof.d1.late.normal`, extra cameras) are kept out of the JSON.
+**Proposal, schema not frozen (PIPE-01).** Same key set as North section 9, written so `tools/reference/region_from_dossier.py` maps it onto region schema 1 without edits; `sourceFrame.sharedFrame` is given directly (`not_shared`). The two peephole portals, `prof.d1.late.normal` and `cam.curiosity_shop.peephole` were registered on 2026-11-08 (PORTAL_REGISTER 4.3, SOURCE_REGISTER 3 and 4.6); the peephole portals are now in `portalIds`.
 
 ```json
 {
@@ -467,7 +467,9 @@ foreach ($bank in @('object_hariko','object_wdor01','gameplay_keep')) {
     "portal.curiosity_shop.west_clock_town",
     "portal.curiosity_shop.west_clock_town.kickout",
     "portal.curiosity_shop.laundry_pool",
-    "portal.curiosity_shop.laundry_pool.kickout"
+    "portal.curiosity_shop.laundry_pool.kickout",
+    "portal.curiosity_shop.curiosity_shop.r1_r0",
+    "portal.curiosity_shop.curiosity_shop.r0_r1"
   ],
   "materialBindings": null,
   "cameraIds": ["cam.curiosity_shop.entry", "cam.curiosity_shop.reverse_door", "cam.curiosity_shop.fixture", "cam.curiosity_shop.room_01"],

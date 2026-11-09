@@ -3,7 +3,7 @@
   "frozen": "2026-11-08 (PIPE-01)",
   "generatedBy": "tools/reference/build_city_ids.py",
   "generatedFrom": {
-    "commit": "31b20dc",
+    "commit": "c8b847e",
     "files": [
       "docs/city/LOCATION_REGISTER.md",
       "docs/city/PORTAL_REGISTER.md",
@@ -589,6 +589,11 @@
       "from": "loc.astral_observatory",
       "to": "ext.z2_00keikoku"
     },
+    "portal.astral_observatory.z2_00keikoku.telescope": {
+      "mode": "special",
+      "from": "loc.astral_observatory",
+      "to": "ext.z2_00keikoku"
+    },
     "portal.clock_tower_interior.z2_openingdan": {
       "mode": "external-boundary",
       "from": "loc.clock_tower_interior",
@@ -724,6 +729,20 @@
       "to": "loc.clock_tower_interior",
       "fromRoom": "loc.clock_tower_interior.room_00",
       "toRoom": "loc.clock_tower_interior.room_01"
+    },
+    "portal.curiosity_shop.curiosity_shop.r1_r0": {
+      "mode": "room",
+      "from": "loc.curiosity_shop",
+      "to": "loc.curiosity_shop",
+      "fromRoom": "loc.curiosity_shop.room_01",
+      "toRoom": "loc.curiosity_shop.room_00"
+    },
+    "portal.curiosity_shop.curiosity_shop.r0_r1": {
+      "mode": "room",
+      "from": "loc.curiosity_shop",
+      "to": "loc.curiosity_shop",
+      "fromRoom": "loc.curiosity_shop.room_00",
+      "toRoom": "loc.curiosity_shop.room_01"
     }
   },
   "retiredPortals": {
@@ -738,7 +757,8 @@
     "prof.d3.noon.normal",
     "prof.d3.night.normal",
     "prof.d3.final.normal",
-    "prof.d3.midnight.l2"
+    "prof.d3.midnight.l2",
+    "prof.d1.late.normal"
   ],
   "cameras": [
     "cam.astral_observatory.entry",
@@ -757,6 +777,7 @@
     "cam.clock_tower_rooftop.reverse_door",
     "cam.curiosity_shop.entry",
     "cam.curiosity_shop.fixture",
+    "cam.curiosity_shop.peephole",
     "cam.curiosity_shop.reverse_door",
     "cam.curiosity_shop.room_01",
     "cam.deku_playground.entry",

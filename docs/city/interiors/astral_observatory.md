@@ -506,7 +506,8 @@ Proposal-0 vocabulary as in North section 9, lifted by `tools/reference/region_f
     "portal.astral_observatory.east_clock_town",
     "portal.astral_observatory.z2_00keikoku",
     "portal.astral_observatory.astral_observatory.r0_r1",
-    "portal.astral_observatory.astral_observatory.r1_r0"
+    "portal.astral_observatory.astral_observatory.r1_r0",
+    "portal.astral_observatory.z2_00keikoku.telescope"
   ],
   "materialBindings": null,
   "cameraIds": ["cam.astral_observatory.entry", "cam.astral_observatory.reverse_door", "cam.astral_observatory.fixture", "cam.astral_observatory.room_01"],
