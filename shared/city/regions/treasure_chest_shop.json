@@ -1,0 +1,367 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.treasure_chest_shop",
+  "displayLabel": "Treasure Chest Shop",
+  "source": {
+    "sceneSymbol": "Z2_TAKARAYA",
+    "sceneEnum": "SCENE_TAKARAYA",
+    "sceneTableIndex": "0x17",
+    "entranceTableSceneIndex": "0x14",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no form switch flag set (prize pair index 0 for every form)",
+      "player form Human, no mask",
+      "scene has no alternate headers; the default header serves every layer",
+      "gal skeletal pose UNKNOWN beyond the idle loop"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TAKARAYA",
+      "bytes": 39040,
+      "sha256": "871d64bf855cf90fa8a0400e452e3aa9b8aa4ada50163eb34147c7be1e3a1233"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TAKARAYA_room_00",
+      "bytes": 32384,
+      "sha256": "f815bec34debaa2dc637d2f6a1d0efa9c172d2e7f76f47c679003c264b068f50"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TAKARAYA/Z2_TAKARAYA.c",
+      "sha256": "68de693bb565a3b820e69c4518857234a55b99accadab33944cf448f9c8956fd"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TAKARAYA/Z2_TAKARAYA_room_00.c",
+      "sha256": "72f2341ccf3dfac12711c39954dc2d204a499cc3269b5737dfecb8602bc8f577"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_TAKARAYA/Z2_TAKARAYA.xml",
+      "sha256": "bf338ed7261f1f1b75f1e5df4694575f1508622338b6e61ef0faffb75f967466"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior scene with its own origin; East door at Y 100 vs interior Y 0 (section 2.5)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -1680,
+        0,
+        0
+      ],
+      "max": [
+        80,
+        572,
+        964
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -1680,
+        0,
+        0
+      ],
+      "max": [
+        80,
+        484,
+        960
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -16.8,
+        0,
+        -9.6
+      ],
+      "max": [
+        0.8,
+        4.84,
+        0
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.tcs.spawn0_inside_door",
+      "source": [
+        -70,
+        0,
+        161
+      ],
+      "unity": [
+        -0.7,
+        0,
+        -1.61
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tcs.door_ta0",
+      "source": [
+        -70,
+        0,
+        100
+      ],
+      "unity": [
+        -0.7,
+        0,
+        -1
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tcs.spawn1_game_return",
+      "source": [
+        -91,
+        0,
+        744
+      ],
+      "unity": [
+        -0.91,
+        0,
+        -7.44
+      ],
+      "status": "proposed",
+      "note": "entrance 1 arrival after a game ends"
+    },
+    {
+      "id": "anchor.tcs.gal_stand",
+      "source": [
+        -85,
+        0,
+        849
+      ],
+      "unity": [
+        -0.85,
+        0,
+        -8.49
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tcs.counter_top",
+      "source": [
+        -79.5,
+        40,
+        826
+      ],
+      "unity": [
+        -0.795,
+        0.4,
+        -8.26
+      ],
+      "status": "proposed",
+      "note": "mid of floor polys 79 and 80, Y 40"
+    },
+    {
+      "id": "anchor.tcs.board_center",
+      "source": [
+        -1020,
+        0,
+        480
+      ],
+      "unity": [
+        -10.2,
+        0,
+        -4.8
+      ],
+      "status": "proposed",
+      "note": "centre of the 11 x 8 cell board, floor polys 71 and 72"
+    },
+    {
+      "id": "anchor.tcs.wall_clock",
+      "source": [
+        -300,
+        160,
+        831
+      ],
+      "unity": [
+        -3,
+        1.6,
+        -8.31
+      ],
+      "status": "proposed",
+      "note": "elevation anchor"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.treasure_chest_shop.room_00",
+      "sourceRoom": "Z2_TAKARAYA_room_00",
+      "header": 0,
+      "roomShape": "cullable, 16 entries",
+      "displayLists": 21
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_TAKARAYA/h0/room_00/a01",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28 gClockTowerMinuteRingDL",
+        "object_obj_tokeidai:0xBEE8 gClockTowerClockCenterAndHandDL",
+        "object_obj_tokeidai:0xF518 gWallClockClockFaceDL",
+        "object_obj_tokeidai:0xC368 gClockTowerSunAndMoonPanelDL"
+      ],
+      "status": "selected",
+      "note": "wall clock scale 0.02 yaw 180, time-posed"
+    },
+    {
+      "sourceKey": "Z2_TAKARAYA/h0/room_00/a02",
+      "actorId": "0x1C1",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_bg:0x8FC8 gTreasureChestShopGalSkel"
+      ],
+      "status": "optional",
+      "note": "gal, present D0d to D3d (mask 0x3F8), idle loop object_bg_Anim_009890, scale 0.01 default; skeletal pose deferred"
+    },
+    {
+      "sourceKey": "Z2_TAKARAYA/h0/transition/ta0",
+      "actorId": "0x005",
+      "params": "0x0288",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "gameplay_keep:0x20BB8 gDoorLeftDL",
+        "gameplay_keep:0x20D00 gDoorRightDL"
+      ],
+      "status": "selected",
+      "note": "closed pose; schedule TREASURE_CHEST_SHOP; exit floor polys 69 and 70 behind it"
+    },
+    {
+      "sourceKey": "Z2_TAKARAYA/h0/room_00/a02/wall",
+      "actorId": "0x1BB",
+      "params": "0xB0A0,0xB180,0xB080,0xB540,0xB520",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_takaraya_objects:0xB70 gTreasureChestShopWallBlackDL",
+        "object_takaraya_objects:0xD60 gTreasureChestShopWallWhiteDL"
+      ],
+      "status": "optional",
+      "note": "runtime child of the gal, spawned at (0, 0, 0) on payment; params = prize (purple, heart piece, red, 10 nuts, 5 nuts); up to 88 cells of 120 units rise only next to the player"
+    },
+    {
+      "sourceKey": "Z2_TAKARAYA/h0/room_00/a02/chest",
+      "actorId": "0x006",
+      "params": "0xB0A0,0xB180,0xB080,0xB540,0xB520",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_box:0x66A0 gBoxChestSkel"
+      ],
+      "status": "optional",
+      "note": "big chest at (-1635, 0, 60 + 120 column), column random 0..7, spawned by the wall actor; prize chosen by form"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_TAKARAYACollisionHeader_000A30 (97 polys)",
+    "waterBoxes": 0,
+    "actorDynapoly": [
+      "a02/chest En_Box gBoxChestCol (runtime, after payment)"
+    ],
+    "actorCylinders": [
+      "a02/wall Obj_Takaraya_Wall columnCollider and rowCollider (OC cylinders, init radius 40 height 120, radius 200 while active)"
+    ],
+    "note": "En_Takaraya has no collider; the board floor is room collision polys 71 and 72 and the walls are OC cylinders, not collision polys"
+  },
+  "portalIds": [
+    "portal.treasure_chest_shop.east_clock_town",
+    "portal.treasure_chest_shop.east_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.treasure_chest_shop.entry",
+    "cam.treasure_chest_shop.reverse_door",
+    "cam.treasure_chest_shop.fixture"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "a02 En_Takaraya skeletal pose, head tracking and blink",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "a00",
+      "a03",
+      "a04"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "payment, 45 s timer, win and time-up states and the return to entrance 1",
+    "random 11 x 8 maze generation and the rising wall cells",
+    "per-form fee, prize pair and the persistent Goron Heart Piece flag",
+    "door schedule closed 22:00-05:59 and the 22:00 kickout with its game deferral",
+    "BgCam 2 CAM_SET_TREASURE_CHEST_MINIGAME camera and the chest cutscenes 9 and 10",
+    "positional shop BGM and the game sub-BGM",
+    "wall clock time-driven pose unless implemented"
+  ],
+  "evidence": [
+    "docs/city/interiors/treasure_chest_shop.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "sourceInspection": "fee, prize and text numbers come from the decoded message table (MSG) and an independent baserom decode; maze statistics are a scratch simulation"
+  }
+}
