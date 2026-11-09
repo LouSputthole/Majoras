@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.stock_pot_inn",
+  "displayLabel": "Stock Pot Inn",
+  "source": {
+    "sceneSymbol": "Z2_YADOYA",
+    "sceneEnum": "SCENE_YADOYA",
+    "sceneTableIndex": "0x61",
+    "entranceTableSceneIndex": "0x5E",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch, collectible or chest flags",
+      "player form Human",
+      "no Room Key",
+      "no mask worn",
+      "arrival spawn 0 through East TA0 (open 08:00-20:30)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA",
+      "bytes": 62592,
+      "sha256": "b49451b01030f336070f8cbe78768115c0b61410e50e3f86c4c42107cf968777"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA_room_00",
+      "bytes": 99520,
+      "sha256": "f5caef9f074b855c3fb02d44aff5f9c976bbeacf9bc56b6e5f860ff4b735cd9f"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA_room_01",
+      "bytes": 33584,
+      "sha256": "9d5e0bec9c69696144cba14e0f0f12696727ef35e1bd59a275e51ba104d3865d"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA_room_02",
+      "bytes": 24288,
+      "sha256": "bd845f1f3aceb068be7faf0d79767f88cdd02845875ce56bd6289ddb3524b6b9"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA_room_03",
+      "bytes": 20672,
+      "sha256": "12aec8621ba7b2cec2a3278b6af61b3a136537c5186213b92ca6420478bc4235"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YADOYA_room_04",
+      "bytes": 30000,
+      "sha256": "1e9851105ce43d7b997a38a767db24701f4921cdde62b8ed93a6ef068d271830"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA.c",
+      "sha256": "4b8b2c5da23479a2277de0cdcd318ce52de457e2c51d4e624919a07662c0e368"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA_room_00.c",
+      "sha256": "9c3469fa3b53ae6f32db8392c52387335efd05a7436d28b97f0101e76e30d43a"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA_room_01.c",
+      "sha256": "8631e38be29e8646144418fb1f77703ac50f705e78daff8297eabf466f9edda0"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA_room_02.c",
+      "sha256": "cc5b66bd6149778c3e4ddec33ba5a55eda557946c65a07f218fed4194ab74fad"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA_room_03.c",
+      "sha256": "26606bfc51a91a1f313bb5493f8e52163491dea04e9bc3d0cdf796d82d859f8b"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YADOYA/Z2_YADOYA_room_04.c",
+      "sha256": "4bcc5fbbb2c63389b7b550c3972417368d39161bf85d2fe3142691232a8629c1"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_YADOYA/Z2_YADOYA.xml",
+      "sha256": "e7c7e0c1ccabc34ff42a32f1cba7132a76aa8a0d61f5e25ec20d57f4ed77703a"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.east_clock_town"
+      ],
+      "status": "unknown",
+      "evidence": "no: interior frame, door offsets differ from the East facade (U-10)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -605,
+        -30,
+        -300
+      ],
+      "max": [
+        337,
+        390,
+        960
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -602,
+        -30,
+        -300
+      ],
+      "max": [
+        330,
+        390,
+        960
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -6.02,
+        -0.3,
+        -9.6
+      ],
+      "max": [
+        3.3,
+        3.9,
+        3.0
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.spi.spawn0_lower_door",
+      "source": [
+        149,
+        0,
+        303
+      ],
+      "unity": [
+        1.49,
+        0.0,
+        -3.03
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.spawn1_upper_door",
+      "source": [
+        -63,
+        210,
+        -46
+      ],
+      "unity": [
+        -0.63,
+        2.1,
+        0.46
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.door_lower_ta5",
+      "source": [
+        180,
+        0,
+        360
+      ],
+      "unity": [
+        1.8,
+        0.0,
+        -3.6
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.door_upper_ta4",
+      "source": [
+        -60,
+        210,
+        0
+      ],
+      "unity": [
+        -0.6,
+        2.1,
+        0.0
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.ramp_foot",
+      "source": [
+        210,
+        0,
+        -90
+      ],
+      "unity": [
+        2.1,
+        0.0,
+        0.9
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.ramp_top",
+      "source": [
+        -30,
+        210,
+        -90
+      ],
+      "unity": [
+        -0.3,
+        2.1,
+        0.9
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.spi.wall_clock",
+      "source": [
+        34,
+        93,
+        231
+      ],
+      "unity": [
+        0.34,
+        0.93,
+        -2.31
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.stock_pot_inn.room_00",
+      "sourceRoom": "Z2_YADOYA_room_00",
+      "roomShape": "cullable, 12 entries",
+      "displayLists": 85,
+      "role": "lobby, reception, kitchen, toilet, ramp stair, upper corridor (INF)",
+      "collisionLightIndex": 2,
+      "header": 0
+    },
+    {
+      "id": "loc.stock_pot_inn.room_01",
+      "sourceRoom": "Z2_YADOYA_room_01",
+      "roomShape": "cullable, 8 entries",
+      "displayLists": 24,
+      "role": "Granny's room",
+      "collisionLightIndex": 0,
+      "header": 0
+    },
+    {
+      "id": "loc.stock_pot_inn.room_02",
+      "sourceRoom": "Z2_YADOYA_room_02",
+      "roomShape": "cullable, 6 entries",
+      "displayLists": 18,
+      "role": "staff room (Anju)",
+      "collisionLightIndex": 4,
+      "header": 0
+    },
+    {
+      "id": "loc.stock_pot_inn.room_03",
+      "sourceRoom": "Z2_YADOYA_room_03",
+      "roomShape": "cullable, 8 entries",
+      "displayLists": 16,
+      "role": "Knife Chamber",
+      "collisionLightIndex": 1,
+      "header": 0
+    },
+    {
+      "id": "loc.stock_pot_inn.room_04",
+      "sourceRoom": "Z2_YADOYA_room_04",
+      "roomShape": "cullable, 8 entries",
+      "displayLists": 16,
+      "role": "Large Suite",
+      "collisionLightIndex": 3,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta5",
+      "actorId": "0x005",
+      "params": "0x028B",
+      "class": "door-transition",
+      "dls": [
+        "object_wdor03:0x548"
+      ],
+      "status": "selected",
+      "note": "closed pose"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta4",
+      "actorId": "0x005",
+      "params": "0x028C",
+      "class": "door-transition",
+      "dls": [
+        "object_wdor03:0x548"
+      ],
+      "status": "selected",
+      "note": "closed pose"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta0",
+      "actorId": "0x005",
+      "params": "0x028D",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "fallback art"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta1",
+      "actorId": "0x005",
+      "params": "0x028E",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "fallback art"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta2",
+      "actorId": "0x005",
+      "params": "0x028F",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "fallback art"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/ta3",
+      "actorId": "0x005",
+      "params": "0x0290",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "fallback art"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a07",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a08",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a09",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a10",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a11",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a12",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a17",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "noon pose"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_01/a03",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_02/a04",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_02/a05",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_02/a09",
+      "actorId": "0x006",
+      "params": "0x50C1",
+      "class": "posed-skeletal",
+      "dls": [
+        "object_box:NI"
+      ],
+      "status": "selected",
+      "note": "closed chest, skeleton pending"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_03/a01",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_03/a02",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_03/a06",
+      "actorId": "0x006",
+      "params": "0x50C0",
+      "class": "posed-skeletal",
+      "dls": [
+        "object_box:NI"
+      ],
+      "status": "selected",
+      "note": "closed chest, skeleton pending"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_04/a09",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_04/a10",
+      "actorId": "0x294",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_yado_obj:0x430",
+        "object_yado_obj:0x320"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a00",
+      "actorId": "0x004",
+      "params": "0x83F0",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x1ACF0"
+      ],
+      "status": "optional",
+      "note": "billboard approximation"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a01",
+      "actorId": "0x004",
+      "params": "0x83F0",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x1ACF0"
+      ],
+      "status": "optional",
+      "note": "billboard approximation"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_00/a13",
+      "actorId": "0x004",
+      "params": "0x07F4",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "optional",
+      "note": "billboard approximation"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_01/a04",
+      "actorId": "0x004",
+      "params": "0x07F5",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "optional",
+      "note": "billboard approximation"
+    },
+    {
+      "sourceKey": "Z2_YADOYA/h0/room_04/a00",
+      "actorId": "0x004",
+      "params": "0x83F0",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x1ACF0"
+      ],
+      "status": "optional",
+      "note": "billboard approximation"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_YADOYACollisionHeader_00A018 (1145 polys, one header for all five rooms; per-room split by surface light index)",
+    "actorDynapoly": [],
+    "actorCylinders": null,
+    "waterBoxes": 1,
+    "note": "actorCylinders: NI waterBoxes: x -600..-390, y -15, z 210..420, room 0"
+  },
+  "portalIds": [
+    "portal.stock_pot_inn.east_clock_town.lower",
+    "portal.stock_pot_inn.east_clock_town.upper",
+    "portal.stock_pot_inn.east_clock_town.kickout",
+    "portal.stock_pot_inn.stock_pot_inn.r0_r1",
+    "portal.stock_pot_inn.stock_pot_inn.r1_r0",
+    "portal.stock_pot_inn.stock_pot_inn.r0_r2",
+    "portal.stock_pot_inn.stock_pot_inn.r2_r0",
+    "portal.stock_pot_inn.stock_pot_inn.r0_r3",
+    "portal.stock_pot_inn.stock_pot_inn.r3_r0",
+    "portal.stock_pot_inn.stock_pot_inn.r0_r4",
+    "portal.stock_pot_inn.stock_pot_inn.r4_r0"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.stock_pot_inn.entry",
+    "cam.stock_pot_inn.reverse_door",
+    "cam.stock_pot_inn.fixture",
+    "cam.stock_pot_inn.room_01",
+    "cam.stock_pot_inn.room_02",
+    "cam.stock_pot_inn.room_03",
+    "cam.stock_pot_inn.room_04"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "room_01 Anju lunch pose (persistent instance)",
+    "room_01 a05 En_Nb",
+    "room_00 a24 En_Rz Judo walking",
+    "room_04 a13 En_Rz Marilla walking",
+    "room_04 a07 En_Guruguru",
+    "room_02 a02 En_Drs",
+    "room_00 a05 En_Fish",
+    "room_00 a15 and room_04 a11 En_Insect",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "room_00/a02",
+      "room_00/a18",
+      "room_00/a21",
+      "room_01/a01",
+      "room_02/a01",
+      "room_02/a07",
+      "room_03/a03",
+      "room_04/a01",
+      "room_04/a02",
+      "room_04/a03",
+      "room_04/a05",
+      "room_04/a06"
+    ],
+    "stateOrSchedule": [
+      "room_00/a19 (drawn in room_01 at noon)",
+      "room_00/a20",
+      "room_00/a22",
+      "room_00/a23",
+      "room_01/a07 duplicate",
+      "room_02/a11 duplicate",
+      "room_02/a10 needs 51_40",
+      "room_02/a06 Dm_Tag killed",
+      "room_02/a00 cue only"
+    ],
+    "noGeometry": [
+      "kickout tags x5",
+      "En_Test4 x5",
+      "room_00/a14",
+      "room_00/a25",
+      "room_01/a00",
+      "room_03/a04",
+      "room_00/a03 and room_04/a04 Mask of Scents",
+      "room_00/a04 audio copy"
+    ]
+  },
+  "unsupported": [
+    "two resident rooms during door passes",
+    "schedule-driven NPC placement",
+    "per-floor environment light index",
+    "fixed toilet camera",
+    "water box and scrolling water texture",
+    "Mask of Scents mushrooms",
+    "audio-only Guru-Guru",
+    "climbable bunk walls",
+    "door schedule gates and kickout"
+  ],
+  "evidence": [
+    "docs/city/interiors/stock_pot_inn.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

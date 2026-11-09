@@ -26,6 +26,7 @@ SHARED_WITH = {
     "sharedWithSouth": ["loc.south_clock_town"],
     "sharedWithNorthWestEast": ["loc.north_clock_town", "loc.west_clock_town", "loc.east_clock_town"],
 }
+SHORT_LOC = {"South": "south_clock_town", "North": "north_clock_town", "West": "west_clock_town", "East": "east_clock_town", "Laundry": "laundry_pool"}
 PRODUCED_BY = {"current committed scripts (inferred)": "inferred-committed-scripts", "earlier unrecorded export": "unrecorded"}
 READINESS = ("not_run", "pass", "fail", "blocked", "not_applicable", "partial")
 
@@ -56,12 +57,15 @@ def normalize(rec):
         h = room_headers.get(room["id"], "default header")
         room["header"] = 0 if h.startswith("default") else int(re.search(r"\d+", h).group())
     sf = rec["sourceFrame"]
-    for key, locs in SHARED_WITH.items():
-        if key in sf:
-            text = sf.pop(key)
-            status = "verified" if text.lower().startswith("verified") else "inferred" if "INFERRED" in text or "inferred" in text else "unknown"
-            sf["sharedFrame"] = {"with": locs, "status": status, "evidence": text}
+    for key in [k for k in sf if k.startswith("sharedWith")]:   # sharedWithSouth, sharedWithNorthWestEast, sharedWithEast, ...
+        text = sf.pop(key)
+        locs = SHARED_WITH.get(key) or [f"loc.{n}" for n in SHORT_LOC.values() if n.split("_")[0].capitalize() in re.findall(r"[A-Z][a-z]+", key[10:])]
+        status = "verified" if text.lower().startswith("verified") else "inferred" if "INFERRED" in text or "inferred" in text else "unknown"
+        sf["sharedFrame"] = {"with": locs, "status": status, "evidence": text}
     sf.setdefault("sharedFrame", {"with": [], "status": "unknown", "evidence": ""})
+    if "cameraSourceHints" in rec:                              # camera poses belong in cameras/<region>.json (REF-03), not the region record
+        rec.pop("cameraSourceHints")
+        print(f"  note: dropped cameraSourceHints from {rec['regionId']} (stays in the dossier; goes into the camera records)")
     for a in rec["anchors"]:
         s = a["status"]
         if s.startswith("proposed"):
@@ -83,6 +87,9 @@ def normalize(rec):
     if isinstance(co.get("actorCylinders"), str):
         co["note"] = "actorCylinders: " + co["actorCylinders"]
         co["actorCylinders"] = None
+    if isinstance(co.get("waterBoxes"), list):                  # schema wants the count; the descriptions move to the note
+        co["note"] = (co.get("note", "") + " waterBoxes: " + "; ".join(map(str, co["waterBoxes"]))).strip()
+        co["waterBoxes"] = len(co["waterBoxes"])
     ex = rec["excluded"]
     if "stateOrDrawNull" in ex:
         ex["stateOrSchedule"] = ex.pop("stateOrDrawNull")

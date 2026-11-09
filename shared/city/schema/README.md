@@ -6,7 +6,7 @@ This folder freezes what `docs/FULL_CITY_PLAN.md` section 3 proposed. Everything
 
 | Path | Owner | Written by | Read by |
 | --- | --- | --- | --- |
-| `schema/region.schema.json`, `portal.schema.json`, `camera.schema.json` | integrator | hand-edited; a change bumps `schemaVersion` and is logged in `docs/ITERATION_LOG.md` | `tools/reference/validate_city.py`, future importer (PIPE-02) and Unity bindings |
+| `schema/region.schema.json`, `portal.schema.json`, `camera.schema.json` | integrator | hand-edited; adding an optional field is logged in the change list below, anything that removes, renames or re-types a field bumps `schemaVersion` and is logged in `docs/ITERATION_LOG.md` | `tools/reference/validate_city.py`, future importer (PIPE-02) and Unity bindings |
 | `ids.json` | integrator | `python -I tools/reference/build_city_ids.py` from the three registers in `docs/city/` | validator, importer, evidence writers |
 | `regions/<region>.json` | the dossier's author proposes, the integrator accepts | `python -I tools/reference/region_from_dossier.py docs/city/<dir>/<file>.md` lifts the dossier's "Proposed region record" block and maps it onto the frozen enums | importer (PIPE-02), evidence, saves |
 | `portals.json` | integrator | not yet generated (PORT-01 exports it from `docs/city/PORTAL_REGISTER.md`) | transition system |
@@ -19,6 +19,15 @@ python -I tools/reference/validate_city.py --selftest
 ```
 
 Exit 1 and a `file: $.json.path: reason` line for every problem. The self-test proves the validator still rejects an unknown key, a wrong version, an unregistered or retired ID, a free-text enum, a wrong conversion matrix, too few anchors, a bad hash, a foreign room and truncated JSON. A record that is not listed as OK is not accepted; an omitted field is never a pass.
+
+## Schema change list (schema 1)
+
+| Date | Change | Why |
+| --- | --- | --- |
+| 2026-11-08 | frozen | PIPE-01 |
+| 2026-11-08 | region: optional `rooms[].role` (string) and `rooms[].collisionLightIndex` (integer) | multi-room venues (Stock Pot Inn) need to name each room and record the per-room environment light the collision surfaces select |
+
+Camera pose hints are not region-record fields; they belong in `cameras/<region>.json` (camera schema). `collisionOwnership.waterBoxes` is a count; descriptions go in `collisionOwnership.note`.
 
 ## Frozen ID grammar
 

@@ -1,0 +1,942 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.astral_observatory",
+  "displayLabel": "Astral Observatory",
+  "source": {
+    "sceneSymbol": "Z2_TENMON_DAI",
+    "sceneEnum": "SCENE_TENMON_DAI",
+    "sceneTableIndex": "0x29",
+    "entranceTableSceneIndex": "0x26",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no switch, chest, collectible or week-event flags",
+      "player form Human",
+      "telescope off",
+      "arrival by entrance 0 or 1",
+      "no alternate headers exist"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TENMON_DAI",
+      "bytes": 34688,
+      "sha256": "a63da639fe2073d224645cf4b95e51fff02bb023e345a1641a44fd486039f728"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TENMON_DAI_room_00",
+      "bytes": 74528,
+      "sha256": "3e89e7c147bc9c91c9cd7210e03c3be2378f2fd8fe6054c2f14c1b7f2e0985b8"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_TENMON_DAI_room_01",
+      "bytes": 101040,
+      "sha256": "2e8bd998e39690df1b02d26e100968ea2d06c6441fdcd50037fe4569d39f9477"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TENMON_DAI/Z2_TENMON_DAI.c",
+      "bytes": 143218,
+      "sha256": "90d369e5e82810af76a3d143b57d3d055e52c71673ed33d72b25d26333d6c043"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TENMON_DAI/Z2_TENMON_DAI_room_00.c",
+      "bytes": 86945,
+      "sha256": "dbf43101e39e7612cb29691ee078a7a4c27d1c4e0d65f99e52e92cecf44e6c52"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_TENMON_DAI/Z2_TENMON_DAI_room_01.c",
+      "bytes": 94734,
+      "sha256": "ddf63e7010833cfaac10301aecfbd6f9eac0fcd5f25f3e78d82ea485b6be471b"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_TENMON_DAI/Z2_TENMON_DAI.xml",
+      "bytes": 697,
+      "sha256": "d16579c13198af41003f7b0702fbd938c69d961768e40a66d2ca5ce5e7b9cff5"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "East tunnel exit floors x 1832..1960 z -1824..-1764 vs observatory east end x 570..630 z 4160..4320: separate frames; joined by scene change"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -810,
+        -632,
+        -497
+      ],
+      "max": [
+        900,
+        354,
+        4320
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -700,
+        -632,
+        -440
+      ],
+      "max": [
+        900,
+        354,
+        4320
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -7.0,
+        -6.32,
+        -43.2
+      ],
+      "max": [
+        9.0,
+        3.54,
+        4.4
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.astral_observatory.wb00",
+      "sourceWaterBox": {
+        "xMin": -300,
+        "xMax": -220,
+        "zMin": 1040,
+        "zMax": 1200,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -3.0,
+          -2.2
+        ],
+        "z": [
+          -12.0,
+          -10.4
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film over the channel bed"
+    },
+    {
+      "id": "water.astral_observatory.wb01",
+      "sourceWaterBox": {
+        "xMin": -220,
+        "xMax": -140,
+        "zMin": 1040,
+        "zMax": 1140,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -2.2,
+          -1.4
+        ],
+        "z": [
+          -11.4,
+          -10.4
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb02",
+      "sourceWaterBox": {
+        "xMin": 280,
+        "xMax": 420,
+        "zMin": 1400,
+        "zMax": 1640,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          2.8,
+          4.2
+        ],
+        "z": [
+          -16.4,
+          -14.0
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb03",
+      "sourceWaterBox": {
+        "xMin": 380,
+        "xMax": 420,
+        "zMin": 1260,
+        "zMax": 1400,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          3.8,
+          4.2
+        ],
+        "z": [
+          -14.0,
+          -12.6
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb04",
+      "sourceWaterBox": {
+        "xMin": 220,
+        "xMax": 280,
+        "zMin": 1500,
+        "zMax": 1640,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          2.2,
+          2.8
+        ],
+        "z": [
+          -16.4,
+          -15.0
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb05",
+      "sourceWaterBox": {
+        "xMin": 160,
+        "xMax": 220,
+        "zMin": 1580,
+        "zMax": 1640,
+        "surfaceY": -626,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          1.6,
+          2.2
+        ],
+        "z": [
+          -16.4,
+          -15.8
+        ],
+        "surfaceY": -6.26
+      },
+      "poolFloorY": [
+        -630,
+        -630
+      ],
+      "behavior": "UNKNOWN: 4 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb06",
+      "sourceWaterBox": {
+        "xMin": 720,
+        "xMax": 820,
+        "zMin": 3260,
+        "zMax": 3400,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          7.2,
+          8.2
+        ],
+        "z": [
+          -34.0,
+          -32.6
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film over the bank"
+    },
+    {
+      "id": "water.astral_observatory.wb07",
+      "sourceWaterBox": {
+        "xMin": 680,
+        "xMax": 720,
+        "zMin": 3360,
+        "zMax": 3400,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          6.8,
+          7.2
+        ],
+        "z": [
+          -34.0,
+          -33.6
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb08",
+      "sourceWaterBox": {
+        "xMin": 800,
+        "xMax": 820,
+        "zMin": 3200,
+        "zMax": 3260,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          8.0,
+          8.2
+        ],
+        "z": [
+          -32.6,
+          -32.0
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb09",
+      "sourceWaterBox": {
+        "xMin": -660,
+        "xMax": 900,
+        "zMin": 2180,
+        "zMax": 3000,
+        "surfaceY": -592,
+        "properties": "0x00000300",
+        "bgCamIndex": 0,
+        "lightIndex": 3,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -6.6,
+          9.0
+        ],
+        "z": [
+          -30.0,
+          -21.8
+        ],
+        "surfaceY": -5.92
+      },
+      "poolFloorY": [
+        -632,
+        -632
+      ],
+      "bankFloorY": [
+        -600,
+        -580
+      ],
+      "behavior": "UNKNOWN: main channel, 40 u deep over the -632 bed; fish spawner r00 a03 inside"
+    },
+    {
+      "id": "water.astral_observatory.wb10",
+      "sourceWaterBox": {
+        "xMin": 420,
+        "xMax": 470,
+        "zMin": 3310,
+        "zMax": 3400,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          4.2,
+          4.7
+        ],
+        "z": [
+          -34.0,
+          -33.1
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb11",
+      "sourceWaterBox": {
+        "xMin": 420,
+        "xMax": 440,
+        "zMin": 3260,
+        "zMax": 3310,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          4.2,
+          4.4
+        ],
+        "z": [
+          -33.1,
+          -32.6
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film"
+    },
+    {
+      "id": "water.astral_observatory.wb12",
+      "sourceWaterBox": {
+        "xMin": 470,
+        "xMax": 510,
+        "zMin": 3340,
+        "zMax": 3400,
+        "surfaceY": -579,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          4.7,
+          5.1
+        ],
+        "z": [
+          -34.0,
+          -33.4
+        ],
+        "surfaceY": -5.79
+      },
+      "poolFloorY": [
+        -580,
+        -580
+      ],
+      "behavior": "UNKNOWN: 1 u film"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.ao.spawn0_east_arrival",
+      "source": [
+        602,
+        -472,
+        4125
+      ],
+      "unity": [
+        6.02,
+        -4.72,
+        -41.25
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ao.hall_plane",
+      "source": [
+        60,
+        -480,
+        440
+      ],
+      "unity": [
+        0.6,
+        -4.8,
+        -4.4
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ao.spawn1_tf_door",
+      "source": [
+        -6,
+        -129,
+        133
+      ],
+      "unity": [
+        -0.06,
+        -1.29,
+        -1.33
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ao.spawn2_telescope_deck",
+      "source": [
+        107,
+        -84,
+        -209
+      ],
+      "unity": [
+        1.07,
+        -0.84,
+        2.09
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ao.door_tf",
+      "source": [
+        -7,
+        -129,
+        188
+      ],
+      "unity": [
+        -0.07,
+        -1.29,
+        -1.88
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.astral_observatory.room_00",
+      "sourceRoom": "Z2_TENMON_DAI_room_00",
+      "roomShape": "cullable, 12 entries",
+      "displayLists": 26,
+      "header": 0
+    },
+    {
+      "id": "loc.astral_observatory.room_01",
+      "sourceRoom": "Z2_TENMON_DAI_room_01",
+      "roomShape": "cullable, 20 entries",
+      "displayLists": 37,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a00",
+      "actorId": "0x05F",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "dls": [
+        "object_fusen:0xA00",
+        "object_fusen:0xD78"
+      ],
+      "status": "selected",
+      "note": "bob omitted"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a10",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a11",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a12",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a13",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a14",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a15",
+      "actorId": "0x039",
+      "params": "0x287F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870",
+        "gameplay_keep:0x7D590"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a16",
+      "actorId": "0x082",
+      "params": "0x400A",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a17",
+      "actorId": "0x082",
+      "params": "0x460A",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a18",
+      "actorId": "0x082",
+      "params": "0x420E",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a19",
+      "actorId": "0x082",
+      "params": "0x440E",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a21",
+      "actorId": "0x28D",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_astr_obj:0x2380",
+        "object_astr_obj:0x22E0"
+      ],
+      "status": "selected",
+      "note": "intact (switch 0 clear)"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a22",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "12:00 hand pose"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_00/a23",
+      "actorId": "0x006",
+      "params": "0x50C0",
+      "class": "posed-skeletal",
+      "dls": [
+        "object_box:0x66A0 gBoxChestSkel"
+      ],
+      "status": "optional",
+      "note": "closed pose"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_01/a03",
+      "actorId": "0x283",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_gi_reserve00:0xD78",
+        "object_gi_reserve00:0xC80",
+        "object_gi_reserve00:0x1C60"
+      ],
+      "status": "selected",
+      "note": "glow is a billboard"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_01/a04",
+      "actorId": "0x082",
+      "params": "0x4802",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_01/a05",
+      "actorId": "0x082",
+      "params": "0x4A02",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_01/a06",
+      "actorId": "0x082",
+      "params": "0x4C0E",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_dangeon_keep:0x17EA0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/room_01/a08",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "12:00 hand pose"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x007F",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "object_dor01:0x448"
+      ],
+      "status": "selected",
+      "note": "rest pose"
+    },
+    {
+      "sourceKey": "Z2_TENMON_DAI/h0/transition/ta01",
+      "actorId": "0x018",
+      "params": "0x007F",
+      "class": "door-transition",
+      "dls": [
+        "ovl_En_Holl:0x0C30 gEnHollCentralPlaneDL"
+      ],
+      "status": "optional",
+      "note": "hall plane hidden in a both-rooms render"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_TENMON_DAICollisionHeader_007514 (1439 polys: room_00 polys 0-656, room_01 polys 657-1438)",
+    "waterBoxes": 13,
+    "actorDynapoly": [
+      "r00 a00 object_fusen_Colheader_002420",
+      "r00 a21 gAstralObservatoryBombWallCol"
+    ],
+    "actorCylinders": null,
+    "note": "cylinders NI except r01 a00 r18 h64 (bji.c:54)"
+  },
+  "portalIds": [
+    "portal.astral_observatory.east_clock_town",
+    "portal.astral_observatory.z2_00keikoku",
+    "portal.astral_observatory.astral_observatory.r0_r1",
+    "portal.astral_observatory.astral_observatory.r1_r0"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.astral_observatory.entry",
+    "cam.astral_observatory.reverse_door",
+    "cam.astral_observatory.fixture",
+    "cam.astral_observatory.room_01"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "r00 a01/a02 En_St",
+    "r01 a00 En_Bji_01",
+    "r01 a01 En_Kakasi",
+    "r01 a02 En_Niw",
+    "r00 a04-a08 drips, a09 flame and light, torch flames",
+    "room_01 six cylindrical-billboard room DLs",
+    "telescope view (external Z2_00KEIKOKU)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "r00 a03 Obj_Mure controller",
+      "r00 a20 En_Test4",
+      "r01 a07 En_Test4",
+      "r01 a09 Obj_Sound"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC and enemy poses",
+    "billboard orientation",
+    "two-layer texture scroll on 6 segments",
+    "hall plane fade and room swap",
+    "ladder climbing",
+    "water film and channel behaviour",
+    "telescope camera mode",
+    "door exit through the respawn-down path"
+  ],
+  "evidence": [
+    "docs/city/interiors/astral_observatory.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

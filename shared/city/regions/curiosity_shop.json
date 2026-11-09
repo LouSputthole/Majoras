@@ -1,0 +1,347 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.curiosity_shop",
+  "displayLabel": "Curiosity Shop",
+  "source": {
+    "sceneSymbol": "Z2_AYASHIISHOP",
+    "sceneEnum": "SCENE_AYASHIISHOP",
+    "sceneTableIndex": "0x0D",
+    "entranceTableSceneIndex": "0x07",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event flags, stolenItems 0",
+      "player form Human, no mask",
+      "venue closed at this profile from both outside doors (texts 0x180A, 0x180C); record serves an A1 reference render only",
+      "first open: prof.d3.final.normal (registered) or proposed prof.d1.late.normal for room_00; room_01 needs the Kafei letter flags (prof.d2.night.normal)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_AYASHIISHOP",
+      "bytes": 13472,
+      "sha256": "70650005834ecba853fc923b94a14275235bfba609edfaad3570135a51639cfc"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_AYASHIISHOP_room_00",
+      "bytes": 72320,
+      "sha256": "499284379a26e35e776a4a1fff16a503c79ed3cebcd2215f6f1ac11cace07ae3"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_AYASHIISHOP_room_01",
+      "bytes": 21792,
+      "sha256": "40cb9407143afcf2c4c951a826e074fd30d3bc1b74fb12498b44cc5d52ddf7fc"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_AYASHIISHOP/Z2_AYASHIISHOP.c",
+      "bytes": 41919,
+      "sha256": "e10e8fc86b1dfe716c558dd634a800f0eee373cc1e78f0b9d3bcbad61af019ae"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_AYASHIISHOP/Z2_AYASHIISHOP_room_00.c",
+      "bytes": 105076,
+      "sha256": "1df25587db85efba53dddfa08b488ce144a6094b691cf117c46fced1110ce1fd"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_AYASHIISHOP/Z2_AYASHIISHOP_room_01.c",
+      "bytes": 35207,
+      "sha256": "666d293414a20698de452c5717c778b54c5c53335976e86e4d0bb6747a9c5aae"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_AYASHIISHOP/Z2_AYASHIISHOP.xml",
+      "bytes": 832,
+      "sha256": "19f9023c8470a99eba35ae63a1a630fbad9c8f0dbf5c7d20b00b1a0049434c17"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior scene with its own frame: TA0 at (0, 0, 252) pairs with West TA5 at (-1510, 45, -12) and TA1 at (-264, -96, -612) with Laundry TA0 at (-2097, -120, -112); joined only by portals"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -364,
+        -96,
+        -910
+      ],
+      "max": [
+        137,
+        156,
+        375
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -364,
+        -96,
+        -910
+      ],
+      "max": [
+        132,
+        156,
+        375
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -3.64,
+        -0.96,
+        -3.75
+      ],
+      "max": [
+        1.32,
+        1.56,
+        9.1
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.cshop.spawn0_west_door",
+      "source": [
+        1,
+        0,
+        227
+      ],
+      "unity": [
+        0.01,
+        0.0,
+        -2.27
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cshop.counter_talk",
+      "source": [
+        1,
+        12,
+        -34
+      ],
+      "unity": [
+        0.01,
+        0.12,
+        0.34
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cshop.spawn1_laundry_door",
+      "source": [
+        -262,
+        -96,
+        -619
+      ],
+      "unity": [
+        -2.62,
+        -0.96,
+        6.19
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cshop.peephole_step",
+      "source": [
+        -95,
+        30,
+        -311
+      ],
+      "unity": [
+        -0.95,
+        0.3,
+        3.11
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.curiosity_shop.room_00",
+      "sourceRoom": "Z2_AYASHIISHOP_room_00",
+      "roomShape": "cullable, 20 entries (18 opaque, 10 XLU)",
+      "displayLists": 49,
+      "header": 0
+    },
+    {
+      "id": "loc.curiosity_shop.room_01",
+      "sourceRoom": "Z2_AYASHIISHOP_room_01",
+      "roomShape": "cullable, 8 entries (8 opaque, 3 XLU)",
+      "displayLists": 16,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_AYASHIISHOP/h0/room_00/a05",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "wall clock scale 0.02, noon pose, A1 render only"
+    },
+    {
+      "sourceKey": "Z2_AYASHIISHOP/h0/room_00/a03",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected",
+      "note": "A1 render only"
+    },
+    {
+      "sourceKey": "Z2_AYASHIISHOP/h0/ta0",
+      "actorId": "0x005",
+      "params": "0x0284",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28",
+        "object_wdor01:0x548"
+      ],
+      "status": "selected",
+      "note": "closed pose"
+    },
+    {
+      "sourceKey": "Z2_AYASHIISHOP/h0/room_01/a06",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "small wall clock scale 0.01, A1 render only"
+    },
+    {
+      "sourceKey": "Z2_AYASHIISHOP/h0/ta1",
+      "actorId": "0x005",
+      "params": "0x0285",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28",
+        "gameplay_keep:0x20BB8/0x20D00"
+      ],
+      "status": "selected",
+      "note": "closed pose"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_AYASHIISHOPCollisionHeader_001B2C (182 polys, shared by room_00 and room_01, no water)",
+    "actorDynapoly": [],
+    "actorCylinders": null,
+    "note": "actorCylinders: room_01 a00 En_Fsn r18 h64 (absent at profile); others NI"
+  },
+  "portalIds": [
+    "portal.curiosity_shop.west_clock_town",
+    "portal.curiosity_shop.west_clock_town.kickout",
+    "portal.curiosity_shop.laundry_pool",
+    "portal.curiosity_shop.laundry_pool.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.curiosity_shop.entry",
+    "cam.curiosity_shop.reverse_door",
+    "cam.curiosity_shop.fixture",
+    "cam.curiosity_shop.room_01"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "room_00 a00 En_Fsn and its En_GirlA shelf (night only)",
+    "room_00 a01 Sakon (Night 2 only)",
+    "room_01 a00 En_Fsn back room (Day 3)",
+    "room_01 a01 Kafei (skeletal, schedule and flag gated)",
+    "peephole telescope view (entrance 2) and return (entrance 3)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "room_00/a00",
+      "room_00/a01",
+      "room_01/a00",
+      "room_01/a03",
+      "room_01/a04"
+    ],
+    "stateOrSchedule": [
+      "room_01/a01"
+    ],
+    "noGeometry": [
+      "room_00/a02",
+      "room_00/a04",
+      "room_01/a02",
+      "room_01/a05"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "door opening animation",
+    "segment 8/9 texture scroll",
+    "telescope camera mode",
+    "time-driven clock pose beyond noon",
+    "message-text prices and lines"
+  ],
+  "evidence": [
+    "docs/city/interiors/curiosity_shop.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

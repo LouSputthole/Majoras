@@ -1,0 +1,334 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.post_office",
+  "displayLabel": "Post Office",
+  "source": {
+    "sceneSymbol": "Z2_POSTHOUSE",
+    "sceneEnum": "SCENE_POSTHOUSE",
+    "sceneTableIndex": "0x2E",
+    "entranceTableSceneIndex": "0x2B",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human",
+      "En_Pm schedule script 0 (WEEKEVENTREG_86_01, 89_08, 89_40, 90_01 clear)",
+      "scene switch flags 0 and 1 clear (they persist across cycles)"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_POSTHOUSE",
+      "bytes": 38832,
+      "sha256": "1c88d04972274d36fdab3d9416c4fb84a738c9edb2cbb22e355b570523055630"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_POSTHOUSE_room_00",
+      "bytes": 35088,
+      "sha256": "6dbf593ed508ffea807e9fe66f6bb6ff8821158231b0a746efa7e1902c703cd3"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_POSTHOUSE/Z2_POSTHOUSE.c",
+      "bytes": 45385,
+      "sha256": "baf4928b390af6ccac15edbaeced96abb69dd3b637dcc21d5f347f0943be6804"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_POSTHOUSE/Z2_POSTHOUSE_room_00.c",
+      "bytes": 69466,
+      "sha256": "4c9cea1eb91a8ee73a9b982021bd8764a4179c5a5fab17b8c95354f35f765878"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_POSTHOUSE/Z2_POSTHOUSE.xml",
+      "bytes": 410,
+      "sha256": "0f83b376e84b9bd6a94940ca11ad9af7b87468d8476f267258d4e63a99c3caff"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "separate interior scene; door TA0 (-10,0,300) vs West TA0 (-1610,200,-1420); both doors yaw 0 with the building on -Z (INF orientation match only)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -200,
+        0,
+        -360
+      ],
+      "max": [
+        200,
+        200,
+        391
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -200,
+        0,
+        -360
+      ],
+      "max": [
+        200,
+        200,
+        391
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -2.0,
+        0.0,
+        -3.91
+      ],
+      "max": [
+        2.0,
+        2.0,
+        3.6
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.po.spawn0_from_west",
+      "source": [
+        -10,
+        0,
+        265
+      ],
+      "unity": [
+        -0.1,
+        0.0,
+        -2.65
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.po.door_ta0",
+      "source": [
+        -10,
+        0,
+        300
+      ],
+      "unity": [
+        -0.1,
+        0.0,
+        -3.0
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.po.postman_bed",
+      "source": [
+        116,
+        26,
+        -219
+      ],
+      "unity": [
+        1.16,
+        0.26,
+        2.19
+      ],
+      "status": "proposed",
+      "note": "En_Pm and En_Mm3 home; bed top Y 16 (collision type 10)"
+    },
+    {
+      "id": "anchor.po.counter_east_corner",
+      "source": [
+        200,
+        40,
+        40
+      ],
+      "unity": [
+        2.0,
+        0.4,
+        -0.4
+      ],
+      "status": "proposed",
+      "note": "counter-top vertex, polys 219-222"
+    },
+    {
+      "id": "anchor.po.wall_clock_a10",
+      "source": [
+        134,
+        84,
+        -275
+      ],
+      "unity": [
+        1.34,
+        0.84,
+        2.75
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.post_office.room_00",
+      "sourceRoom": "Z2_POSTHOUSE_room_00",
+      "header": 0,
+      "roomShape": "cullable, 31 entries",
+      "displayLists": 40
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_POSTHOUSE/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x0281",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "object_wdor02:0x548"
+      ],
+      "status": "selected",
+      "note": "rest pose approximated"
+    },
+    {
+      "sourceKey": "Z2_POSTHOUSE/h0/room_00/a01",
+      "actorId": "0x036",
+      "params": "0x0005",
+      "class": "static-mesh",
+      "dls": [
+        "object_posthouse_obj:0x1870"
+      ],
+      "status": "selected",
+      "note": "curtain, x scale 0.1 while switch 0 clear; dynapoly 0x2948"
+    },
+    {
+      "sourceKey": "Z2_POSTHOUSE/h0/room_00/a02",
+      "actorId": "0x036",
+      "params": "0x0204",
+      "class": "static-mesh",
+      "dls": [
+        "object_posthouse_obj:0xA50"
+      ],
+      "status": "selected",
+      "note": "cap on hook, hidden once switch 1 is set"
+    },
+    {
+      "sourceKey": "Z2_POSTHOUSE/h0/room_00/a09",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "wall clock, scale 0.02, noon pose"
+    },
+    {
+      "sourceKey": "Z2_POSTHOUSE/h0/room_00/a10",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "wall clock, scale 0.02, noon pose"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_POSTHOUSECollisionHeader_002158 (381 polys, 0 water boxes)",
+    "waterBoxes": 0,
+    "actorDynapoly": [
+      "a01 object_posthouse_obj:0x2948 curtain (x scale 0.1 while switch 0 clear)"
+    ],
+    "actorCylinders": [
+      "a00 En_Pm cylinder r14 h62, sphere r26 while asleep"
+    ]
+  },
+  "portalIds": [
+    "portal.post_office.west_clock_town",
+    "portal.post_office.west_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a00 En_Pm asleep on the bed (object_mm skeleton, schedule result 9)",
+    "door leaf skeleton pose",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a07",
+      "a11"
+    ],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "a03",
+      "a04",
+      "a05",
+      "a06",
+      "a08"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC pose and sleep loop",
+    "curtain scale animation and cross-cycle switch persistence",
+    "wall clock hand motion",
+    "counting-game timer UI and OS-time A-button stop",
+    "door schedule and kickout timing"
+  ],
+  "evidence": [
+    "docs/city/interiors/post_office.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}
