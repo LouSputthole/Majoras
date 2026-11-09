@@ -147,7 +147,7 @@ Derived day-3 moon drop at base scale 0.16: 1,675 units at 12:00, 4,187.5 at 21:
 | U-07 | Ocarina possession in the baseline | RESOLVED 2026-11-08 (owner): the baseline save holds the Ocarina (clock speed 3, `z_scene.c:399-402`) and the Deku Mask (closes the Great Fairy dossier's U-07). |
 | U-08 | Which flags define "no story progress beyond arrival" | Which weekEventReg/eventInf bits do new-file init and `Sram_ClearFlagsAtDawnOfTheFirstDay` (`z_daytelop.c:239-241`) set, and which of them do district actors read? |
 | U-09 | Moon actor in North, West, East and Laundry | Grep `ACTOR_EN_FALL` in each `ext:` default room actor list (REF-05 to REF-08). |
-| U-10 | Venue access at 12:00 on each day | RESOLVED for the 12 REF-09 venues accepted so far: at Day 1 12:00 every door is open except the Curiosity Shop (both doors closed, INT-03 5.1 and 5.5); per-door hours are in PORTAL_REGISTER 4.2 and 4.3 Conditions. Open: INT-10/11/12/14/17. |
+| U-10 | Venue access at 12:00 on each day | RESOLVED for all 17 venues (REF-09): at Day 1 12:00 every door is open except the Curiosity Shop (both doors closed, INT-03 5.1 and 5.5); the Deku Playground has no door (play gated to Deku form and 06:00-23:30, INT-14) and the Rooftop is closed until the tower opens (`prof.d3.final.normal`, INT-17); per-door hours are in PORTAL_REGISTER 4.2 and 4.3 Conditions. |
 | U-11 | `timeSpeedOffset == 0x12`, tested in `z_message.c:2661` | Grep `timeSpeedOffset =` across all of `mm:src`, including overlays. |
 | U-12 | Which transition cutscenes `En_Test4` plays in each exterior (this selects the day-advance path) | Decode the cutscene ID of each exterior `En_Test4` entry and the scene actor-cutscene list that feeds `sCsIdList` (`z_en_test4.c:322-337`). |
 

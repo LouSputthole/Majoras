@@ -3,7 +3,7 @@
   "frozen": "2026-11-08 (PIPE-01)",
   "generatedBy": "tools/reference/build_city_ids.py",
   "generatedFrom": {
-    "commit": "c8b847e",
+    "commit": "8e6fa70",
     "files": [
       "docs/city/LOCATION_REGISTER.md",
       "docs/city/PORTAL_REGISTER.md",
