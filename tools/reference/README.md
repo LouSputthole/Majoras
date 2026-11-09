@@ -75,3 +75,16 @@ Stdlib only, read the tracked registers and dossiers, write under `shared/city/`
 | `python -I tools/reference/validate_city.py [--selftest] [files]` | validates every region record against `shared/city/schema/region.schema.json` and cross-checks IDs against `ids.json`; exit 1 with `file: $.path: reason` lines; `--selftest` proves twelve malformed variants and truncated JSON are rejected |
 
 Contract text: `shared/city/schema/README.md`.
+
+### Message text
+
+Stdlib only; call the file, never stdin. It decodes every main-game and credits message of the pinned decomp into ignored JSON for the remake:
+
+```powershell
+python -I tools/reference/extract_messages.py                # write both files, print counts; exit 1 on any validation failure
+python -I tools/reference/extract_messages.py --id 180B      # one entry (--file nes|staff to restrict)
+python -I tools/reference/extract_messages.py --grep "Milk"  # matching ids + first 60 chars (-i ignores case)
+python -I tools/reference/extract_messages.py --stats        # counts per textbox type and top control codes, no write
+```
+
+Output is `local-reference/text/messages_nes.json` and `messages_staff.json`, keyed by 4-digit hex text id (fields are listed in the script docstring). It is Nintendo's text and stays under the ignored `local-reference/`; never copy it into tracked files. The tree ships no generated `text/message_data*.h`, so the tool decodes the message tables and data segments in `extracted/n64-us/baserom` using the control codes in `include/message_data_fmt_*.h` and `assets/text/charmap.txt`. Dossiers cite text ids (`0x18xx` door texts and so on) and never paste text.
