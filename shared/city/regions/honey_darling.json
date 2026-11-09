@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.honey_darling",
+  "displayLabel": "Honey & Darling's Shop",
+  "source": {
+    "sceneSymbol": "Z2_BOWLING",
+    "sceneEnum": "SCENE_BOWLING",
+    "sceneTableIndex": "0x11",
+    "entranceTableSceneIndex": "0x04",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event flags (heart piece available, 22_10 clear)",
+      "player form Human, no mask",
+      "platform at rest: rotation 0, bounce 0, elevation 0",
+      "Honey and Darling pose UNKNOWN until captured (CUP_CHEEKS loop, settled yaw 270)",
+      "no alternate scene header exists; Day 2 swaps targets for baskets and adds water, Day 3 uses 16 moving targets"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BOWLING",
+      "bytes": 16544,
+      "sha256": "352be13629c2b29f1c1c64638c4f82f6344c33c574f8b1c74d74c4b61909c20a"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BOWLING_room_00",
+      "bytes": 19792,
+      "sha256": "d9c0024f74f589cc9f61039b6d3bb472c3fc076c5fa8038e31cf49ea67d0c0b6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BOWLING/Z2_BOWLING.c",
+      "sha256": "55a0e260b9948712bbfb70493b55bb605216e100f663452a5be3898922efa7ec"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BOWLING/Z2_BOWLING_room_00.c",
+      "sha256": "0dffcab482d20b3bd920f581345d412342fb1d74f6d1c6b3914b05c105b5ed9d"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_BOWLING/Z2_BOWLING.xml",
+      "sha256": "919755e1aa1285d82d2cedc2e7eab035c9abf2323bfd55742e9667876185cad9"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/object_fu_kaiten",
+      "bytes": 14384,
+      "sha256": "822d8dbe84c2330fabf2cdc0398635a7f622be3e249861b8dd6c2b8f22bcc807"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/object_fu_mato",
+      "bytes": 12880,
+      "sha256": "c752d2467802596d49dcbf4aab8672d15efef942c42d51195b7de0d1cf695d4c"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/object_mu",
+      "bytes": 47840,
+      "sha256": "c1e53f61e4933218d8b036616a492b2c1a59a11f39308ab7aab5d3e5678642bf"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior scene with its own origin; East door at Y 100 vs interior floor Y 0 (section 2.5)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -322,
+        0,
+        -322
+      ],
+      "max": [
+        322,
+        427,
+        442
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -322,
+        0,
+        -322
+      ],
+      "max": [
+        322,
+        427,
+        442
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -3.22,
+        0,
+        -4.42
+      ],
+      "max": [
+        3.22,
+        4.27,
+        3.22
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.hd.spawn0_from_east",
+      "source": [
+        0,
+        0,
+        300
+      ],
+      "unity": [
+        0,
+        0,
+        -3.0
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.hd.door_ta00",
+      "source": [
+        0,
+        0,
+        342
+      ],
+      "unity": [
+        0,
+        0,
+        -3.42
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.hd.exit_pad_centroid",
+      "source": [
+        0,
+        0,
+        392
+      ],
+      "unity": [
+        0,
+        0,
+        -3.92
+      ],
+      "status": "proposed",
+      "note": "centroid of exit polys 91, 92"
+    },
+    {
+      "id": "anchor.hd.pedestal_top",
+      "source": [
+        0,
+        49,
+        0
+      ],
+      "unity": [
+        0,
+        0.49,
+        0
+      ],
+      "status": "proposed",
+      "note": "En_Fu a02 position; platform at rest"
+    },
+    {
+      "id": "anchor.hd.deck_rim",
+      "source": [
+        171,
+        20,
+        0
+      ],
+      "unity": [
+        1.71,
+        0.2,
+        0
+      ],
+      "status": "proposed",
+      "note": "platform deck edge at rest (C-BIN radius 171.1)"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.honey_darling.room_00",
+      "sourceRoom": "Z2_BOWLING_room_00",
+      "header": 0,
+      "roomShape": "cullable, 10 entries",
+      "displayLists": 11,
+      "role": "only room: octagonal hall with the rotating platform, corridor and door behind",
+      "collisionLightIndex": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a01",
+      "actorId": "0x1AE",
+      "params": "0x000F",
+      "class": "static-mesh",
+      "dls": [
+        "object_fu_kaiten:0x5D0"
+      ],
+      "status": "selected",
+      "note": "rotating platform, dyna collision 0x2D30; rest pose only (rotation and bounce are driven by En_Fu)"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02",
+      "actorId": "0x0B5",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_mu:0xB2B0 gHoneyAndDarlingSkel"
+      ],
+      "status": "optional",
+      "note": "Honey and Darling, one flex skeleton, mask D0d..D3d; skeletal pose deferred; spawns the day's targets"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato0",
+      "actorId": "0x1B3",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at path 2 point 0 (-2, 140, 297), yaw 180"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato1",
+      "actorId": "0x1B3",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (209, 200, 211), yaw 225"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato2",
+      "actorId": "0x1B3",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (292, 140, 2), yaw 270"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato3",
+      "actorId": "0x1B3",
+      "params": "0x0003",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (212, 200, -208), yaw 314"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato4",
+      "actorId": "0x1B3",
+      "params": "0x0004",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (0, 140, -290), yaw 0"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato5",
+      "actorId": "0x1B3",
+      "params": "0x0005",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (-212, 200, -210), yaw 45"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato6",
+      "actorId": "0x1B3",
+      "params": "0x0006",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (-294, 140, 2), yaw 90"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/room_00/a02/mato7",
+      "actorId": "0x1B3",
+      "params": "0x0007",
+      "class": "static-mesh",
+      "variant": "spawned",
+      "dls": [
+        "object_fu_mato:0x2720"
+      ],
+      "status": "selected",
+      "note": "Day 1 target at (-212, 200, 208), yaw 134"
+    },
+    {
+      "sourceKey": "Z2_BOWLING/h0/transition/ta0",
+      "actorId": "0x005",
+      "params": "0x0289",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x22B28",
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "closed pose; schedule type HONEY_DARLING_SHOP, closed from the street 22:00 to 06:00"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_BOWLINGCollisionHeader_000C74 (121 polys)",
+    "waterBoxes": 0,
+    "actorDynapoly": [
+      "a01 Bg_Fu_Kaiten object_fu_kaiten:0x2D30 (58 polys, moving)",
+      "Bg_Fu_Mizu object_fu_kaiten:0x37F8 (no polys, 1 water box, Day 2 only)",
+      "En_Fu_Mato object_fu_mato:0x23D4 (24 polys each, Days 1 and 3)",
+      "En_Fu_Kago object_fu_mato:0x15C0 (44 polys each, Day 2)"
+    ],
+    "actorCylinders": [
+      "En_Fu cylinder radius 20 height 50 (AC on Day 3 only)",
+      "En_Fu_Mato sphere radius 30 (Day 1) or 17 (Day 3)",
+      "En_Fu_Kago sphere radius 10"
+    ],
+    "note": "dyna collision headers decoded from the baserom object binaries (C-BIN), not from extracted C"
+  },
+  "portalIds": [
+    "portal.honey_darling.east_clock_town",
+    "portal.honey_darling.east_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.honey_darling.entry",
+    "cam.honey_darling.reverse_door",
+    "cam.honey_darling.fixture"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "a02 skeletal Honey and Darling (6 animations)",
+    "platform rotation, bounce and wood-gear sound",
+    "heart particles around a02",
+    "animated materials on segments 8-12",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [
+      "En_Fu_Kago x8 and Bg_Fu_Mizu (Day 2 only)",
+      "En_Fu_Mato x16 moving targets (Day 3, 8 for Deku)",
+      "target break, basket break and fall animations"
+    ],
+    "noGeometry": [
+      "a00",
+      "a03",
+      "a04"
+    ]
+  },
+  "unsupported": [
+    "three daily games: fee, 60 s timer, score, win flags, heart piece and purple rupee rewards",
+    "free Bombchus, bombs, arrows and Deku bubbles; invulnerability during rounds",
+    "22:00 kickout (En_Time_Tag) and door schedule closed 22:00 to 06:00",
+    "positional BGM NA_BGM_SHOOTING_GALLERY and sub BGM NA_BGM_TIMED_MINI_GAME",
+    "actor cs camera 0 (BOMBBASKET) and bgCam 1 (BOMBBOWL) behaviour",
+    "En_Test4 three-day controller"
+  ],
+  "evidence": [
+    "docs/city/interiors/honey_darling.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "sourceInspection": "scene and room C read in full; overlay mechanics read for En_Fu, En_Fu_Mato, En_Fu_Kago, Bg_Fu_Kaiten, Bg_Fu_Mizu, En_Time_Tag, En_Door schedule; object collision decoded from baserom binaries (C-BIN)"
+  }
+}
