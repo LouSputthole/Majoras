@@ -42,6 +42,8 @@ For native rebuilding, copy `zapd-windows/CMakeLists.txt` into the pinned decomp
 
 ## Blender and Unity
 
+Where the runs happen (owner decision 2026-11-08): on this Windows PC, not the Linux box (it cannot carry Unity 6000.5.11f1) and never in cloud CI (the inputs are ROM-derived and stay local). Rules: announce every Blender or Unity run to the owner before starting it (an interactive player launch locked the PC on 2026-11-08); prefer batch mode (Blender --background as below; Unity -batchmode -nographics -quit -executeMethod Majoras.Editor.ImportRomReference.Generate) over an interactive editor; never while the owner is gaming; record input and output hashes with every run (REC-02/REC-03).
+
 From the Majoras root:
 
 ```powershell
