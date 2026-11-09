@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.great_fairy_fountain_town",
+  "displayLabel": "Fairy's Fountain (Clock Town)",
+  "source": {
+    "sceneSymbol": "Z2_YOUSEI_IZUMI",
+    "sceneEnum": "SCENE_YOUSEI_IZUMI",
+    "sceneTableIndex": "0x26",
+    "entranceTableSceneIndex": "0x23",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or scene flags (unk_14 = 0)",
+      "Clock Town stray fairy not held (WEEKEVENTREG_08_80 clear)",
+      "no Deku Mask and no Great Fairy's Mask in inventory",
+      "magic not acquired",
+      "player form per profile (Human); first-cycle play is Deku (dossier U-07)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YOUSEI_IZUMI",
+      "bytes": 144320,
+      "sha256": "dec3850e4e685e2553a6ffdbe75424560192f9c0540ba2144f94ff6b9429676d"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_YOUSEI_IZUMI_room_00",
+      "bytes": 20704,
+      "sha256": "4def5b3cd8c493af90048ecf29c28d9a0c3e807cf549d3da480a6e4b3ee639a6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YOUSEI_IZUMI/Z2_YOUSEI_IZUMI.c",
+      "bytes": 748454,
+      "sha256": "32b696d0c11e21897aca2ad7720e1b2e27515c10910df69a695efda31d488a32"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_YOUSEI_IZUMI/Z2_YOUSEI_IZUMI_room_00.c",
+      "bytes": 34103,
+      "sha256": "f13242b1a0e511db3cd302f7133b55b482b2b9dc1d8f2273f8e52f24e365d3ba"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_YOUSEI_IZUMI/Z2_YOUSEI_IZUMI.xml",
+      "bytes": 1576,
+      "sha256": "3c093a1f8750a7e4f8295adc667f05821d2ada4cc6a8e40c03b15af69e75a7a1"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "own scene; five fountain rooms laid out 1200 u apart on x (room_00 at x 2400); no exterior shares this frame"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -2772,
+        -32,
+        -1121
+      ],
+      "max": [
+        2770,
+        369,
+        857
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        2028,
+        -32,
+        -1121
+      ],
+      "max": [
+        2770,
+        369,
+        857
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        20.28,
+        -0.32,
+        -8.57
+      ],
+      "max": [
+        27.7,
+        3.69,
+        11.21
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.great_fairy_fountain_town.pool",
+      "sourceWaterBox": {
+        "xMin": 2101,
+        "xMax": 2699,
+        "zMin": -1059,
+        "zMax": -461,
+        "surfaceY": -20,
+        "properties": "0x00000A00",
+        "bgCamIndex": 0,
+        "lightIndex": 10,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          21.01,
+          26.99
+        ],
+        "z": [
+          4.61,
+          10.59
+        ],
+        "surfaceY": -0.2
+      },
+      "poolFloorY": [
+        -30,
+        10
+      ],
+      "bankFloorY": [
+        32,
+        42
+      ],
+      "surfaceMesh": "INFERRED: room XLU entry 5 DL_004FB0 centered at Y -20, segment 10 two-texture scroll",
+      "behavior": "UNKNOWN: shallow wading (about 10 u over the deepest floor); gameplay decision"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.gff.spawn0_entry",
+      "source": [
+        2400,
+        20,
+        360
+      ],
+      "unity": [
+        24.0,
+        0.2,
+        -3.6
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.gff.spawn5_pool_edge",
+      "source": [
+        2400,
+        -15,
+        -454
+      ],
+      "unity": [
+        24.0,
+        -0.15,
+        4.54
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.gff.fairy_center",
+      "source": [
+        2400,
+        -20,
+        -750
+      ],
+      "unity": [
+        24.0,
+        -0.2,
+        7.5
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.gff.exit_field_edge",
+      "source": [
+        2398,
+        20,
+        384
+      ],
+      "unity": [
+        23.98,
+        0.2,
+        -3.84
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.great_fairy_fountain_town.room_00",
+      "sourceRoom": "Z2_YOUSEI_IZUMI_room_00",
+      "roomShape": "cullable, 9 entries",
+      "displayLists": 11,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_YOUSEI_IZUMI/h0/room_00/a02/child0-23",
+      "actorId": "0x1B0",
+      "params": "0x0001",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:gStrayFairySkel 0x2CA98"
+      ],
+      "status": "optional",
+      "note": "24 runtime En_Elforg around a02; skeletal billboard, approximation must be labeled"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_YOUSEI_IZUMICollisionHeader_01BDE8 polys 0-405 of 2030 (room_00 slice; one header for all five fountains)",
+    "waterBoxes": 1,
+    "actorDynapoly": [],
+    "actorCylinders": null,
+    "note": "actorCylinders: NI"
+  },
+  "portalIds": [
+    "portal.great_fairy_fountain_town.north_clock_town",
+    "portal.great_fairy_fountain_town.z2_21miturinmae",
+    "portal.great_fairy_fountain_town.z2_12hakuginmae",
+    "portal.great_fairy_fountain_town.z2_31misaki",
+    "portal.great_fairy_fountain_town.z2_ikana"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.great_fairy_fountain_town.entry",
+    "cam.great_fairy_fountain_town.reverse_door",
+    "cam.great_fairy_fountain_town.fixture"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "a02 children: 24 En_Elforg stray fairies (optional proxy)",
+    "rooms 01-04 (other regions' fountains) and their four external exits",
+    "alternate header 1 (credits)",
+    "Great Fairy, beam, particles and reward cutscenes",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [
+      "a00 Demo_Getitem (draw only on cue 110)",
+      "a01 Bg_Dy_Yoseizo (scale 0, draw only on cue 103)"
+    ],
+    "noGeometry": [
+      "a02 En_Elfgrp controller",
+      "a03 En_Test4",
+      "a04 Elf_Msg3 trigger"
+    ]
+  },
+  "unsupported": [
+    "two-texture scroll animated materials (3)",
+    "stray fairy flight, sparkle and billboard",
+    "conveyor exit floor",
+    "floor property 9 and wall type 1 behavior",
+    "light-mode settings (per-surface light index)",
+    "Great Fairy cutscenes and awards"
+  ],
+  "evidence": [
+    "docs/city/interiors/great_fairy_fountain_town.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

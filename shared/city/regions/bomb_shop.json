@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.bomb_shop",
+  "displayLabel": "Bomb Shop",
+  "source": {
+    "sceneSymbol": "Z2_BOMYA",
+    "sceneEnum": "SCENE_BOMYA",
+    "sceneTableIndex": "0x68",
+    "entranceTableSceneIndex": "0x65",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event flags (slot 0 = Bomb Bag 20)",
+      "player form Human, no mask",
+      "shopkeeper pose UNKNOWN (waiting at path start or seated; player-position driven)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BOMYA",
+      "bytes": 51568,
+      "sha256": "8b02d101e7fe3e7e46d72e64780402cf50381b63ef9e28bfba2b6f5f080f7c73"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BOMYA_room_00",
+      "bytes": 32480,
+      "sha256": "852151e1eef6d6db9c4a2216194a5d59ff95cba39175ce63bf7105ad8417d43b"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BOMYA/Z2_BOMYA.c",
+      "sha256": "017de0f8c72ae46a0f5f8552c994b538d5dcc1c5e13120a1f078c404cfe996f7"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BOMYA/Z2_BOMYA_room_00.c",
+      "sha256": "936b43b15b410246ed6e25cc96ab71fab76cd6eebfaa72b94f607002086d1be1"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_BOMYA/Z2_BOMYA.xml",
+      "sha256": "d0bae3c2a7643d1d95e8a31e7523a0380597c6774c786c56f22fe41babe0fcf1"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior scene with its own origin; West door at Y 165 vs interior Y -30 (section 2.5)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -24,
+        -33,
+        -225
+      ],
+      "max": [
+        522,
+        264,
+        540
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -15,
+        -30,
+        -225
+      ],
+      "max": [
+        465,
+        225,
+        540
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -0.15,
+        -0.3,
+        -5.4
+      ],
+      "max": [
+        4.65,
+        2.25,
+        2.25
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.bs.spawn0_inside_door",
+      "source": [
+        61,
+        -30,
+        366
+      ],
+      "unity": [
+        0.61,
+        -0.3,
+        -3.66
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.bs.door_ta0",
+      "source": [
+        60,
+        -30,
+        405
+      ],
+      "unity": [
+        0.6,
+        -0.3,
+        -4.05
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.bs.counter_seat",
+      "source": [
+        186,
+        -30,
+        -8
+      ],
+      "unity": [
+        1.86,
+        -0.3,
+        0.08
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.bs.counter_top_item1",
+      "source": [
+        203,
+        -8,
+        69
+      ],
+      "unity": [
+        2.03,
+        -0.08,
+        -0.69
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.bomb_shop.room_00",
+      "sourceRoom": "Z2_BOMYA_room_00",
+      "roomShape": "cullable, 14 entries",
+      "displayLists": 22,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a04",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "wall clock scale 0.02, time-posed"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a05",
+      "actorId": "0x242",
+      "params": "0x0009",
+      "class": "static-mesh",
+      "dls": [
+        "object_oF1d_map:0x91A8"
+      ],
+      "status": "selected",
+      "note": "rolled-up idle DL; unrolls to skeleton on talk"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a06",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a00/item0",
+      "actorId": "0x002",
+      "params": "0x0017",
+      "class": "static-mesh",
+      "dls": [
+        "object_gi_bombpouch:0xB90",
+        "object_gi_bombpouch:0xAD0",
+        "object_gi_bombpouch:0xB30",
+        "object_gi_bombpouch:0xD98"
+      ],
+      "status": "selected",
+      "variant": "spawned",
+      "note": "fresh save; 0x0018 with WEEKEVENTREG_RECOVERED_STOLEN_BOMB_BAG"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a00/item1",
+      "actorId": "0x002",
+      "params": "0x0019",
+      "class": "static-mesh",
+      "dls": [
+        "object_gi_bomb_2:0x4B0"
+      ],
+      "status": "selected",
+      "variant": "spawned"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/room_00/a00/item2",
+      "actorId": "0x002",
+      "params": "0x001A",
+      "class": "static-mesh",
+      "dls": [
+        "object_gi_bomb_1:0x9A0"
+      ],
+      "status": "selected",
+      "variant": "spawned"
+    },
+    {
+      "sourceKey": "Z2_BOMYA/h0/transition/ta0",
+      "actorId": "0x005",
+      "params": "0x0286",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28",
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "variant": "posed-skeletal",
+      "note": "closed pose"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_BOMYACollisionHeader_000D84 (124 polys)",
+    "actorDynapoly": [],
+    "actorCylinders": null,
+    "note": "actorCylinders: NI (En_Sob1 radius 50, En_Baba, En_S_Goro)"
+  },
+  "portalIds": [
+    "portal.bomb_shop.west_clock_town"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a00 En_Sob1 skeletal shopkeeper (two source poses)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a03"
+    ],
+    "stateOrSchedule": [],
+    "noGeometry": [
+      "a01",
+      "a02",
+      "a07"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "5 room billboard quads (segment 0x01 matrix)",
+    "wall clock time-driven pose unless implemented",
+    "shop goods spin on selection",
+    "Obj_Hariko quake bob",
+    "positional shop BGM"
+  ],
+  "evidence": [
+    "docs/city/interiors/bomb_shop.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

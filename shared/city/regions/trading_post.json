@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.trading_post",
+  "displayLabel": "Trading Post",
+  "source": {
+    "sceneSymbol": "Z2_8ITEMSHOP",
+    "sceneEnum": "SCENE_8ITEMSHOP",
+    "sceneTableIndex": "0x34",
+    "entranceTableSceneIndex": "0x31",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human, no mask worn",
+      "venue open: door schedule none at 12:00, Curiosity Shop Man present, day stock sShops[0]"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_8ITEMSHOP",
+      "bytes": 41584,
+      "sha256": "5e1fce4d894017b2c1136575485b5b7c07695de0d5e3c1724035c9a933bed912"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_8ITEMSHOP_room_00",
+      "bytes": 51760,
+      "sha256": "8a0372ba6771df1b3c7228f54f04d14af669e96dfb74dd6589b92c9aeaa42de8"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_8ITEMSHOP/Z2_8ITEMSHOP.c",
+      "bytes": 34580,
+      "sha256": "c6e1547829f682046881015673885041212f518b6b29c08ea8630e6244870007"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_8ITEMSHOP/Z2_8ITEMSHOP_room_00.c",
+      "bytes": 95701,
+      "sha256": "ba3735bac600de0e3e786c6954e595559d9a542b952b137a445b49200f3a2b72"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_8ITEMSHOP/Z2_8ITEMSHOP.xml",
+      "bytes": 410,
+      "sha256": "b5fe3dae2d553bf3d9333cd28263b5da7c3e6924cfd1ac11eb71b9ae863d900b"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior local frame: door TA#0 at (0, 15, 225) vs the West street door at (-1796, 105, -204); no shared geometry"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -310,
+        -41,
+        -385
+      ],
+      "max": [
+        310,
+        280,
+        360
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -210,
+        -40,
+        -210
+      ],
+      "max": [
+        210,
+        220,
+        360
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -2.1,
+        -0.4,
+        -3.6
+      ],
+      "max": [
+        2.1,
+        2.2,
+        2.1
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.trading_post.channel",
+      "sourceWaterBox": {
+        "xMin": -240,
+        "xMax": 240,
+        "zMin": -385,
+        "zMax": 95,
+        "surfaceY": -6,
+        "properties": "0x00001F00",
+        "bgCamIndex": 0,
+        "lightIndex": 31,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -2.4,
+          2.4
+        ],
+        "z": [
+          -0.95,
+          3.85
+        ],
+        "surfaceY": -0.06
+      },
+      "poolFloorY": [
+        -15,
+        -15
+      ],
+      "bankFloorY": [
+        0,
+        0
+      ],
+      "surfaceMesh": "room DL_00C150 at Y -6, two-texture scroll on segment 8",
+      "behavior": "depth at most 9: wading only (Human swims above 32); surface 6 current inactive below depth 20"
+    },
+    {
+      "id": "water.trading_post.scarecrow_pool",
+      "sourceWaterBox": {
+        "xMin": -158,
+        "xMax": -90,
+        "zMin": 128,
+        "zMax": 204,
+        "surfaceY": -6,
+        "properties": "0x00001F00",
+        "bgCamIndex": 0,
+        "lightIndex": 31,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -1.58,
+          -0.9
+        ],
+        "z": [
+          -2.04,
+          -1.28
+        ],
+        "surfaceY": -0.06
+      },
+      "poolFloorY": [
+        -13,
+        -13
+      ],
+      "bankFloorY": [
+        0,
+        0
+      ],
+      "surfaceMesh": "room DL_00C2E8 at Y -6, two-texture scroll on segment 9",
+      "behavior": "depth 7: wading only; scarecrow a12 stands in it"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.tp.spawn0_entry",
+      "source": [
+        -1,
+        15,
+        189
+      ],
+      "unity": [
+        -0.01,
+        0.15,
+        -1.89
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tp.door_ta0",
+      "source": [
+        0,
+        15,
+        225
+      ],
+      "unity": [
+        0.0,
+        0.15,
+        -2.25
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tp.counter_talk_center",
+      "source": [
+        0,
+        25,
+        -75
+      ],
+      "unity": [
+        0.0,
+        0.25,
+        0.75
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.tp.wall_clock",
+      "source": [
+        -98,
+        143,
+        -206
+      ],
+      "unity": [
+        -0.98,
+        1.43,
+        2.06
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.trading_post.room_00",
+      "sourceRoom": "Z2_8ITEMSHOP_room_00",
+      "roomShape": "cullable, 12 entries",
+      "displayLists": 18,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/ta0",
+      "actorId": "0x005",
+      "params": "0x0283",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:gDoorSkel",
+        "object_wdor02:0x548"
+      ],
+      "status": "selected",
+      "variant": "posed-skeletal",
+      "note": "rest pose approximated"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a11",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "noon pose from clock time"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a13",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80",
+        "object_hariko:0x110"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a08",
+      "actorId": "0x082",
+      "params": "0x030A",
+      "class": "static-mesh",
+      "dls": [
+        "object_tsubo:0x17C0"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a02",
+      "actorId": "0x041",
+      "params": "0xFF0B",
+      "class": "static-mesh",
+      "dls": [
+        "object_wood02:0x90"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a03",
+      "actorId": "0x041",
+      "params": "0xFF0B",
+      "class": "static-mesh",
+      "dls": [
+        "object_wood02:0x90"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a04",
+      "actorId": "0x041",
+      "params": "0xFF0B",
+      "class": "static-mesh",
+      "dls": [
+        "object_wood02:0x90"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a05",
+      "actorId": "0x041",
+      "params": "0xFF0B",
+      "class": "static-mesh",
+      "dls": [
+        "object_wood02:0x90"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_8ITEMSHOP/h0/room_00/a01/items0-7",
+      "actorId": "0x002",
+      "params": "0x0009,0x0007,0x0004,0x0008,0x0003,0x0005,0x0006,0x000A",
+      "class": "static-mesh",
+      "dls": [
+        "GID_DEKU_NUTS",
+        "GID_DEKU_STICK",
+        "GID_ARROWS_LARGE",
+        "GID_ARROWS_MEDIUM",
+        "GID_FAIRY",
+        "GID_POTION_GREEN",
+        "GID_SHIELD_HERO",
+        "GID_POTION_RED"
+      ],
+      "status": "selected",
+      "variant": "spawned",
+      "note": "GetItem_Draw models spawned by a01 from sShops[0]"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_8ITEMSHOPCollisionHeader_001738 (241 polys, 2 water boxes)",
+    "waterBoxes": 2,
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "a08 Obj_Tsubo r12 h32"
+    ],
+    "note": "schedule door loads no dynapoly (z_en_door.c:338-341); NPC and fish colliders NI"
+  },
+  "portalIds": [
+    "portal.trading_post.west_clock_town",
+    "portal.trading_post.west_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a01 En_Ossan (gFsnSkel)",
+    "a12 En_Kakasi (object_ka skeleton)",
+    "a06 En_Fish (swimming skeleton)",
+    "door skeleton animation",
+    "water texture scroll",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [
+      "a07"
+    ],
+    "noGeometry": [
+      "a00",
+      "a09",
+      "a10",
+      "a14"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "shop transaction UI, cursor and cutscene cameras",
+    "prices (message data)",
+    "time-driven wall clock rotation",
+    "positional BGM",
+    "water texture scroll",
+    "inactive water current"
+  ],
+  "evidence": [
+    "docs/city/interiors/trading_post.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}
