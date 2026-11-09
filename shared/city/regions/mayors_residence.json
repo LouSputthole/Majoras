@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.mayors_residence",
+  "displayLabel": "The Mayor's Residence",
+  "source": {
+    "sceneSymbol": "Z2_SONCHONOIE",
+    "sceneEnum": "SCENE_SONCHONOIE",
+    "sceneTableIndex": "0x12",
+    "entranceTableSceneIndex": "0x00",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags (WEEKEVENTREG_ATTENDED_MAYOR_MEETING, WEEKEVENTREG_RESOLVED_MAYOR_MEETING, WEEKEVENTREG_86_20 clear)",
+      "player form Human, no mask worn, Kafei's Mask not owned",
+      "arrival by entrance 0 from East Clock Town, room_00 loaded first",
+      "Day 1 12:00: Gorman on path 7 (schedule result 29), Aroma result 1, meeting unresolved"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SONCHONOIE",
+      "bytes": 29952,
+      "sha256": "d5b204bf68129ba888c4f83152b7963e71702fd539b4884fae8fa2ec9063b43b"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SONCHONOIE_room_00",
+      "bytes": 38352,
+      "sha256": "df594cec98f21cc151425f5812a07db4de4d0c74c09999b85c028bc140ac8999"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SONCHONOIE_room_01",
+      "bytes": 28544,
+      "sha256": "5d5e3da1a45b0bab2b3f783596cd5321f28dc0757cd69a96c49613ea2bb0f92b"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SONCHONOIE_room_02",
+      "bytes": 41328,
+      "sha256": "90a03d827c35688b13c747e6ca917e196f0ede10ff188d2c21e35a9c43461dff"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SONCHONOIE_room_03",
+      "bytes": 40304,
+      "sha256": "74b1933d8931c742b677875498a406073332c3a2af37d70fa25a4e5f28b82d1f"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE.c",
+      "bytes": 72105,
+      "sha256": "d65903442f6d2b62d721a4293942408a8f59db241ac9cc3bbd16bc282573acd6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE_room_00.c",
+      "bytes": 64894,
+      "sha256": "f47abfc183ba1d25b62a357e361de3ddbec23c67766e22dacbe5468b9ffdd138"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE_room_01.c",
+      "bytes": 44432,
+      "sha256": "133fa49dc903145c4d0923dd62405d22a0b513da853360dbcaf1684cac653a91"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE_room_02.c",
+      "bytes": 63566,
+      "sha256": "5d6a2a4c440ec53e6c5d2e2e41cf268e4c5d62c8bde9418cbd9e17706e7bf661"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE_room_03.c",
+      "bytes": 56968,
+      "sha256": "096914f06a19a61128787bb662b2075ef21cb6e56b5bc8a8efa9db47d8cb6521"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_SONCHONOIE/Z2_SONCHONOIE.xml",
+      "bytes": 1951,
+      "sha256": "ad009ec42e6ca2371bada01dfa520820d76a760b17278420d4c4260b1571ab13"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "C: interior frame near the origin (main door TA3 at (0, 0, 345)); East's door TA5 is at (1100, 200, -2020); the link is the entrance pair 0x0000 / 0xD270, not shared coordinates"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -315,
+        0,
+        -495
+      ],
+      "max": [
+        675,
+        182,
+        480
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -315,
+        0,
+        -480
+      ],
+      "max": [
+        675,
+        180,
+        480
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -3.15,
+        0.0,
+        -4.8
+      ],
+      "max": [
+        6.75,
+        1.8,
+        4.8
+      ]
+    }
+  },
+  "water": [],
+  "anchors": [
+    {
+      "id": "anchor.mr.spawn0_entry",
+      "source": [
+        3,
+        0,
+        304
+      ],
+      "unity": [
+        0.03,
+        0.0,
+        -3.04
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.main_door_ta3",
+      "source": [
+        0,
+        0,
+        345
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        -3.45
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.office_door_ta0",
+      "source": [
+        -165,
+        0,
+        -150
+      ],
+      "unity": [
+        -1.65,
+        0.0,
+        1.5
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.drawing_room_door_ta1",
+      "source": [
+        165,
+        0,
+        -150
+      ],
+      "unity": [
+        1.65,
+        0.0,
+        1.5
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.bedroom_door_ta2",
+      "source": [
+        345,
+        0,
+        -435
+      ],
+      "unity": [
+        3.45,
+        0.0,
+        4.35
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.spawn1_office",
+      "source": [
+        -165,
+        0,
+        -289
+      ],
+      "unity": [
+        -1.65,
+        0.0,
+        2.89
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mr.desk_cow_statue",
+      "source": [
+        -65,
+        48,
+        -53
+      ],
+      "unity": [
+        -0.65,
+        0.48,
+        0.53
+      ],
+      "status": "proposed",
+      "note": "on the Y 40 reception desk top (poly 90)"
+    },
+    {
+      "id": "anchor.mr.wall_clock",
+      "source": [
+        0,
+        114,
+        -116
+      ],
+      "unity": [
+        0.0,
+        1.14,
+        1.16
+      ],
+      "status": "proposed",
+      "note": "elevation anchor"
+    },
+    {
+      "id": "anchor.mr.bedroom_talk_spot",
+      "source": [
+        452,
+        34,
+        -4
+      ],
+      "unity": [
+        4.52,
+        0.34,
+        0.04
+      ],
+      "status": "proposed",
+      "note": "En_Talk on the Y 34 surface (poly 451)"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.mayors_residence.room_00",
+      "sourceRoom": "Z2_SONCHONOIE_room_00",
+      "header": 0,
+      "roomShape": "cullable, 6 entries",
+      "displayLists": 24,
+      "role": "lobby and reception (arrival room)",
+      "collisionLightIndex": 31
+    },
+    {
+      "id": "loc.mayors_residence.room_01",
+      "sourceRoom": "Z2_SONCHONOIE_room_01",
+      "header": 0,
+      "roomShape": "cullable, 8 entries",
+      "displayLists": 23,
+      "role": "Mayor's office, meeting room",
+      "collisionLightIndex": 31
+    },
+    {
+      "id": "loc.mayors_residence.room_02",
+      "sourceRoom": "Z2_SONCHONOIE_room_02",
+      "header": 0,
+      "roomShape": "cullable, 9 entries",
+      "displayLists": 27,
+      "role": "Madame Aroma's drawing room",
+      "collisionLightIndex": 31
+    },
+    {
+      "id": "loc.mayors_residence.room_03",
+      "sourceRoom": "Z2_SONCHONOIE_room_03",
+      "header": 0,
+      "roomShape": "cullable, 7 entries",
+      "displayLists": 21,
+      "role": "bedroom (occupant not stated in source)",
+      "collisionLightIndex": 31
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/transition/ta3",
+      "actorId": "0x005",
+      "params": "0x0291",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "object_wdor01:0x548 gLotteryCuriosityShopMayorHouseDoorDL",
+        "gameplay_keep:0x22B28 gDoorSkel"
+      ],
+      "status": "selected",
+      "note": "main door, closed rest pose approximated; exit floor polys 60/61 behind it"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/ta0-ta2",
+      "actorId": "0x005",
+      "params": "0x0292,0x0293,0x0294",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x20BB8 gDoorLeftDL",
+        "gameplay_keep:0x20D00 gDoorRightDL",
+        "gameplay_keep:0x22B28 gDoorSkel"
+      ],
+      "status": "selected",
+      "note": "inner room-swap doors, always open"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_00/a04",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80 gHarikoBodyDL",
+        "object_hariko:0x110 gHarikoFaceDL"
+      ],
+      "status": "selected",
+      "note": "cow statue on the reception desk, scale 0.1, yaw 19"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_00/a08",
+      "actorId": "0x19C",
+      "params": "0xA07F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518 gWallClockClockFaceDL",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "small wall clock (type 10), scale 0.01, hands at 12:00"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a03",
+      "actorId": "0x20A",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_hariko:0x80 gHarikoBodyDL",
+        "object_hariko:0x110 gHarikoFaceDL"
+      ],
+      "status": "selected",
+      "note": "cow statue in the office, scale 0.1, yaw 302"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_02/a04",
+      "actorId": "0x004",
+      "params": "0x07F4",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x7D590 gEffFire1DL"
+      ],
+      "status": "optional",
+      "note": "fireplace flame, scale 0.004, point light r300, Days 0-2 mask"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_03/a02",
+      "actorId": "0x004",
+      "params": "0x07F4",
+      "class": "billboard-effect",
+      "dls": [
+        "gameplay_keep:0x7D590 gEffFire1DL"
+      ],
+      "status": "optional",
+      "note": "fireplace flame, scale 0.004, point light r300, Days 0-2 mask"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_00/a06",
+      "actorId": "0x290",
+      "params": "0x0005",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_bg:0x11B60 object_bg_Skel_011B60"
+      ],
+      "status": "optional",
+      "note": "receptionist, present Days 0-2; skeletal pose deferred"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_00/a01",
+      "actorId": "0x0A4",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_in2:0x78B0 object_in2_Skel_0078B0"
+      ],
+      "status": "optional",
+      "note": "Gorman, Day 1 10:00-12:20 only; walking path 7 at 12:00; singleton"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a01",
+      "actorId": "0x26F",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_dt:0xB0CC object_dt_Skel_00B0CC"
+      ],
+      "status": "optional",
+      "note": "Mayor Dotour, all half-days; distress loop before the meeting"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a05",
+      "actorId": "0x26B",
+      "params": "0x0001",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_toryo:0x7150 object_toryo_Skel_007150"
+      ],
+      "status": "optional",
+      "note": "Mutoh, until RESOLVED_MAYOR_MEETING or Day 3 night"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a06",
+      "actorId": "0x26D",
+      "params": "0x0001",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_sdn:0xD640 gSoldierSkel"
+      ],
+      "status": "optional",
+      "note": "soldier, same gate as Mutoh"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a07",
+      "actorId": "0x26C",
+      "params": "0x0001",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_bai:0x7908 object_bai_Skel_007908"
+      ],
+      "status": "optional",
+      "note": "Viscen, same gate as Mutoh"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_01/a08",
+      "actorId": "0x09C",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_daiku:0xA850 object_daiku_Skel_00A850"
+      ],
+      "status": "optional",
+      "note": "carpenter, same gate as Mutoh"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_02/a00",
+      "actorId": "0x262",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_al:0xA0D8 gMadameAromaSkel"
+      ],
+      "status": "optional",
+      "note": "Madame Aroma, Days 1-2 08:00-20:00; schedule result 1 at 12:00"
+    },
+    {
+      "sourceKey": "Z2_SONCHONOIE/h0/room_02/a02",
+      "actorId": "0x234",
+      "params": "0x050B",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_zm:0xA978 gTotoSkel"
+      ],
+      "status": "optional",
+      "note": "Toto seated, Day 1 and Day 2 daytime mask"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_SONCHONOIECollisionHeader_0036D4 (495 vertices, 535 polys, 22 surface types); one scene-level header covers rooms 00-03",
+    "waterBoxes": 0,
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "room_00/a01 En_Gm r14 h62 plus sphere",
+      "room_01/a01 En_Dt r25 h70",
+      "room_01/a05 En_Muto r30 h60",
+      "room_01/a06 En_Heishi r30 h60",
+      "room_01/a07 En_Baisen r30 h60",
+      "room_01/a08 En_Daiku r30 h60",
+      "room_02/a00 En_Al r14 h62",
+      "room_02/a02 En_Toto r20 h60"
+    ],
+    "note": "En_Recepgirl and Obj_Hariko have no collider; the four doors load no collision (not framed)"
+  },
+  "portalIds": [
+    "portal.mayors_residence.east_clock_town",
+    "portal.mayors_residence.east_clock_town.kickout",
+    "portal.mayors_residence.mayors_residence.r0_r1",
+    "portal.mayors_residence.mayors_residence.r1_r0",
+    "portal.mayors_residence.mayors_residence.r0_r2",
+    "portal.mayors_residence.mayors_residence.r2_r0",
+    "portal.mayors_residence.mayors_residence.r2_r3",
+    "portal.mayors_residence.mayors_residence.r3_r2"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.mayors_residence.entry",
+    "cam.mayors_residence.reverse_door",
+    "cam.mayors_residence.fixture",
+    "cam.mayors_residence.room_01",
+    "cam.mayors_residence.room_02",
+    "cam.mayors_residence.room_03"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "skeletal NPC poses and animation (9 NPCs present at noon)",
+    "flame point lights and texture scroll",
+    "Link and Tatl",
+    "LOD-branch neighbour-room copies (room_00 3 branches, room_02 2)",
+    "door opening animation"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "room_00/a00 En_Light night candle",
+      "room_01/a00 En_Light night candle"
+    ],
+    "stateOrSchedule": [
+      "room_00/a02 En_Heishi p0 (until RESOLVED_MAYOR_MEETING or Day 3 night)",
+      "room_00/a05 En_Baisen p0 (same gate)",
+      "room_02/a01 En_Gm duplicate (singleton kill)"
+    ],
+    "noGeometry": [
+      "room_00/a03 En_Time_Tag",
+      "room_00/a07 En_Test4",
+      "room_01/a02 En_Time_Tag",
+      "room_01/a04 En_Test4",
+      "room_02/a03 En_Time_Tag",
+      "room_02/a05 En_Test4",
+      "room_03/a00 En_Talk",
+      "room_03/a01 En_Time_Tag",
+      "room_03/a03 En_Test4"
+    ]
+  },
+  "unsupported": [
+    "schedule-driven NPC movement and NPC door opening (Gorman)",
+    "door hours and the 20:00 kickout",
+    "meeting and Couple's Mask cutscenes and cameras",
+    "gsSPBranchLessZraw LOD branches",
+    "wall type 1 no-ledge-climb flag",
+    "billboard flames",
+    "scene_texture_01 external textures (not extracted)"
+  ],
+  "evidence": [
+    "docs/city/interiors/mayors_residence.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "sourceInspection": "4 rooms, 28 room actors, 4 doors, collision, schedules and story flags indexed; no capture",
+    "objectExtraction": "only object_obj_tokeidai exists locally; section 9 lists the rest"
+  }
+}

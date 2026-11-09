@@ -1,0 +1,337 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.milk_bar",
+  "displayLabel": "Milk Bar",
+  "source": {
+    "sceneSymbol": "Z2_MILK_BAR",
+    "sceneEnum": "SCENE_MILK_BAR",
+    "sceneTableIndex": "0x15",
+    "entranceTableSceneIndex": "0x12",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags (WEEKEVENTREG_ESCORTED_CREMIA clear)",
+      "player form Human, no mask worn",
+      "12:00 inside the free door window (sDoorSch_MilkBar returns none 10:00-21:00)"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_MILK_BAR",
+      "bytes": 54224,
+      "sha256": "8e65185a4415d599692e8a107d19a5b9affb150124c590df3a617394ec3dcd80"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_MILK_BAR_room_00",
+      "bytes": 44928,
+      "sha256": "ce13695d88bf45b355ed88cb9500705a8a45846198cffbef44b2230a91c2b402"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_MILK_BAR/Z2_MILK_BAR.c",
+      "sha256": "24649989273d7eb561568ee0e559031bccfa90d242645a0f1e039f4f1cd27e45"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_MILK_BAR/Z2_MILK_BAR_room_00.c",
+      "sha256": "52cd941e324d763552edc0c3de22352d564ff33a52eedbec676e67bf71f4b2e9"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_MILK_BAR/Z2_MILK_BAR.xml",
+      "sha256": "0aeed311726256c92e53c85039d87846ee7dc315875dc2082ab0f42fffd0902a"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior scene with its own origin; East street door TA6 at (1038, 100, -931) vs interior door TA0 at (-200, 152, 410) (section 2.5)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -260,
+        -16,
+        -600
+      ],
+      "max": [
+        260,
+        500,
+        520
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -260,
+        -16,
+        -600
+      ],
+      "max": [
+        228,
+        500,
+        520
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -2.6,
+        -0.16,
+        -5.2
+      ],
+      "max": [
+        2.28,
+        5.0,
+        6.0
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.mb.spawn0_landing",
+      "source": [
+        -200,
+        152,
+        360
+      ],
+      "unity": [
+        -2.0,
+        1.52,
+        -3.6
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mb.door_ta0",
+      "source": [
+        -200,
+        152,
+        410
+      ],
+      "unity": [
+        -2.0,
+        1.52,
+        -4.1
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.mb.barten_day_floor",
+      "source": [
+        -28,
+        -8,
+        -195
+      ],
+      "unity": [
+        -0.28,
+        -0.08,
+        1.95
+      ],
+      "status": "proposed",
+      "note": "main floor Y -8"
+    },
+    {
+      "id": "anchor.mb.barten_counter_back",
+      "source": [
+        161,
+        0,
+        -10
+      ],
+      "unity": [
+        1.61,
+        0.0,
+        0.1
+      ],
+      "status": "proposed",
+      "note": "behind-counter floor Y 0"
+    },
+    {
+      "id": "anchor.mb.stage_human_spotlight",
+      "source": [
+        -15,
+        22,
+        -396
+      ],
+      "unity": [
+        -0.15,
+        0.22,
+        3.96
+      ],
+      "status": "proposed",
+      "note": "stage deck Y 22"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.milk_bar.room_00",
+      "sourceRoom": "Z2_MILK_BAR_room_00",
+      "header": 0,
+      "roomShape": "cullable, 8 entries",
+      "displayLists": 26
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_MILK_BAR/h0/room_00/a04",
+      "actorId": "0x199",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_milkbar:0x2CD0",
+        "object_milkbar:0x2BA0"
+      ],
+      "status": "selected",
+      "note": "Dm_Char07 stage, scale 0.1, dynapoly object_milkbar_Colheader_006688"
+    },
+    {
+      "sourceKey": "Z2_MILK_BAR/h0/transition/ta0",
+      "actorId": "0x005",
+      "params": "0x028A",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "object_wdor04:0x508"
+      ],
+      "status": "selected",
+      "note": "closed pose on gameplay_keep gDoorSkel limb 4; alternates use 0x007F with gameplay_keep door DLs"
+    },
+    {
+      "sourceKey": "Z2_MILK_BAR/h0/room_00/a13",
+      "actorId": "0x28B",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_milk_bin:0x4B0"
+      ],
+      "status": "optional",
+      "note": "drawn only with WEEKEVENTREG_ESCORTED_CREMIA"
+    },
+    {
+      "sourceKey": "Z2_MILK_BAR/h0/room_00/a14",
+      "actorId": "0x28B",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_milk_bin:0x4B0"
+      ],
+      "status": "optional",
+      "note": "drawn only with WEEKEVENTREG_ESCORTED_CREMIA"
+    },
+    {
+      "sourceKey": "Z2_MILK_BAR/h0/room_00/a15",
+      "actorId": "0x28B",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_milk_bin:0x4B0"
+      ],
+      "status": "optional",
+      "note": "drawn only with WEEKEVENTREG_ESCORTED_CREMIA"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_MILK_BARCollisionHeader_002D1C (408 polys)",
+    "waterBoxes": 0,
+    "actorDynapoly": [
+      "a04 object_milkbar_Colheader_006688 (Dm_Char07 stage)"
+    ],
+    "actorCylinders": null,
+    "note": "actorCylinders NI except Obj_Milk_Bin r12 h30 (section 4.7)"
+  },
+  "portalIds": [
+    "portal.milk_bar.east_clock_town",
+    "portal.milk_bar.east_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [
+    "cam.milk_bar.entry",
+    "cam.milk_bar.reverse_door",
+    "cam.milk_bar.fixture"
+  ],
+  "routeIds": [],
+  "omissions": [
+    "a03 En_Tab Mr. Barten skeletal (gBartenSkel, schedule result 1 at (-28, -8, -195))",
+    "alternate headers 1-4 (end-credits layers, sections 1.2 and 4.3-4.6)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a00",
+      "a01",
+      "a02",
+      "a06",
+      "a08",
+      "a17"
+    ],
+    "stateOrSchedule": [
+      "a07",
+      "a12"
+    ],
+    "noGeometry": [
+      "a05",
+      "a09",
+      "a10",
+      "a11",
+      "a16"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "door schedule, Romani's Mask membership gate and 21:00/05:00 kickouts",
+    "CAM_SET_FIXED0 stage camera (bgCam 0)",
+    "Dm_Char07 stage dynapoly until object_milkbar is extracted",
+    "positional Obj_Sound BGM",
+    "sound-check cutscene chain, spotlights, Link clones and Ballad playback",
+    "WALL_TYPE_1 no-ledge-climb walls"
+  ],
+  "evidence": [
+    "docs/city/interiors/milk_bar.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}
