@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.clock_tower_interior",
+  "displayLabel": "Clock Tower Interior",
+  "source": {
+    "sceneSymbol": "Z2_INSIDETOWER",
+    "sceneEnum": "SCENE_INSIDETOWER",
+    "sceneTableIndex": "0x63",
+    "entranceTableSceneIndex": "0x60",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "post-introduction: SCENE_INSIDETOWER switch flag 0 set (cycle-persistent; Obj_Demo killed, En_Osn drawn)",
+      "arrival by entrance 1 (0xC010, from South): stone doors a08/a09 closed at home, room_01 not loaded",
+      "player form Human",
+      "scene time speed 0: clock frozen at the entry time (12:00)",
+      "Ocarina and Song of Healing per owner choice (SOURCE_REGISTER U-07); changes En_Osn talk only"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_INSIDETOWER",
+      "bytes": 32576,
+      "sha256": "3c0d865934f5c730058638b2965b0ebde08911138401e4c859c440e26f7ce6b4"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_INSIDETOWER_room_00",
+      "bytes": 64016,
+      "sha256": "5a76e16b03958d39d51b05032395795b638368e326d2423bc13382c7a16d0a41"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_INSIDETOWER_room_01",
+      "bytes": 432,
+      "sha256": "75c75307607646e8c0a547310657b7217f8c876871e6608d7de2f3cae39b7440"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_INSIDETOWER/Z2_INSIDETOWER.c",
+      "bytes": 206209,
+      "sha256": "ee9c6384a5bb07dd4352f5414693bb3898b033a5809ff83ea2340483fc48ccd9"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_INSIDETOWER/Z2_INSIDETOWER_room_00.c",
+      "bytes": 57206,
+      "sha256": "57c46092e6a649ad0f74d120d62249e0dfdc0ba440c78dd1c70677f52a44b783"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_INSIDETOWER/Z2_INSIDETOWER_room_01.c",
+      "bytes": 3172,
+      "sha256": "714f71190de50ed1cc85698cf7392a55b685a5b16aeada2cbc4e8691a40535d4"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_INSIDETOWER/Z2_INSIDETOWER.xml",
+      "bytes": 631,
+      "sha256": "e9a6d98a69790b10b0d67f1ddadbb8a8d434d2043c60528bccfafeb1e33cc2ba"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.south_clock_town"
+      ],
+      "status": "not_shared",
+      "evidence": "interior door a02 at (0, 45, 288) vs South door a19 at (-280, 0, -807); the scenes are joined only by exit 0xD800 / entrance 0xC010 (C)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -1665,
+        -1379,
+        -2500
+      ],
+      "max": [
+        1665,
+        720,
+        1465
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -1065,
+        -420,
+        -2500
+      ],
+      "max": [
+        1065,
+        585,
+        445
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -10.65,
+        -4.2,
+        -4.45
+      ],
+      "max": [
+        10.65,
+        5.85,
+        25.0
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.clock_tower_interior.channel",
+      "sourceWaterBox": {
+        "xMin": -765,
+        "xMax": 835,
+        "zMin": -135,
+        "zMax": 1465,
+        "surfaceY": -330,
+        "properties": "0x00001F01",
+        "bgCamIndex": 1,
+        "lightIndex": 31,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -7.65,
+          8.35
+        ],
+        "z": [
+          -14.65,
+          1.35
+        ],
+        "surfaceY": -3.3
+      },
+      "poolFloorY": [
+        -420,
+        -420
+      ],
+      "bankFloorY": [
+        -315,
+        -300
+      ],
+      "surfaceMesh": "room_00 DL_00C8F8 at Y -330, two-layer scroll on segment 8",
+      "behavior": "UNKNOWN: gameplay decision; channel bed type 1 is a conveyor (speed 2, direction 48)"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.cti.spawn1_from_south",
+      "source": [
+        1,
+        30,
+        182
+      ],
+      "unity": [
+        0.01,
+        0.3,
+        -1.82
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cti.door_a02",
+      "source": [
+        0,
+        45,
+        288
+      ],
+      "unity": [
+        0.0,
+        0.45,
+        -2.88
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cti.hms_a01",
+      "source": [
+        -106,
+        -30,
+        -79
+      ],
+      "unity": [
+        -1.06,
+        -0.3,
+        0.79
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cti.spawn5_base_floor",
+      "source": [
+        0,
+        -300,
+        -604
+      ],
+      "unity": [
+        0.0,
+        -3.0,
+        6.04
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.cti.spawn0_corridor",
+      "source": [
+        11,
+        -296,
+        -2317
+      ],
+      "unity": [
+        0.11,
+        -2.96,
+        23.17
+      ],
+      "status": "proposed",
+      "note": "room_01"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.clock_tower_interior.room_00",
+      "sourceRoom": "Z2_INSIDETOWER_room_00",
+      "header": 0,
+      "roomShape": "cullable, 15 entries",
+      "displayLists": 23,
+      "role": "tower chamber, entry room from South (spawns 1-6)"
+    },
+    {
+      "id": "loc.clock_tower_interior.room_01",
+      "sourceRoom": "Z2_INSIDETOWER_room_01",
+      "header": 0,
+      "roomShape": "cullable, 1 entry (one placeholder triangle)",
+      "displayLists": 2,
+      "role": "twisting corridor from Z2_OPENINGDAN (spawn 0); closed off post-intro"
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a02",
+      "actorId": "0x1A2",
+      "params": "0x0000",
+      "class": "door-transition",
+      "dls": [
+        "object_tokei_tobira:0x1108",
+        "object_tokei_tobira:0x13E8"
+      ],
+      "status": "selected",
+      "note": "with spawned type-1 leaf; push swing not modeled"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a04",
+      "actorId": "0x1B6",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x10828"
+      ],
+      "status": "selected",
+      "note": "ceiling cog; rotation frozen"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a05",
+      "actorId": "0x1B6",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x10828"
+      ],
+      "status": "selected",
+      "note": "ceiling cog, yaw 180; rotation frozen"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a06",
+      "actorId": "0x1B6",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x17018"
+      ],
+      "status": "selected",
+      "note": "center cog; rotation frozen"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a07",
+      "actorId": "0x1B6",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x18118"
+      ],
+      "status": "selected",
+      "note": "water wheel; rotation and splashes frozen"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a08",
+      "actorId": "0x061",
+      "params": "0x0002",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x174E0"
+      ],
+      "status": "selected",
+      "note": "stone door closed at home (arrival from South)"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a09",
+      "actorId": "0x061",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x17220"
+      ],
+      "status": "selected",
+      "note": "main stone door closed at home"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_00/a01",
+      "actorId": "0x1B5",
+      "params": "0x0000",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_osn:0x202F0 gHappyMaskSalesmanSkel",
+        "object_osn:0x201BC idle anim"
+      ],
+      "status": "optional",
+      "note": "drawn only with switch 0 set; skeletal pose needed"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/transition/ta00",
+      "actorId": "0x018",
+      "params": "0x007F",
+      "class": "door-transition",
+      "dls": [
+        "ovl_En_Holl:0xC30 gEnHollCentralPlaneDL"
+      ],
+      "status": "optional",
+      "note": "room hall; occluded by the closed stone doors in this profile"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_01/a00",
+      "actorId": "0x061",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x12DA0",
+        "object_ctower_rot:0x129D0"
+      ],
+      "status": "optional",
+      "note": "corridor; room_01 loads only on an entrance-0 arrival; roll depends on player z"
+    },
+    {
+      "sourceKey": "Z2_INSIDETOWER/h0/room_01/a01",
+      "actorId": "0x061",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_ctower_rot:0x12DA0",
+        "object_ctower_rot:0x129D0"
+      ],
+      "status": "optional",
+      "note": "duplicate corridor 2 u from a00"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_INSIDETOWERCollisionHeader_007F10 (553 polys, 13 surface types; one scene mesh for both rooms)",
+    "waterBoxes": 1,
+    "actorDynapoly": [
+      "a02 + child object_tokei_tobira_Colheader_0012B0/001590",
+      "a07 gClockTowerWaterWheelCol",
+      "a08 gClockTowerStoneDoorCol",
+      "a09 gClockTowerStoneDoorMainCol",
+      "a03 gClockTowerOrganCol (disabled until cue 104 id 2)",
+      "room_01 a00/a01 gClockTowerCorridorCol"
+    ],
+    "actorCylinders": [
+      "a01 En_Osn r30 h40"
+    ]
+  },
+  "portalIds": [
+    "portal.clock_tower_interior.south_clock_town",
+    "portal.clock_tower_interior.z2_openingdan",
+    "portal.clock_tower_interior.clock_tower_interior.r0_r1",
+    "portal.clock_tower_interior.clock_tower_interior.r1_r0"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a01 En_Osn skeletal pose",
+    "Tatl companion (En_Elf) and Link",
+    "gear, wheel and corridor animation",
+    "water texture scroll"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [
+      "a00 Dm_Char03 (cue 136 only)",
+      "a03 organ (cue 104 only)",
+      "a10 Dm_Char00 (cutscene only)",
+      "room_01 a00/a01 (room not loaded)"
+    ],
+    "noGeometry": [
+      "a11 Obj_Demo controller (killed by switch 0)"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC pose",
+    "push-swing door leaves",
+    "stone door open/close and cs 9",
+    "corridor roll driven by player position",
+    "cutscene scripts 0-7",
+    "conveyor floors (exit and channel)",
+    "water box swim/dive behavior",
+    "scene time speed 0 (clock frozen)",
+    "EN_HOLL room loading"
+  ],
+  "evidence": [
+    "docs/city/interiors/clock_tower_interior.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "sourceInspection": "senders of entrances 0, 2, 3, 4, 6 come from a scratch baserom header scan (dossier 2.1, C-BIN)"
+  }
+}
