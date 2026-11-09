@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.town_shooting_gallery",
+  "displayLabel": "Town Shooting Gallery",
+  "source": {
+    "sceneSymbol": "Z2_SYATEKI_MIZU",
+    "sceneEnum": "SCENE_SYATEKI_MIZU",
+    "sceneTableIndex": "0x20",
+    "entranceTableSceneIndex": "0x1D",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event flags (quiver and heart-piece prize flags clear, kickout flags clear)",
+      "player form Human, no mask, quiver value irrelevant to the static assembly",
+      "clock 12:00: venue open (door schedule closed only 22:00-05:59)",
+      "no game in progress: keeper drawn, Octoroks idle and not drawn, high score 39",
+      "scene has no alternate headers"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SYATEKI_MIZU",
+      "bytes": 38592,
+      "sha256": "ac3046d43f9a671eb36539d04c914cd83b6f3da6e75a74914e33bcce9c5856cb"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_SYATEKI_MIZU_room_00",
+      "bytes": 24912,
+      "sha256": "bd46d74bca1afb266498e36b89b1397ffcc633f49ce80cf87cde5a0809af6c54"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SYATEKI_MIZU/Z2_SYATEKI_MIZU.c",
+      "bytes": 29274,
+      "sha256": "dd9151ddd880bcda5aca72cdc35c334bdd5984ce993f33af23253b4daeee0aa0"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_SYATEKI_MIZU/Z2_SYATEKI_MIZU_room_00.c",
+      "bytes": 51199,
+      "sha256": "f5ae263badf719e4f40feeecb0ad3d9cfe12e25f6a4723dedbb81a59b38c3fb3"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_SYATEKI_MIZU/Z2_SYATEKI_MIZU.xml",
+      "bytes": 428,
+      "sha256": "abf9c6d4d0ed61efad3a91a5eac76947df165a369e4fa1031e98f036254e1cec"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [],
+      "status": "not_shared",
+      "evidence": "interior local frame (collision x -260..260, z -413..486); joined to East Clock Town only by the door transition (East TA#3 at (1114, 100, 274), gallery TA0 at (-10, 0, 420)); exit and arrival coordinates do not coincide (dossier 2.4)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -260,
+        -3,
+        -413
+      ],
+      "max": [
+        260,
+        299,
+        502
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -260,
+        0,
+        -413
+      ],
+      "max": [
+        260,
+        299,
+        486
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -2.6,
+        0.0,
+        -4.86
+      ],
+      "max": [
+        2.6,
+        2.99,
+        4.13
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.town_shooting_gallery.pool",
+      "sourceWaterBox": {
+        "xMin": -209,
+        "xMax": 218,
+        "zMin": -413,
+        "zMax": 153,
+        "surfaceY": 37,
+        "properties": "0x00000000",
+        "bgCamIndex": 0,
+        "lightIndex": 0,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -2.09,
+          2.18
+        ],
+        "z": [
+          -1.53,
+          4.13
+        ],
+        "surfaceY": 0.37
+      },
+      "poolFloorY": [
+        0,
+        0
+      ],
+      "surfaceMesh": "room DL_0052E0 (XLU shape entry 17) at Y 37, two-layer scroll on segment 8",
+      "behavior": "Octorok target pool: En_Syateki_Okuta Init needs this water to survive and spawns at the surface Y 37; the pool is walled off from the player (counter, invisible barrier)"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.tsg.spawn0_from_east",
+      "source": [
+        -10,
+        0,
+        390
+      ],
+      "unity": [
+        -0.1,
+        0.0,
+        -3.9
+      ],
+      "status": "proposed",
+      "note": "spawn 0, yaw 180, floor poly 33"
+    },
+    {
+      "id": "anchor.tsg.door_ta00",
+      "source": [
+        -10,
+        0,
+        420
+      ],
+      "unity": [
+        -0.1,
+        0.0,
+        -4.2
+      ],
+      "status": "proposed",
+      "note": "TA0 door leaf, yaw 0; exit probe lands on poly 37"
+    },
+    {
+      "id": "anchor.tsg.player_station",
+      "source": [
+        -20,
+        40,
+        175
+      ],
+      "unity": [
+        -0.2,
+        0.4,
+        -1.75
+      ],
+      "status": "proposed",
+      "note": "sTownPlayerPos constant (man.c:188), top tier Y 40"
+    },
+    {
+      "id": "anchor.tsg.keeper_a02",
+      "source": [
+        145,
+        0,
+        290
+      ],
+      "unity": [
+        1.45,
+        0.0,
+        -2.9
+      ],
+      "status": "proposed",
+      "note": "keeper, yaw 270, behind the wall x 80"
+    },
+    {
+      "id": "anchor.tsg.octorok_front_mid",
+      "source": [
+        -20,
+        37,
+        0
+      ],
+      "unity": [
+        -0.2,
+        0.37,
+        0.0
+      ],
+      "status": "proposed",
+      "note": "a10 grid index 7; actor-list Y is 0, runtime Y is the water surface 37"
+    },
+    {
+      "id": "anchor.tsg.octorok_back_mid",
+      "source": [
+        -20,
+        37,
+        -320
+      ],
+      "unity": [
+        -0.2,
+        0.37,
+        3.2
+      ],
+      "status": "proposed",
+      "note": "a04 grid index 1"
+    },
+    {
+      "id": "anchor.tsg.wall_clock_a13",
+      "source": [
+        0,
+        210,
+        391
+      ],
+      "unity": [
+        0.0,
+        2.1,
+        -3.91
+      ],
+      "status": "proposed",
+      "note": "large wall clock, yaw 180"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.town_shooting_gallery.room_00",
+      "sourceRoom": "Z2_SYATEKI_MIZU_room_00",
+      "header": 0,
+      "roomShape": "cullable, 19 entries (18 opaque, 3 XLU)",
+      "displayLists": 26,
+      "role": "venue room",
+      "collisionLightIndex": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_SYATEKI_MIZU/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x0287",
+      "class": "door-transition",
+      "variant": "posed-skeletal",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "gameplay_keep:0x20BB8 gDoorLeftDL",
+        "gameplay_keep:0x20D00 gDoorRightDL"
+      ],
+      "status": "selected",
+      "note": "closed rest pose; schedule type TOWN_SHOOTING_GALLERY (7); leaf side chosen by camera yaw"
+    },
+    {
+      "sourceKey": "Z2_SYATEKI_MIZU/h0/room_00/a13",
+      "actorId": "0x19C",
+      "params": "0x907F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "object_obj_tokeidai:0xBEE8",
+        "object_obj_tokeidai:0xF518",
+        "object_obj_tokeidai:0xC368"
+      ],
+      "status": "selected",
+      "note": "large wall clock (type 9), scale 0.02, noon pose"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_SYATEKI_MIZUCollisionHeader_0013AC (192 polys, 1 water box)",
+    "waterBoxes": 1,
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "a03-a11 Octorok AC cylinders r20 h40 yShift -30 (red +10 r +15 h), active only while shown"
+    ],
+    "note": "keeper a02 has no collider (colChkInfo.cylRadius 100 only); counter-top pin (floorProperty 8), projectile-passing walls (xp 4/5) and the x 80 keeper wall are collision data, not actor logic"
+  },
+  "portalIds": [
+    "portal.town_shooting_gallery.east_clock_town",
+    "portal.town_shooting_gallery.east_clock_town.kickout"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a02 En_Syateki_Man (gBurlyGuySkel, HandsOnTable loop, Town head DL, blink and head tracking)",
+    "a03-a11 En_Syateki_Okuta (gOctorokSkel appear/float/hide/die, blue material, hit marks)",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a01"
+    ],
+    "stateOrSchedule": [
+      "a03",
+      "a04",
+      "a05",
+      "a06",
+      "a07",
+      "a08",
+      "a09",
+      "a10",
+      "a11"
+    ],
+    "noGeometry": [
+      "a00",
+      "a12",
+      "a14"
+    ]
+  },
+  "unsupported": [
+    "skeletal keeper pose",
+    "Octorok animation, wave schedule and hit marks",
+    "door skeleton rest pose",
+    "wall clock live time",
+    "water two-layer texture scroll",
+    "bow minigame: 20-rupee fee, 75 s timer, 50-point score, high score 39, quiver, heart piece, purple and huge rupees",
+    "22:00 kickout and KICKOUT_WAIT deferral",
+    "positional gallery BGM and timed-minigame sub-BGM",
+    "counter-top pin and projectile-passing barrier walls",
+    "floor-selected cameras (CIRCLE3 fixed eye, ROOM1)",
+    "player cutscene id chain (csId 0)"
+  ],
+  "evidence": [
+    "docs/city/interiors/town_shooting_gallery.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}
