@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.clock_tower_rooftop",
+  "displayLabel": "Clock Tower Rooftop",
+  "source": {
+    "sceneSymbol": "Z2_OKUJOU",
+    "sceneEnum": "SCENE_OKUJOU",
+    "sceneTableIndex": "0x19",
+    "entranceTableSceneIndex": "0x16",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d3.final.normal",
+    "sceneLayer": 0,
+    "halfDayBit": "0x004",
+    "stateAssumptions": [
+      "venue closed at prof.d1.noon.normal: Obj_Tokei_Step closed panel and hidden staircase until Day 3 before 06:00 (z_obj_tokei_step.c:191-208, z_obj_tokeidai.c:615-621)",
+      "arrival by South exit 0x2C00, entrance 0 layer 0, spawn 0, default headers",
+      "Ocarina held (SOURCE_REGISTER baseline owner decision): Dm_Char02 killed, Skull Kid intro cs 11 then floating idle",
+      "WEEKEVENTREG_25_02 clear: success giants and stopped moon a14 killed, clock-tower moon a15 drawn",
+      "scene time speed 0: clock frozen at the arrival time; 300 s moon-crash timer running"
+    ]
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_OKUJOU",
+      "bytes": 110496,
+      "sha256": "332445961fc8b267e72510a83a993d3646aaa31ccf2d1e17bfc72c4da4d01ef7"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_OKUJOU_room_00",
+      "bytes": 12160,
+      "sha256": "38ce3e75223f68fbca0db2baf1df53e0711ada3d5956f0f6a367c2b4e31a9c07"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_OKUJOU/Z2_OKUJOU.c",
+      "bytes": 544886,
+      "sha256": "83034b16ecd9606ac03630b2f759e456be5f6207b28a3308113414939b03ec63"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_OKUJOU/Z2_OKUJOU_room_00.c",
+      "bytes": 39137,
+      "sha256": "1e7cafa724213b4a7265c17370d9eded25acc8459cad36ae4243d5c8bfba7bc6"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_OKUJOU/Z2_OKUJOU.xml",
+      "bytes": 324,
+      "sha256": "131e23060ba2e4870ec7b96df948777bc3e253fb1b5bfe4930b4ac266a16da48"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.south_clock_town"
+      ],
+      "status": "not_shared",
+      "evidence": "rooftop spawn 0 at (0, 20, 222) on a roof centered at the origin vs the South tower-top exit treads x -340..-220, Y 300..375, z -1053..-893; the scenes are joined only by exit 0x2C00 (C)"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -483,
+        -45,
+        -480
+      ],
+      "max": [
+        477,
+        139,
+        480
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -483,
+        0,
+        -480
+      ],
+      "max": [
+        477,
+        139,
+        480
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -4.83,
+        0.0,
+        -4.8
+      ],
+      "max": [
+        4.77,
+        1.39,
+        4.8
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.ctr.spawn0_stair_head",
+      "source": [
+        0,
+        20,
+        222
+      ],
+      "unity": [
+        0.0,
+        0.2,
+        -2.22
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ctr.spawn1_center",
+      "source": [
+        0,
+        0,
+        0
+      ],
+      "unity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ctr.pot_a03",
+      "source": [
+        208,
+        26,
+        -212
+      ],
+      "unity": [
+        2.08,
+        0.26,
+        2.12
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.ctr.skull_kid_a01_home",
+      "source": [
+        0,
+        9,
+        -110
+      ],
+      "unity": [
+        0.0,
+        0.09,
+        1.1
+      ],
+      "status": "proposed",
+      "note": "idle hover Y about 160"
+    },
+    {
+      "id": "anchor.ctr.moon_a15",
+      "source": [
+        0,
+        4000,
+        -200
+      ],
+      "unity": [
+        0.0,
+        40.0,
+        2.0
+      ],
+      "status": "proposed",
+      "note": "skyline, not a ground point"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.clock_tower_rooftop.room_00",
+      "sourceRoom": "Z2_OKUJOU_room_00",
+      "header": 0,
+      "roomShape": "cullable, 5 entries",
+      "displayLists": 17,
+      "role": "tower roof; one room for all four headers",
+      "collisionLightIndex": 31
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a03",
+      "actorId": "0x082",
+      "params": "0x808F",
+      "class": "static-mesh",
+      "variant": "state-pickup",
+      "dls": [
+        "object_racetsubo:0x278 gMagicPotDL"
+      ],
+      "status": "selected",
+      "note": "magic pot, breakable; drops a big magic jar"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a04",
+      "actorId": "0x082",
+      "params": "0x828F",
+      "class": "static-mesh",
+      "variant": "state-pickup",
+      "dls": [
+        "object_racetsubo:0x278 gMagicPotDL"
+      ],
+      "status": "selected",
+      "note": "magic pot"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a05",
+      "actorId": "0x082",
+      "params": "0x848F",
+      "class": "static-mesh",
+      "variant": "state-pickup",
+      "dls": [
+        "object_racetsubo:0x278 gMagicPotDL"
+      ],
+      "status": "selected",
+      "note": "magic pot"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a06",
+      "actorId": "0x082",
+      "params": "0x868F",
+      "class": "static-mesh",
+      "variant": "state-pickup",
+      "dls": [
+        "object_racetsubo:0x278 gMagicPotDL"
+      ],
+      "status": "selected",
+      "note": "magic pot"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a15",
+      "actorId": "0x17C",
+      "params": "0x04FF",
+      "class": "static-mesh",
+      "dls": [
+        "object_fall:0x77F0 gMoonDL"
+      ],
+      "status": "selected",
+      "note": "clock-tower moon, scale 0.48, rot X 60 Y 315; killed if WEEKEVENTREG_25_02"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a01",
+      "actorId": "0x191",
+      "params": "0x0000",
+      "class": "posed-skeletal",
+      "variant": "posed-skeletal",
+      "dls": [
+        "object_stk:0x13328 gSkullKidSkel",
+        "object_stk2:0x29A04 floating anim"
+      ],
+      "status": "optional",
+      "note": "hovers near Y 160 facing the player after the arrival cutscene"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a00",
+      "actorId": "0x194",
+      "params": "0x0000",
+      "class": "posed-skeletal",
+      "dls": [
+        "object_stk2:0xAD68 gClockTowerOcarinaOfTimeSkel"
+      ],
+      "status": "optional",
+      "note": "first cycle only (no Ocarina held); get-item GI_OCARINA_OF_TIME"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a02",
+      "actorId": "0x275",
+      "params": "0x000F",
+      "class": "billboard-effect",
+      "variant": "camera-relative",
+      "status": "optional",
+      "note": "draw outside cue 512 unknown (dossier U-06)"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a14",
+      "actorId": "0x17C",
+      "params": "0x03FF",
+      "class": "static-mesh",
+      "dls": [
+        "object_fall:0x77F0 gMoonDL"
+      ],
+      "status": "optional",
+      "note": "stopped moon at Y 3250; only with WEEKEVENTREG_25_02"
+    },
+    {
+      "sourceKey": "Z2_OKUJOU/h0/room_00/a07",
+      "actorId": "0x1DB",
+      "params": "0xFE04",
+      "class": "npc-scheduled",
+      "dls": [
+        "object_giant:0x79B0 gGiantSkel"
+      ],
+      "status": "optional",
+      "note": "success giant; only with WEEKEVENTREG_25_02 (a08-a10 same rule)"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_OKUJOUCollisionHeader_00AC00 (146 polys, 3 surface types, no exits; shared by all four headers)",
+    "waterBoxes": 0,
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "a01 Dm_Stk r14 h38",
+      "a03-a06 Obj_Tsubo type 1 r18 h45"
+    ],
+    "note": "beyond the rim top (Y 139, r about 480) there is no collision; void behavior unknown"
+  },
+  "portalIds": [],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a01 Skull Kid skeletal pose and hover",
+    "Tatl companion (En_Elf) and Link",
+    "moon-crash timer HUD",
+    "skybox and 1000 stars",
+    "three colored point lights"
+  ],
+  "excluded": {
+    "halfDayMask": [],
+    "stateOrSchedule": [
+      "a00 Dm_Char02 (killed: Ocarina held)",
+      "a07-a10 En_Giant success types (need WEEKEVENTREG_25_02)",
+      "a14 En_Fall type 7 (needs WEEKEVENTREG_25_02)",
+      "a12, a13 Dm_Char00 (cutscene-only)",
+      "alt1-alt3 actor lists (cutscene layers 1-3)"
+    ],
+    "noGeometry": [
+      "a11 En_Time_Tag Oath to Order controller",
+      "a16 En_Weather_Tag star count"
+    ]
+  },
+  "unsupported": [
+    "venue gate (South Obj_Tokei_Step panel and Obj_Tokeidai staircase)",
+    "skeletal NPC pose",
+    "cutscene scripts 0-7 and alternate layers 1-3",
+    "Oath to Order time tag",
+    "moon-crash timer and its exits",
+    "Ocarina get-item",
+    "code-driven exits (no exit list)",
+    "scene time speed 0 (clock frozen)",
+    "breakable pots and drops",
+    "void beyond the rim"
+  ],
+  "evidence": [
+    "docs/city/interiors/clock_tower_rooftop.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "sourceInspection": "selected profile is prof.d3.final.normal because the venue is closed at Day 1 noon; SPOT00 and Z2_00KEIKOKU senders come from a scratch baserom header scan (dossier 1.2, C-BIN)"
+  }
+}
