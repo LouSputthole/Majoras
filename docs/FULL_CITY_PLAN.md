@@ -64,7 +64,7 @@ The next developer should make the city enumerable before making it decorative. 
 
 ### 3.1 Proposed artifact layout
 
-These paths are a contract proposal. As of 2026-11-08 `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` and the five exterior dossiers under `districts/` exist (REF-01/02/03/04/05/06/07/08); every other path is **not yet implemented**. Confirm the remaining layout and freeze the ID/schema proposals in PIPE-01. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
+These paths are a contract proposal. As of 2026-11-08 `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` and the five exterior dossiers under `districts/` exist (REF-01/02/03/04/05/06/07/08); every other path is **not yet implemented**. PIPE-01 (2026-11-08) froze the IDs and the region, portal and camera schemas in `shared/city/schema/` (contract: [shared/city/schema/README.md](../shared/city/schema/README.md)); `shared/city/ids.json` is the ID registry and `shared/city/regions/<region>.json` holds the five accepted exterior records, all checked by `tools/reference/validate_city.py`. `portals.json`, `cameras/`, `routes/`, `art/` and `Unity/Assets/City/` are still **not implemented**. Use the same stable IDs in JSON records, Unity bindings, evidence and future saves.
 
 ```text
 docs/city/
@@ -398,7 +398,7 @@ All rows below start **planned**, except recovered inputs explicitly cited elsew
 | REF-07 | Next dev / M | **Done 2026-11-08**, [districts/east_clock_town.md](city/districts/east_clock_town.md); wall polygon 169 ruled not a portal. East complete inventory and multi-level/venue mapping | REF-01–03 | Every visible destination/access classified and traced |
 | REF-08 | Next dev / M | **Done 2026-11-08**, [districts/laundry_pool.md](city/districts/laundry_pool.md); one water box, no swim surface flags, back-room door is the Curiosity Shop `ENDOOR_SCH_TYPE_LAUNDRY_POOL` door. Laundry complete inventory, shoreline and secondary-room mapping | REF-01–03 | Water/collision ownership and private destination clarified |
 | REF-09 | Next dev / L | Interior dossiers; one child packet per INT-01–17 | REF-01–03 | All rooms/doors/variants and special mechanics indexed; no first-room-only inventory |
-| PIPE-01 | Integrator / M | Freeze schema/IDs/coordinate/source-output ownership and validate examples | REF-04/05 initial data | South and North sample records accepted; malformed/unknown data fails visibly |
+| PIPE-01 | Integrator / M | **Done 2026-11-08**, [shared/city/schema/README.md](../shared/city/schema/README.md); 5 exterior records accepted, 12 negative cases rejected by `validate_city.py --selftest`. Freeze schema/IDs/coordinate/source-output ownership and validate examples | REF-04/05 initial data | South and North sample records accepted; malformed/unknown data fails visibly |
 | PIPE-02 | Integrator / M | Generalize importer using South plus North adapters | PIPE-01, REF-05 | Region-scoped repeatable import; current South output/IDs preserved |
 | PIPE-03 | Integrator / M | Validate actor assembly, collision metadata and unsupported-state reporting | PIPE-02 | Static/spawned/skeletal/effect categories explicit; no silent omitted hero component |
 | PIPE-04 | Integrator / M | Authored asset calibration/export and binary-storage choice | PIPE-01 and a simple calibration fixture | Asymmetric/material/skin sample imports and reimports; editable sources and hashes retained |

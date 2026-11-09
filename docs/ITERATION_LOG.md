@@ -230,3 +230,19 @@ Documentation verification: all local Markdown file links in the eight touched d
 **Integrator checks run:** South spawns (11 positions and yaws), transition actor, exit list, water boxes, collision header bounds, 416/508/21 counts, poly 120 plane and vertices, and the per-header actor counts all read back from `Z2_CLOCKTOWER.c`/`_room_00.c`; the audit's git claims rechecked (`import_clocktown.py` sha identical at 15a46cd, d0bc29f, 98e554b; `export_reference.py` differs by exactly the two `sourceTexture`/`texture-sources.json` lines). West, East and Laundry exit lists, transition actors with params, actor counts, water box and polygon 169 normal read back from their scene C. The polygon-169 ruling was re-verified at `z_player.c:6405-6416`, `:6783` and `:12572` before editing PORTAL_REGISTER. **Corrections applied:** PORTAL_REGISTER `.p169` row relabeled as a non-portal data oddity, U3 resolved, "missing reciprocal" list reduced to the rooftop; SOURCE_REGISTER `cam.south_clock_town.east_lower_approach` polygons 184/185 -> 180/181 (REF-04 U-20). **Not run:** Unity, Blender, any capture, any push, REC-02, REC-03.
 
 **Status:** REF-01 to REF-08 done; every exterior district has a source dossier and a proposed region record (section 10 of each). **Next:** PIPE-01 schema and ID freeze from those five records; REC-03 provenance rerun (needs Blender and Unity, owner go-ahead); REF-09 interiors. Owner decisions: capture mechanism, Ocarina in the baseline save, push, REC-02/REC-03 on this machine.
+
+## 2026-11-08 (late) - PIPE-01 freeze; REF-09 interior packets dispatched
+
+**Request:** owner said "lets start" on the two unblocked tracks: PIPE-01 (integrator) and REF-09 (17 interior dossiers, Opus agents in batches). The first six REF-09 packets (INT-01, 02, 03, 07, 13, 15) were dispatched with a shared brief; results are logged when they land.
+
+| Item | Result | Evidence |
+| --- | --- | --- |
+| Schemas | `shared/city/schema/region.schema.json`, `portal.schema.json`, `camera.schema.json`, schema 1, standard JSON Schema 2020-12 vocabulary, unknown keys rejected at every level; the N64-to-Unity matrix is a schema constant | `shared/city/schema/README.md` |
+| ID registry | `shared/city/ids.json` generated from the three registers: 22 locations, 36 rooms, 94 live portals, 1 retired (`...p169`), 9 profiles, 118 cameras, 6 externals; legacy `scene.south_clock_town`/`sct.*` recorded as aliases | `tools/reference/build_city_ids.py` |
+| Accepted records | all five exterior proposal blocks lifted to `shared/city/regions/*.json` and accepted. Vocabulary mapping applied once, in `region_from_dossier.py`: free-text component/anchor/readiness statuses split into enum + note; `sharedWith*` keys folded into `sourceFrame.sharedFrame`; `stateOrDrawNull` renamed `stateOrSchedule`; room header index made explicit | `python -I tools/reference/validate_city.py --selftest` -> 5 records OK, 12/12 negative cases rejected, truncated JSON rejected |
+| Dossier corrections (integrator) | North proposal lacked `portal.north_clock_town.north_clock_town.bomjimb` (the registry has it; West and East list theirs) - added. South `textureSourcesJson` had no provenance - made explicit as the same 11:35 run as `reference.json` (section 9) | both dossiers' JSON blocks |
+| Not frozen yet | `portals.json` (PORT-01 export from PORTAL_REGISTER), `cameras/`, `routes/`, asset schema, `Unity/Assets/City/` bindings | plan section 3.1 |
+
+**Checks run:** validator on all five records plus self-test; every `shared/city/*.json` parses; relative-link check. **Not run:** Unity, Blender, any import, REC-02/REC-03, push.
+
+**Next:** accept REF-09 dossiers as they land (lift, validate, fix the dossier not the record); PIPE-02 importer generalization from the frozen records; REC-03 waits for the owner's go-ahead to run Blender and Unity.

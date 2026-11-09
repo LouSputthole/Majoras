@@ -1,0 +1,424 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.north_clock_town",
+  "displayLabel": "North Clock Town",
+  "source": {
+    "sceneSymbol": "Z2_BACKTOWN",
+    "sceneEnum": "SCENE_BACKTOWN",
+    "sceneTableIndex": "0x6E",
+    "entranceTableSceneIndex": "0x6B",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human",
+      "magic not acquired"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BACKTOWN",
+      "bytes": 69344,
+      "sha256": "22468a076936183cd93741cd4d765ba8b7d7dd903f5347f95f202a5af3ca00c6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_BACKTOWN_room_00",
+      "bytes": 41344,
+      "sha256": "480c42ace6fc8807acd8a40409ab6e4c15c9b012bbe8756d229705822a2ba651"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BACKTOWN/Z2_BACKTOWN.c",
+      "sha256": "bb483c82e669d23875a1ea86604d420aff419efb3796c950b3ce97f7c2717ab6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_BACKTOWN/Z2_BACKTOWN_room_00.c",
+      "sha256": "4732267915c1a43655a1b1d5a91c89149eba5c7c2beddf9fe19322d80a7ad7e7"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_BACKTOWN/Z2_BACKTOWN.xml",
+      "sha256": "1f41cd190660782fd28e17e35fcbe4ce4aa8866748719e6c2ac72e9be1b8bdc3"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.south_clock_town"
+      ],
+      "status": "inferred",
+      "evidence": "INFERRED (identical tower/chimney anchors), unverified"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -2355,
+        -40,
+        -2773
+      ],
+      "max": [
+        880,
+        1183,
+        -707
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -1291,
+        188,
+        -2773
+      ],
+      "max": [
+        880,
+        600,
+        -1280
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -12.91,
+        1.88,
+        12.8
+      ],
+      "max": [
+        8.8,
+        6.0,
+        27.73
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.nct.spawn0_tf_gate",
+      "source": [
+        -473,
+        191,
+        -2439
+      ],
+      "unity": [
+        -4.73,
+        1.91,
+        24.39
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.nct.spawn1_east",
+      "source": [
+        562,
+        193,
+        -1785
+      ],
+      "unity": [
+        5.62,
+        1.93,
+        17.85
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.nct.spawn3_fountain",
+      "source": [
+        -1033,
+        292,
+        -2008
+      ],
+      "unity": [
+        -10.33,
+        2.92,
+        20.08
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.nct.tree_a07_base",
+      "source": [
+        -5,
+        240,
+        -2335
+      ],
+      "unity": [
+        -0.05,
+        2.4,
+        23.35
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.north_clock_town.room_00",
+      "sourceRoom": "Z2_BACKTOWN_room_00",
+      "roomShape": "cullable, 13 entries",
+      "displayLists": 83,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a32",
+      "actorId": "0x19C",
+      "params": "0x207F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "0xBEE8",
+        "0xE818",
+        "0xC368"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a09",
+      "actorId": "0x19C",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xBA78"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a10",
+      "actorId": "0x19C",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xBA78"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a11",
+      "actorId": "0x19C",
+      "params": "0x307F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xB208"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a12",
+      "actorId": "0x1B8",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_tokei_step:0x88"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a07",
+      "actorId": "0x229",
+      "params": "0x00FF",
+      "class": "static-mesh",
+      "dls": [
+        "object_tree:0x680",
+        "object_tree:0x7C8"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a21",
+      "actorId": "0x229",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_tree:0x680",
+        "object_tree:0x7C8"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a02",
+      "actorId": "0x183",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_keep:0xED80"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a03",
+      "actorId": "0x183",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_keep:0xED80"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a16/child0-8",
+      "actorId": "0x171",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_field_keep:0x78A0"
+      ],
+      "status": "selected",
+      "variant": "spawned",
+      "note": "yaw approximated"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a15",
+      "actorId": "0x282",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "dls": [
+        "object_fusen:0xA00",
+        "object_fusen:0xD78"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a31",
+      "actorId": "0x0A8",
+      "params": "0x0011",
+      "class": "static-mesh",
+      "dls": [
+        "object_kanban:0xC30",
+        "gameplay_keep:0x5AED0"
+      ],
+      "status": "selected",
+      "note": "Human-form Y"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a04",
+      "actorId": "0x00E",
+      "params": "0x0A06",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_keep:0x5AAB0"
+      ],
+      "status": "optional",
+      "variant": "state-pickup",
+      "note": "fresh save"
+    },
+    {
+      "sourceKey": "Z2_BACKTOWN/h0/room_00/a30",
+      "actorId": "0x17C",
+      "params": "0x037F",
+      "class": "static-mesh",
+      "dls": [
+        "object_lodmoon:0x10E0",
+        "object_lodmoon:0x1158"
+      ],
+      "status": "selected",
+      "variant": "camera-relative",
+      "note": "special rule"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_BACKTOWNCollisionHeader_002238 (312 polys)",
+    "actorDynapoly": [
+      "a02/a03 gPinkDekuFlowerCol",
+      "a07/a21 gTreeTopCol",
+      "a12 gClocktowerPanelCol"
+    ],
+    "actorCylinders": null,
+    "note": "actorCylinders: NI"
+  },
+  "portalIds": [
+    "portal.north_clock_town.south_clock_town",
+    "portal.north_clock_town.east_clock_town",
+    "portal.north_clock_town.z2_00keikoku",
+    "portal.north_clock_town.great_fairy_fountain_town",
+    "portal.north_clock_town.deku_playground",
+    "portal.north_clock_town.north_clock_town.bomjimb"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a08 En_Stop_heishi",
+    "a14 En_Bomjima",
+    "a17 En_Pst",
+    "a19 En_Bal",
+    "a05/a06 Obj_Entotu billboards and smoke",
+    "a00 Door_Ana billboard",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a01",
+      "a18",
+      "a23"
+    ],
+    "stateOrSchedule": [
+      "a13",
+      "a26",
+      "a22",
+      "a24",
+      "a25",
+      "a27",
+      "a29",
+      "a20"
+    ],
+    "noGeometry": [
+      "a16 controller",
+      "a28"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC poses",
+    "billboard orientation",
+    "smoke vertex alpha and texture scroll",
+    "conveyor exit floors",
+    "floor property 9 behavior",
+    "moon 9000-unit rule unless implemented"
+  ],
+  "evidence": [
+    "docs/city/districts/north_clock_town.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

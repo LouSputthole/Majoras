@@ -61,3 +61,15 @@ Coordinate conversion is Unity `(x,y,z) = N64 (x,y,-z)/100`. The ratio preserves
 - The source importer needed matrix-stack pop handling and one scale conversion instead of repeated scaling during matrix multiplication. Camera-facing billboards are retained at a fixed import orientation.
 - The Unity combiner preserves texture/color inputs and primitive LOD fraction; lighting, hardware filtering, per-pixel LOD, fog and runtime animated material state remain approximate.
 - A rendered reference does not establish final art quality, camera matching, traversal, collision gameplay or performance.
+
+## City contract tools (PIPE-01, 2026-11-08)
+
+Stdlib only, read the tracked registers and dossiers, write under `shared/city/`. Never run them with stdin (`python -`); call the file.
+
+| Script | Does |
+| --- | --- |
+| `python -I tools/reference/build_city_ids.py` | regenerates `shared/city/ids.json` (22 locations, 36 rooms, 94 portals + 1 retired, 9 profiles, 118 cameras, 6 externals) from `docs/city/LOCATION_REGISTER.md`, `PORTAL_REGISTER.md`, `SOURCE_REGISTER.md` |
+| `python -I tools/reference/region_from_dossier.py docs/city/<dir>/<dossier>.md ...` | lifts each dossier's "Proposed region record" JSON block, maps the proposal vocabulary onto the frozen enums and writes `shared/city/regions/<region>.json`; fix the dossier, not the record |
+| `python -I tools/reference/validate_city.py [--selftest] [files]` | validates every region record against `shared/city/schema/region.schema.json` and cross-checks IDs against `ids.json`; exit 1 with `file: $.path: reason` lines; `--selftest` proves twelve malformed variants and truncated JSON are rejected |
+
+Contract text: `shared/city/schema/README.md`.

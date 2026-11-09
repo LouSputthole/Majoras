@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.south_clock_town",
+  "aliases": [
+    "scene.south_clock_town",
+    "sct.*"
+  ],
+  "displayLabel": "South Clock Town",
+  "source": {
+    "sceneSymbol": "Z2_CLOCKTOWER",
+    "sceneEnum": "SCENE_CLOCKTOWER",
+    "sceneTableIndex": "0x6F",
+    "entranceTableSceneIndex": "0x6C",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": "b13010949567e4a2bf44ba3ccc18b06427243153 plus local f3d_parser.py patch (sha256 0f61a839138c40cf6935a762b78bde89a8a904d5a596784c321bfc0b223041d4)"
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human",
+      "owl statue not activated",
+      "WEEKEVENTREG_59_04 clear (door cutscene pending)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_CLOCKTOWER",
+      "bytes": 140896,
+      "sha256": "64da8491df8c143fbf3bd6b4523dede22a45b5a0b181c91403ac94af81320706"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_CLOCKTOWER_room_00",
+      "bytes": 80048,
+      "sha256": "c9b8754c74786f1553d2a667e1c52fcbb140b65d729ffb7a0e8f7bbf64f3efd5"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_CLOCKTOWER/Z2_CLOCKTOWER.c",
+      "bytes": 209318,
+      "sha256": "ff08dbfb319cca148a4260eab9462d4b06c5c05c97392a7ea35f56487283aaef"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_CLOCKTOWER/Z2_CLOCKTOWER_room_00.c",
+      "bytes": 231563,
+      "sha256": "88a093d637ea0a4a8b82725cced8e3cbbacce18070dab1e119ea5220ea09a92b"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_CLOCKTOWER/Z2_CLOCKTOWER.xml",
+      "bytes": 418,
+      "sha256": "f065cbde259cef0ec3b4221696ab3c7d6625b45d37bd6633fd94c466626d0968"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/objects/object_obj_tokeidai/object_obj_tokeidai.c",
+      "sha256": "4e05dadb0fd8bf084820cf006321274b4f6d3d5fe389f7db9d162e2ef8384f8a"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/objects/object_tokei_turret/object_tokei_turret.c",
+      "sha256": "f8319a02976e7d3fce1632b44f489f2b84313ccb3524c32c87a9822855f36a43"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/objects/object_tokei_step/object_tokei_step.c",
+      "sha256": "dc1dd8ff1785b7b42265e13278155800c98636f14df8503917331c728e9793f6"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/objects/object_tokei_tobira/object_tokei_tobira.c",
+      "sha256": "919936cfc3a92e24f48a05607bab85d0deb1eb5bfdf083dcdbf2a184321df6c2"
+    }
+  ],
+  "localExports": {
+    "referenceJson": {
+      "path": "Unity/Assets/LocalReference/SouthClockTown/reference.json",
+      "sha256": "ada0fd31667547d4a57e0d14556fc68b97a52eaacda28cf58523a30640d0c9e5",
+      "writtenLocal": "2026-11-08T11:35:21",
+      "producedBy": "inferred-committed-scripts"
+    },
+    "textureSourcesJson": {
+      "path": "Unity/Assets/LocalReference/SouthClockTown/texture-sources.json",
+      "sha256": "f0db4d9f7806b5281004842cb2aec97c9114658a0887b12358298596a8887770",
+      "writtenLocal": "2026-11-08T11:35:21",
+      "producedBy": "inferred-committed-scripts"
+    },
+    "unityReferenceScene": {
+      "path": "Unity/Assets/LocalReference/SouthClockTown/Generated/SouthClockTown_RomReference.unity",
+      "sha256": "408da692dd4addd73be050ff62cb77cec87a39ab63152e32b22c5ce3b519d7da",
+      "writtenLocal": "2026-11-08T11:26:00",
+      "producedBy": "unrecorded"
+    }
+  },
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.north_clock_town",
+        "loc.west_clock_town",
+        "loc.east_clock_town"
+      ],
+      "status": "inferred",
+      "evidence": "INFERRED (PORTAL_REGISTER section 3.2), unverified"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -2360,
+        -424,
+        -1974
+      ],
+      "max": [
+        1600,
+        1183,
+        1200
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -2040,
+        -424,
+        -1600
+      ],
+      "max": [
+        1200,
+        995,
+        1000
+      ]
+    },
+    "unityImportRecorded": {
+      "min": [
+        -23.6,
+        -4.24,
+        -10.2
+      ],
+      "max": [
+        16.0,
+        13.03,
+        16.0
+      ]
+    }
+  },
+  "anchors": [
+    {
+      "id": "anchor.sct.spawn0_tower_door",
+      "source": [
+        -278,
+        0,
+        -801
+      ],
+      "unity": [
+        -2.78,
+        0.0,
+        8.01
+      ],
+      "status": "probed",
+      "note": "ground probe recorded in unity-playmode-verification.json, not surveyed"
+    },
+    {
+      "id": "anchor.sct.spawn4_north_upper",
+      "source": [
+        -260,
+        200,
+        -1380
+      ],
+      "unity": [
+        -2.6,
+        2.0,
+        13.8
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.sct.spawn7_east_lower",
+      "source": [
+        323,
+        0,
+        247
+      ],
+      "unity": [
+        3.23,
+        0.0,
+        -2.47
+      ],
+      "status": "probed",
+      "note": "ground probe recorded, not surveyed"
+    },
+    {
+      "id": "anchor.sct.owl_statue",
+      "source": [
+        -540,
+        100,
+        -1099
+      ],
+      "unity": [
+        -5.4,
+        1.0,
+        10.99
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.sct.clock_center",
+      "source": [
+        -280,
+        555,
+        -833
+      ],
+      "unity": [
+        -2.8,
+        5.55,
+        8.33
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.south_clock_town.room_00",
+      "sourceRoom": "Z2_CLOCKTOWER_room_00",
+      "roomShape": "cullable, 6 entries",
+      "displayLists": 239,
+      "lodBranchesNotImported": 12,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a13",
+      "actorId": "0x19C",
+      "params": "0x207F",
+      "class": "static-mesh",
+      "status": "imported"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a14",
+      "actorId": "0x19C",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "status": "imported"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a15",
+      "actorId": "0x19C",
+      "params": "0x007F",
+      "class": "static-mesh",
+      "status": "imported"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a16",
+      "actorId": "0x19C",
+      "params": "0x307F",
+      "class": "static-mesh",
+      "status": "imported",
+      "note": "yaw 0 phase"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a17",
+      "actorId": "0x1B8",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "status": "imported",
+      "note": "collision missing"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a19",
+      "actorId": "0x1A2",
+      "params": "0x0000",
+      "class": "door-transition",
+      "status": "imported",
+      "note": "with spawned type-1 leaf, push behavior missing"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a21",
+      "actorId": "0x221",
+      "params": "0x0001",
+      "class": "static-mesh",
+      "status": "imported",
+      "note": "collision missing"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a24",
+      "actorId": "0x221",
+      "params": "0x0000",
+      "class": "static-mesh",
+      "status": "imported",
+      "note": "collision missing"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a04",
+      "actorId": "0x183",
+      "params": "0x017F",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_keep:0x11BD0"
+      ],
+      "status": "selected",
+      "note": "not extracted"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a32",
+      "actorId": "0x223",
+      "params": "0x0004",
+      "class": "static-mesh",
+      "dls": [
+        "object_sek:0x1D0"
+      ],
+      "status": "selected",
+      "note": "not extracted"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a45",
+      "actorId": "0x026",
+      "params": "0x360A",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_keep:gSignDirectionalDL"
+      ],
+      "status": "selected",
+      "note": "not extracted"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a05",
+      "actorId": "0x00E",
+      "params": "0x0A06",
+      "class": "static-mesh",
+      "status": "optional",
+      "variant": "state-pickup",
+      "note": "fresh save"
+    },
+    {
+      "sourceKey": "Z2_CLOCKTOWER/h0/room_00/a48",
+      "actorId": "0x17C",
+      "params": "0x037F",
+      "class": "static-mesh",
+      "status": "selected",
+      "variant": "camera-relative",
+      "note": "special rule"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_CLOCKTOWERCollisionHeader_005560 (508 polys, 21 surface types)",
+    "waterBoxes": 2,
+    "actorDynapoly": [
+      "a17 gClocktowerPanelCol",
+      "a19 + child object_tokei_tobira_Colheader_0012B0/001590",
+      "a21 gClockTownTurretPlatformCol",
+      "a24 gClockTownTurretBaseCol",
+      "a04 gGoldDekuFlowerCol",
+      "a43 gBoxChestCol"
+    ],
+    "actorCylinders": [
+      "a32 owl",
+      "a46/a47 postboxes",
+      "a45 sign",
+      "a12 soldier",
+      "NPC cylinders"
+    ]
+  },
+  "portalIds": [
+    "portal.south_clock_town.clock_tower_interior",
+    "portal.south_clock_town.z2_00keikoku",
+    "portal.south_clock_town.east_clock_town.upper",
+    "portal.south_clock_town.west_clock_town.upper",
+    "portal.south_clock_town.north_clock_town",
+    "portal.south_clock_town.west_clock_town.lower",
+    "portal.south_clock_town.laundry_pool",
+    "portal.south_clock_town.east_clock_town.lower",
+    "portal.south_clock_town.clock_tower_rooftop"
+  ],
+  "materialBindings": {
+    "sourceMaterials": 158,
+    "exportedImages": 108,
+    "repaintFiles": 4,
+    "repaintedSlots": 33
+  },
+  "cameraIds": [],
+  "routeIds": [
+    "R1",
+    "R2",
+    "R3",
+    "R11"
+  ],
+  "omissions": [
+    "a00 Business Scrub",
+    "a01 Anju",
+    "a02 Kafei",
+    "a03 En_Sth",
+    "a06 Postman",
+    "a11 dog",
+    "a12 gate soldier",
+    "a33/a36/a37 carpenters",
+    "a43 chest",
+    "a46/a47 postboxes",
+    "a08 chimney billboard and smoke",
+    "86 LOD-branch triangles",
+    "14 mip-level textures",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a07",
+      "a20",
+      "a22",
+      "a23",
+      "a25",
+      "a26",
+      "a30",
+      "a31",
+      "a34",
+      "a35",
+      "a38",
+      "a39",
+      "a44"
+    ],
+    "noGeometry": [
+      "a09",
+      "a10",
+      "a27",
+      "a28",
+      "a29",
+      "a40",
+      "a49"
+    ],
+    "stateOrSchedule": [
+      "a18",
+      "a41",
+      "a42"
+    ]
+  },
+  "unsupported": [
+    "surface semantics",
+    "water boxes",
+    "actor collision",
+    "door push",
+    "LOD branches",
+    "mip LOD",
+    "texture scroll",
+    "skeletal poses",
+    "billboards",
+    "moon 9000-unit rule"
+  ],
+  "evidence": [
+    "docs/city/districts/south_clock_town.md",
+    "evidence/rom-reference-verification.json",
+    "evidence/city-mvp-routes-editor.json"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "partial",
+    "import": "fail",
+    "controllerTraversal": "partial",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  },
+  "readinessNotes": {
+    "objectExtraction": "4 banks",
+    "import": "provenance not established, section 9",
+    "controllerTraversal": "4 of 20 routes",
+    "editorRender": "on current inputs"
+  }
+}

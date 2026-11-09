@@ -433,7 +433,8 @@ The keep files (`gameplay_keep` 599,520 bytes, `gameplay_field_keep`) have not b
     "portal.north_clock_town.east_clock_town",
     "portal.north_clock_town.z2_00keikoku",
     "portal.north_clock_town.great_fairy_fountain_town",
-    "portal.north_clock_town.deku_playground"
+    "portal.north_clock_town.deku_playground",
+    "portal.north_clock_town.north_clock_town.bomjimb"
   ],
   "materialBindings": null,
   "cameraIds": [],

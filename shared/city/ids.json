@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "frozen": "2026-11-08 (PIPE-01)",
+  "generatedBy": "tools/reference/build_city_ids.py",
+  "generatedFrom": {
+    "commit": "31b20dc",
+    "files": [
+      "docs/city/LOCATION_REGISTER.md",
+      "docs/city/PORTAL_REGISTER.md",
+      "docs/city/SOURCE_REGISTER.md"
+    ]
+  },
+  "legacyAliases": {
+    "scene.south_clock_town": "loc.south_clock_town",
+    "sct.*": "loc.south_clock_town (proxy component ids, kept valid)"
+  },
+  "patterns": {
+    "location": "^loc\\.[a-z][a-z0-9_]*$",
+    "room": "^loc\\.[a-z][a-z0-9_]*\\.room_[0-9]{2}$",
+    "portal": "^portal\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(\\.[a-z0-9][a-z0-9_]*)?$",
+    "profile": "^prof\\.d[1-3]\\.[a-z]+\\.[a-z0-9]+$",
+    "camera": "^cam\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*$",
+    "route": "^route\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*$",
+    "anchor": "^anchor\\.[a-z][a-z0-9]*\\.[a-z][a-z0-9_]*$",
+    "water": "^water\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*$",
+    "external": "^ext\\.[a-z][a-z0-9_]*$",
+    "componentSourceKey": "^Z2_[A-Z0-9_]+/h[0-9]+/(room_[0-9]{2}/a[0-9]+(/[a-z0-9-]+)?|ta[0-9]+(-ta[0-9]+)?|transition/ta[0-9]+)$"
+  },
+  "locations": {
+    "loc.south_clock_town": {
+      "label": "South Clock Town",
+      "scene": "Z2_CLOCKTOWER",
+      "sceneEnum": "SCENE_CLOCKTOWER",
+      "rooms": [
+        "loc.south_clock_town.room_00"
+      ]
+    },
+    "loc.north_clock_town": {
+      "label": "North Clock Town",
+      "scene": "Z2_BACKTOWN",
+      "sceneEnum": "SCENE_BACKTOWN",
+      "rooms": [
+        "loc.north_clock_town.room_00"
+      ]
+    },
+    "loc.west_clock_town": {
+      "label": "West Clock Town",
+      "scene": "Z2_ICHIBA",
+      "sceneEnum": "SCENE_ICHIBA",
+      "rooms": [
+        "loc.west_clock_town.room_00"
+      ]
+    },
+    "loc.east_clock_town": {
+      "label": "East Clock Town",
+      "scene": "Z2_TOWN",
+      "sceneEnum": "SCENE_TOWN",
+      "rooms": [
+        "loc.east_clock_town.room_00"
+      ]
+    },
+    "loc.laundry_pool": {
+      "label": "Laundry Pool",
+      "scene": "Z2_ALLEY",
+      "sceneEnum": "SCENE_ALLEY",
+      "rooms": [
+        "loc.laundry_pool.room_00"
+      ]
+    },
+    "loc.trading_post": {
+      "label": "Trading Post",
+      "scene": "Z2_8ITEMSHOP",
+      "sceneEnum": "SCENE_8ITEMSHOP",
+      "rooms": [
+        "loc.trading_post.room_00"
+      ]
+    },
+    "loc.bomb_shop": {
+      "label": "Bomb Shop",
+      "scene": "Z2_BOMYA",
+      "sceneEnum": "SCENE_BOMYA",
+      "rooms": [
+        "loc.bomb_shop.room_00"
+      ]
+    },
+    "loc.curiosity_shop": {
+      "label": "Curiosity Shop",
+      "scene": "Z2_AYASHIISHOP",
+      "sceneEnum": "SCENE_AYASHIISHOP",
+      "rooms": [
+        "loc.curiosity_shop.room_00",
+        "loc.curiosity_shop.room_01"
+      ]
+    },
+    "loc.post_office": {
+      "label": "Post Office",
+      "scene": "Z2_POSTHOUSE",
+      "sceneEnum": "SCENE_POSTHOUSE",
+      "rooms": [
+        "loc.post_office.room_00"
+      ]
+    },
+    "loc.swordsmans_school": {
+      "label": "Swordsman's School",
+      "scene": "Z2_DOUJOU",
+      "sceneEnum": "SCENE_DOUJOU",
+      "rooms": [
+        "loc.swordsmans_school.room_00"
+      ]
+    },
+    "loc.lottery_shop": {
+      "label": "Lottery Shop",
+      "scene": "Z2_TAKARAKUJI",
+      "sceneEnum": "SCENE_TAKARAKUJI",
+      "rooms": [
+        "loc.lottery_shop.room_00"
+      ]
+    },
+    "loc.stock_pot_inn": {
+      "label": "Stock Pot Inn",
+      "scene": "Z2_YADOYA",
+      "sceneEnum": "SCENE_YADOYA",
+      "rooms": [
+        "loc.stock_pot_inn.room_00",
+        "loc.stock_pot_inn.room_01",
+        "loc.stock_pot_inn.room_02",
+        "loc.stock_pot_inn.room_03",
+        "loc.stock_pot_inn.room_04"
+      ]
+    },
+    "loc.mayors_residence": {
+      "label": "The Mayor's Residence",
+      "scene": "Z2_SONCHONOIE",
+      "sceneEnum": "SCENE_SONCHONOIE",
+      "rooms": [
+        "loc.mayors_residence.room_00",
+        "loc.mayors_residence.room_01",
+        "loc.mayors_residence.room_02",
+        "loc.mayors_residence.room_03"
+      ]
+    },
+    "loc.milk_bar": {
+      "label": "Milk Bar",
+      "scene": "Z2_MILK_BAR",
+      "sceneEnum": "SCENE_MILK_BAR",
+      "rooms": [
+        "loc.milk_bar.room_00"
+      ]
+    },
+    "loc.honey_darling": {
+      "label": "Honey & Darling's Shop",
+      "scene": "Z2_BOWLING",
+      "sceneEnum": "SCENE_BOWLING",
+      "rooms": [
+        "loc.honey_darling.room_00"
+      ]
+    },
+    "loc.treasure_chest_shop": {
+      "label": "Treasure Chest Shop",
+      "scene": "Z2_TAKARAYA",
+      "sceneEnum": "SCENE_TAKARAYA",
+      "rooms": [
+        "loc.treasure_chest_shop.room_00"
+      ]
+    },
+    "loc.town_shooting_gallery": {
+      "label": "Town Shooting Gallery",
+      "scene": "Z2_SYATEKI_MIZU",
+      "sceneEnum": "SCENE_SYATEKI_MIZU",
+      "rooms": [
+        "loc.town_shooting_gallery.room_00"
+      ]
+    },
+    "loc.great_fairy_fountain_town": {
+      "label": "Fairy's Fountain",
+      "scene": "Z2_YOUSEI_IZUMI",
+      "sceneEnum": "SCENE_YOUSEI_IZUMI",
+      "rooms": [
+        "loc.great_fairy_fountain_town.room_00",
+        "loc.great_fairy_fountain_town.room_01",
+        "loc.great_fairy_fountain_town.room_02",
+        "loc.great_fairy_fountain_town.room_03",
+        "loc.great_fairy_fountain_town.room_04"
+      ]
+    },
+    "loc.deku_playground": {
+      "label": "Deku Scrub Playground",
+      "scene": "Z2_DEKUTES",
+      "sceneEnum": "SCENE_DEKUTES",
+      "rooms": [
+        "loc.deku_playground.room_00"
+      ]
+    },
+    "loc.astral_observatory": {
+      "label": "Astral Observatory",
+      "scene": "Z2_TENMON_DAI",
+      "sceneEnum": "SCENE_TENMON_DAI",
+      "rooms": [
+        "loc.astral_observatory.room_00",
+        "loc.astral_observatory.room_01"
+      ]
+    },
+    "loc.clock_tower_interior": {
+      "label": "Clock Tower Interior",
+      "scene": "Z2_INSIDETOWER",
+      "sceneEnum": "SCENE_INSIDETOWER",
+      "rooms": [
+        "loc.clock_tower_interior.room_00",
+        "loc.clock_tower_interior.room_01"
+      ]
+    },
+    "loc.clock_tower_rooftop": {
+      "label": "Clock Tower Rooftop",
+      "scene": "Z2_OKUJOU",
+      "sceneEnum": "SCENE_OKUJOU",
+      "rooms": [
+        "loc.clock_tower_rooftop.room_00"
+      ]
+    }
+  },
+  "portals": {
+    "portal.south_clock_town.clock_tower_interior": {
+      "mode": "door",
+      "from": "loc.south_clock_town",
+      "to": "loc.clock_tower_interior"
+    },
+    "portal.south_clock_town.z2_00keikoku": {
+      "mode": "external-boundary",
+      "from": "loc.south_clock_town",
+      "to": "ext.z2_00keikoku"
+    },
+    "portal.south_clock_town.east_clock_town.upper": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.east_clock_town"
+    },
+    "portal.south_clock_town.west_clock_town.upper": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.west_clock_town"
+    },
+    "portal.south_clock_town.north_clock_town": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.south_clock_town.west_clock_town.lower": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.west_clock_town"
+    },
+    "portal.south_clock_town.laundry_pool": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.laundry_pool"
+    },
+    "portal.south_clock_town.east_clock_town.lower": {
+      "mode": "district",
+      "from": "loc.south_clock_town",
+      "to": "loc.east_clock_town"
+    },
+    "portal.south_clock_town.clock_tower_rooftop": {
+      "mode": "special",
+      "from": "loc.south_clock_town",
+      "to": "loc.clock_tower_rooftop"
+    },
+    "portal.north_clock_town.z2_00keikoku": {
+      "mode": "external-boundary",
+      "from": "loc.north_clock_town",
+      "to": "ext.z2_00keikoku"
+    },
+    "portal.north_clock_town.east_clock_town": {
+      "mode": "district",
+      "from": "loc.north_clock_town",
+      "to": "loc.east_clock_town"
+    },
+    "portal.north_clock_town.south_clock_town": {
+      "mode": "district",
+      "from": "loc.north_clock_town",
+      "to": "loc.south_clock_town"
+    },
+    "portal.north_clock_town.great_fairy_fountain_town": {
+      "mode": "district",
+      "from": "loc.north_clock_town",
+      "to": "loc.great_fairy_fountain_town"
+    },
+    "portal.north_clock_town.deku_playground": {
+      "mode": "special",
+      "from": "loc.north_clock_town",
+      "to": "loc.deku_playground"
+    },
+    "portal.north_clock_town.north_clock_town.bomjimb": {
+      "mode": "special",
+      "from": "loc.north_clock_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.west_clock_town.z2_00keikoku": {
+      "mode": "external-boundary",
+      "from": "loc.west_clock_town",
+      "to": "ext.z2_00keikoku"
+    },
+    "portal.west_clock_town.south_clock_town.lower": {
+      "mode": "district",
+      "from": "loc.west_clock_town",
+      "to": "loc.south_clock_town"
+    },
+    "portal.west_clock_town.south_clock_town.upper": {
+      "mode": "district",
+      "from": "loc.west_clock_town",
+      "to": "loc.south_clock_town"
+    },
+    "portal.west_clock_town.swordsmans_school": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.swordsmans_school"
+    },
+    "portal.west_clock_town.curiosity_shop": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.curiosity_shop"
+    },
+    "portal.west_clock_town.trading_post": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.trading_post"
+    },
+    "portal.west_clock_town.bomb_shop": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.bomb_shop"
+    },
+    "portal.west_clock_town.post_office": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.post_office"
+    },
+    "portal.west_clock_town.lottery_shop": {
+      "mode": "door",
+      "from": "loc.west_clock_town",
+      "to": "loc.lottery_shop"
+    },
+    "portal.west_clock_town.north_clock_town.bomjimb": {
+      "mode": "special",
+      "from": "loc.west_clock_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.east_clock_town.z2_00keikoku": {
+      "mode": "external-boundary",
+      "from": "loc.east_clock_town",
+      "to": "ext.z2_00keikoku"
+    },
+    "portal.east_clock_town.south_clock_town.lower": {
+      "mode": "district",
+      "from": "loc.east_clock_town",
+      "to": "loc.south_clock_town"
+    },
+    "portal.east_clock_town.astral_observatory.p116": {
+      "mode": "district",
+      "from": "loc.east_clock_town",
+      "to": "loc.astral_observatory"
+    },
+    "portal.east_clock_town.south_clock_town.upper": {
+      "mode": "district",
+      "from": "loc.east_clock_town",
+      "to": "loc.south_clock_town"
+    },
+    "portal.east_clock_town.treasure_chest_shop": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.treasure_chest_shop"
+    },
+    "portal.east_clock_town.north_clock_town": {
+      "mode": "district",
+      "from": "loc.east_clock_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.east_clock_town.honey_darling": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.honey_darling"
+    },
+    "portal.east_clock_town.mayors_residence": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.mayors_residence"
+    },
+    "portal.east_clock_town.town_shooting_gallery": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.town_shooting_gallery"
+    },
+    "portal.east_clock_town.stock_pot_inn.lower": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.stock_pot_inn"
+    },
+    "portal.east_clock_town.stock_pot_inn.upper": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.stock_pot_inn"
+    },
+    "portal.east_clock_town.north_clock_town.bomjimb": {
+      "mode": "special",
+      "from": "loc.east_clock_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.east_clock_town.milk_bar": {
+      "mode": "door",
+      "from": "loc.east_clock_town",
+      "to": "loc.milk_bar"
+    },
+    "portal.laundry_pool.south_clock_town": {
+      "mode": "district",
+      "from": "loc.laundry_pool",
+      "to": "loc.south_clock_town"
+    },
+    "portal.laundry_pool.curiosity_shop": {
+      "mode": "door",
+      "from": "loc.laundry_pool",
+      "to": "loc.curiosity_shop"
+    },
+    "portal.trading_post.west_clock_town": {
+      "mode": "door",
+      "from": "loc.trading_post",
+      "to": "loc.west_clock_town"
+    },
+    "portal.trading_post.west_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.trading_post",
+      "to": "loc.west_clock_town"
+    },
+    "portal.bomb_shop.west_clock_town": {
+      "mode": "door",
+      "from": "loc.bomb_shop",
+      "to": "loc.west_clock_town"
+    },
+    "portal.curiosity_shop.west_clock_town": {
+      "mode": "door",
+      "from": "loc.curiosity_shop",
+      "to": "loc.west_clock_town"
+    },
+    "portal.curiosity_shop.west_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.curiosity_shop",
+      "to": "loc.west_clock_town"
+    },
+    "portal.curiosity_shop.laundry_pool": {
+      "mode": "door",
+      "from": "loc.curiosity_shop",
+      "to": "loc.laundry_pool"
+    },
+    "portal.curiosity_shop.laundry_pool.kickout": {
+      "mode": "special",
+      "from": "loc.curiosity_shop",
+      "to": "loc.laundry_pool"
+    },
+    "portal.post_office.west_clock_town": {
+      "mode": "door",
+      "from": "loc.post_office",
+      "to": "loc.west_clock_town"
+    },
+    "portal.post_office.west_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.post_office",
+      "to": "loc.west_clock_town"
+    },
+    "portal.swordsmans_school.west_clock_town": {
+      "mode": "door",
+      "from": "loc.swordsmans_school",
+      "to": "loc.west_clock_town"
+    },
+    "portal.swordsmans_school.west_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.swordsmans_school",
+      "to": "loc.west_clock_town"
+    },
+    "portal.lottery_shop.west_clock_town": {
+      "mode": "door",
+      "from": "loc.lottery_shop",
+      "to": "loc.west_clock_town"
+    },
+    "portal.lottery_shop.west_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.lottery_shop",
+      "to": "loc.west_clock_town"
+    },
+    "portal.stock_pot_inn.east_clock_town.lower": {
+      "mode": "door",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.east_clock_town"
+    },
+    "portal.stock_pot_inn.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.east_clock_town"
+    },
+    "portal.stock_pot_inn.east_clock_town.upper": {
+      "mode": "door",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.east_clock_town"
+    },
+    "portal.mayors_residence.east_clock_town": {
+      "mode": "door",
+      "from": "loc.mayors_residence",
+      "to": "loc.east_clock_town"
+    },
+    "portal.mayors_residence.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.mayors_residence",
+      "to": "loc.east_clock_town"
+    },
+    "portal.milk_bar.east_clock_town": {
+      "mode": "door",
+      "from": "loc.milk_bar",
+      "to": "loc.east_clock_town"
+    },
+    "portal.milk_bar.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.milk_bar",
+      "to": "loc.east_clock_town"
+    },
+    "portal.honey_darling.east_clock_town": {
+      "mode": "door",
+      "from": "loc.honey_darling",
+      "to": "loc.east_clock_town"
+    },
+    "portal.honey_darling.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.honey_darling",
+      "to": "loc.east_clock_town"
+    },
+    "portal.treasure_chest_shop.east_clock_town": {
+      "mode": "door",
+      "from": "loc.treasure_chest_shop",
+      "to": "loc.east_clock_town"
+    },
+    "portal.treasure_chest_shop.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.treasure_chest_shop",
+      "to": "loc.east_clock_town"
+    },
+    "portal.town_shooting_gallery.east_clock_town": {
+      "mode": "door",
+      "from": "loc.town_shooting_gallery",
+      "to": "loc.east_clock_town"
+    },
+    "portal.town_shooting_gallery.east_clock_town.kickout": {
+      "mode": "special",
+      "from": "loc.town_shooting_gallery",
+      "to": "loc.east_clock_town"
+    },
+    "portal.great_fairy_fountain_town.north_clock_town": {
+      "mode": "district",
+      "from": "loc.great_fairy_fountain_town",
+      "to": "loc.north_clock_town"
+    },
+    "portal.great_fairy_fountain_town.z2_21miturinmae": {
+      "mode": "external-boundary",
+      "from": "loc.great_fairy_fountain_town",
+      "to": "ext.z2_21miturinmae"
+    },
+    "portal.great_fairy_fountain_town.z2_12hakuginmae": {
+      "mode": "external-boundary",
+      "from": "loc.great_fairy_fountain_town",
+      "to": "ext.z2_12hakuginmae"
+    },
+    "portal.great_fairy_fountain_town.z2_31misaki": {
+      "mode": "external-boundary",
+      "from": "loc.great_fairy_fountain_town",
+      "to": "ext.z2_31misaki"
+    },
+    "portal.great_fairy_fountain_town.z2_ikana": {
+      "mode": "external-boundary",
+      "from": "loc.great_fairy_fountain_town",
+      "to": "ext.z2_ikana"
+    },
+    "portal.deku_playground.north_clock_town": {
+      "mode": "special",
+      "from": "loc.deku_playground",
+      "to": "loc.north_clock_town"
+    },
+    "portal.astral_observatory.east_clock_town": {
+      "mode": "district",
+      "from": "loc.astral_observatory",
+      "to": "loc.east_clock_town"
+    },
+    "portal.astral_observatory.z2_00keikoku": {
+      "mode": "external-boundary",
+      "from": "loc.astral_observatory",
+      "to": "ext.z2_00keikoku"
+    },
+    "portal.clock_tower_interior.z2_openingdan": {
+      "mode": "external-boundary",
+      "from": "loc.clock_tower_interior",
+      "to": "ext.z2_openingdan"
+    },
+    "portal.clock_tower_interior.south_clock_town": {
+      "mode": "district",
+      "from": "loc.clock_tower_interior",
+      "to": "loc.south_clock_town"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r1_r0": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_01",
+      "toRoom": "loc.stock_pot_inn.room_00"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r0_r1": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_00",
+      "toRoom": "loc.stock_pot_inn.room_01"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r2_r0": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_02",
+      "toRoom": "loc.stock_pot_inn.room_00"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r0_r2": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_00",
+      "toRoom": "loc.stock_pot_inn.room_02"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r3_r0": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_03",
+      "toRoom": "loc.stock_pot_inn.room_00"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r0_r3": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_00",
+      "toRoom": "loc.stock_pot_inn.room_03"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r4_r0": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_04",
+      "toRoom": "loc.stock_pot_inn.room_00"
+    },
+    "portal.stock_pot_inn.stock_pot_inn.r0_r4": {
+      "mode": "room",
+      "from": "loc.stock_pot_inn",
+      "to": "loc.stock_pot_inn",
+      "fromRoom": "loc.stock_pot_inn.room_00",
+      "toRoom": "loc.stock_pot_inn.room_04"
+    },
+    "portal.mayors_residence.mayors_residence.r1_r0": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_01",
+      "toRoom": "loc.mayors_residence.room_00"
+    },
+    "portal.mayors_residence.mayors_residence.r0_r1": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_00",
+      "toRoom": "loc.mayors_residence.room_01"
+    },
+    "portal.mayors_residence.mayors_residence.r2_r0": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_02",
+      "toRoom": "loc.mayors_residence.room_00"
+    },
+    "portal.mayors_residence.mayors_residence.r0_r2": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_00",
+      "toRoom": "loc.mayors_residence.room_02"
+    },
+    "portal.mayors_residence.mayors_residence.r2_r3": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_02",
+      "toRoom": "loc.mayors_residence.room_03"
+    },
+    "portal.mayors_residence.mayors_residence.r3_r2": {
+      "mode": "room",
+      "from": "loc.mayors_residence",
+      "to": "loc.mayors_residence",
+      "fromRoom": "loc.mayors_residence.room_03",
+      "toRoom": "loc.mayors_residence.room_02"
+    },
+    "portal.astral_observatory.astral_observatory.r1_r0": {
+      "mode": "room",
+      "from": "loc.astral_observatory",
+      "to": "loc.astral_observatory",
+      "fromRoom": "loc.astral_observatory.room_01",
+      "toRoom": "loc.astral_observatory.room_00"
+    },
+    "portal.astral_observatory.astral_observatory.r0_r1": {
+      "mode": "room",
+      "from": "loc.astral_observatory",
+      "to": "loc.astral_observatory",
+      "fromRoom": "loc.astral_observatory.room_00",
+      "toRoom": "loc.astral_observatory.room_01"
+    },
+    "portal.clock_tower_interior.clock_tower_interior.r1_r0": {
+      "mode": "room",
+      "from": "loc.clock_tower_interior",
+      "to": "loc.clock_tower_interior",
+      "fromRoom": "loc.clock_tower_interior.room_01",
+      "toRoom": "loc.clock_tower_interior.room_00"
+    },
+    "portal.clock_tower_interior.clock_tower_interior.r0_r1": {
+      "mode": "room",
+      "from": "loc.clock_tower_interior",
+      "to": "loc.clock_tower_interior",
+      "fromRoom": "loc.clock_tower_interior.room_00",
+      "toRoom": "loc.clock_tower_interior.room_01"
+    }
+  },
+  "retiredPortals": {
+    "portal.east_clock_town.astral_observatory.p169": "none (data oddity, not a portal)"
+  },
+  "profiles": [
+    "prof.d1.noon.normal",
+    "prof.d1.dusk.normal",
+    "prof.d1.night.normal",
+    "prof.d2.noon.normal",
+    "prof.d2.night.normal",
+    "prof.d3.noon.normal",
+    "prof.d3.night.normal",
+    "prof.d3.final.normal",
+    "prof.d3.midnight.l2"
+  ],
+  "cameras": [
+    "cam.astral_observatory.entry",
+    "cam.astral_observatory.fixture",
+    "cam.astral_observatory.reverse_door",
+    "cam.astral_observatory.room_01",
+    "cam.bomb_shop.entry",
+    "cam.bomb_shop.fixture",
+    "cam.bomb_shop.reverse_door",
+    "cam.clock_tower_interior.entry",
+    "cam.clock_tower_interior.fixture",
+    "cam.clock_tower_interior.reverse_door",
+    "cam.clock_tower_interior.room_01",
+    "cam.clock_tower_rooftop.entry",
+    "cam.clock_tower_rooftop.fixture",
+    "cam.clock_tower_rooftop.reverse_door",
+    "cam.curiosity_shop.entry",
+    "cam.curiosity_shop.fixture",
+    "cam.curiosity_shop.reverse_door",
+    "cam.curiosity_shop.room_01",
+    "cam.deku_playground.entry",
+    "cam.deku_playground.fixture",
+    "cam.deku_playground.reverse_door",
+    "cam.east_clock_town.arrival",
+    "cam.east_clock_town.closeup",
+    "cam.east_clock_town.departure",
+    "cam.east_clock_town.elevated_sightline",
+    "cam.east_clock_town.frontage_honey_darling",
+    "cam.east_clock_town.frontage_mayors_residence",
+    "cam.east_clock_town.frontage_milk_bar",
+    "cam.east_clock_town.frontage_stock_pot_inn",
+    "cam.east_clock_town.frontage_town_shooting_gallery",
+    "cam.east_clock_town.frontage_treasure_chest_shop",
+    "cam.east_clock_town.lower_route",
+    "cam.east_clock_town.main_silhouette",
+    "cam.east_clock_town.observatory_route_access",
+    "cam.east_clock_town.reverse",
+    "cam.east_clock_town.upper_route",
+    "cam.great_fairy_fountain_town.entry",
+    "cam.great_fairy_fountain_town.fixture",
+    "cam.great_fairy_fountain_town.reverse_door",
+    "cam.honey_darling.entry",
+    "cam.honey_darling.fixture",
+    "cam.honey_darling.reverse_door",
+    "cam.laundry_pool.arrival",
+    "cam.laundry_pool.bridge_steps",
+    "cam.laundry_pool.closeup",
+    "cam.laundry_pool.departure",
+    "cam.laundry_pool.lower_route",
+    "cam.laundry_pool.main_silhouette",
+    "cam.laundry_pool.private_door",
+    "cam.laundry_pool.reverse",
+    "cam.laundry_pool.upper_route",
+    "cam.laundry_pool.water_edge",
+    "cam.lottery_shop.entry",
+    "cam.lottery_shop.fixture",
+    "cam.lottery_shop.reverse_door",
+    "cam.mayors_residence.entry",
+    "cam.mayors_residence.fixture",
+    "cam.mayors_residence.reverse_door",
+    "cam.mayors_residence.room_01",
+    "cam.mayors_residence.room_02",
+    "cam.mayors_residence.room_03",
+    "cam.milk_bar.entry",
+    "cam.milk_bar.fixture",
+    "cam.milk_bar.reverse_door",
+    "cam.north_clock_town.arrival",
+    "cam.north_clock_town.closeup",
+    "cam.north_clock_town.deku_playground_approach",
+    "cam.north_clock_town.departure",
+    "cam.north_clock_town.foliage_detail",
+    "cam.north_clock_town.great_fairy_approach",
+    "cam.north_clock_town.lower_route",
+    "cam.north_clock_town.main_silhouette",
+    "cam.north_clock_town.reverse",
+    "cam.north_clock_town.upper_route",
+    "cam.post_office.entry",
+    "cam.post_office.fixture",
+    "cam.post_office.reverse_door",
+    "cam.south_clock_town.clock_closeup",
+    "cam.south_clock_town.east_lower_approach",
+    "cam.south_clock_town.reverse_square",
+    "cam.south_clock_town.stall_underside",
+    "cam.south_clock_town.tower_approach",
+    "cam.south_clock_town.upper_landing",
+    "cam.south_clock_town.west_lower_approach",
+    "cam.stock_pot_inn.entry",
+    "cam.stock_pot_inn.fixture",
+    "cam.stock_pot_inn.reverse_door",
+    "cam.stock_pot_inn.room_01",
+    "cam.stock_pot_inn.room_02",
+    "cam.stock_pot_inn.room_03",
+    "cam.stock_pot_inn.room_04",
+    "cam.swordsmans_school.entry",
+    "cam.swordsmans_school.fixture",
+    "cam.swordsmans_school.reverse_door",
+    "cam.town_shooting_gallery.entry",
+    "cam.town_shooting_gallery.fixture",
+    "cam.town_shooting_gallery.reverse_door",
+    "cam.trading_post.entry",
+    "cam.trading_post.fixture",
+    "cam.trading_post.reverse_door",
+    "cam.treasure_chest_shop.entry",
+    "cam.treasure_chest_shop.fixture",
+    "cam.treasure_chest_shop.reverse_door",
+    "cam.west_clock_town.arrival",
+    "cam.west_clock_town.bank_frontage",
+    "cam.west_clock_town.city_gate",
+    "cam.west_clock_town.closeup",
+    "cam.west_clock_town.departure",
+    "cam.west_clock_town.frontage_bomb_shop",
+    "cam.west_clock_town.frontage_curiosity_shop",
+    "cam.west_clock_town.frontage_lottery_shop",
+    "cam.west_clock_town.frontage_post_office",
+    "cam.west_clock_town.frontage_swordsmans_school",
+    "cam.west_clock_town.frontage_trading_post",
+    "cam.west_clock_town.lower_route",
+    "cam.west_clock_town.main_silhouette",
+    "cam.west_clock_town.reverse",
+    "cam.west_clock_town.upper_route"
+  ],
+  "externals": [
+    "ext.z2_00keikoku",
+    "ext.z2_12hakuginmae",
+    "ext.z2_21miturinmae",
+    "ext.z2_31misaki",
+    "ext.z2_ikana",
+    "ext.z2_openingdan"
+  ]
+}

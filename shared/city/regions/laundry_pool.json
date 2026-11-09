@@ -1,0 +1,428 @@
+{
+  "schemaVersion": 1,
+  "regionId": "loc.laundry_pool",
+  "displayLabel": "Laundry Pool",
+  "source": {
+    "sceneSymbol": "Z2_ALLEY",
+    "sceneEnum": "SCENE_ALLEY",
+    "sceneTableIndex": "0x70",
+    "entranceTableSceneIndex": "0x6D",
+    "baseline": "N64 US rev 0",
+    "decompRevision": "zeldaret/mm 3be2e24123f5e71fd13f939ecc0f9d7f73252639",
+    "extractorSha256": "36cdc50b83a3c3e3c414317f2d65cdc04c0be4125125ebe6b88e1d83122409bd",
+    "fast64Revision": null
+  },
+  "selection": {
+    "profile": "prof.d1.noon.normal",
+    "halfDayBit": "0x080",
+    "stateAssumptions": [
+      "fresh save: no week-event, switch or collectible flags",
+      "player form Human",
+      "bell not hit (WEEKEVENTREG_HIT_LAUNDRY_POOL_BELL clear)"
+    ],
+    "sceneLayer": 0
+  },
+  "localSourceInputs": [
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_ALLEY",
+      "bytes": 55392,
+      "sha256": "c73517b309943976fb2ef562d715e8e878a5ff31c4dfec422ee14ce94316f0a8"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/baserom/Z2_ALLEY_room_00",
+      "bytes": 36080,
+      "sha256": "a82e90431561812b8a5d6f023748b7de7ff477105b0dcdca3940fe93bde03f3d"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_ALLEY/Z2_ALLEY.c",
+      "bytes": 57206,
+      "sha256": "f3babac54684f99b2d2c3aaa27f9f64f606e6e188af943b854ed31244199b9d8"
+    },
+    {
+      "path": "local-reference/mm-decomp/extracted/n64-us/assets/scenes/Z2_ALLEY/Z2_ALLEY_room_00.c",
+      "bytes": 67628,
+      "sha256": "3ad10d2d4b42f2106f3f1492f6a2a60922909cbb3df0b2f88996838c1f46fc7a"
+    },
+    {
+      "path": "local-reference/mm-decomp/assets/xml/scenes/Z2_ALLEY/Z2_ALLEY.xml",
+      "bytes": 386,
+      "sha256": "4b941e3041ac1abef144858a13e4e1c382c2d33edc072944764f4d46c1336e53"
+    }
+  ],
+  "sourceFrame": {
+    "units": "N64 world units",
+    "up": "+Y",
+    "sharedFrame": {
+      "with": [
+        "loc.south_clock_town"
+      ],
+      "status": "inferred",
+      "evidence": "INFERRED (corridor stub overlaps South's Laundry exit AABB), unverified"
+    }
+  },
+  "conversionToUnity": {
+    "matrix": [
+      [
+        0.01,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.01,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rule": "Unity (x, y, z) = N64 (x, y, -z) / 100"
+  },
+  "authoredRegistrationMatrix": null,
+  "provisionalPhysicalScale": true,
+  "bounds": {
+    "sourceCollisionHeader": {
+      "min": [
+        -2577,
+        -224,
+        -960
+      ],
+      "max": [
+        -240,
+        635,
+        1120
+      ]
+    },
+    "sourceCollisionVertices": {
+      "min": [
+        -2400,
+        -224,
+        -596
+      ],
+      "max": [
+        -800,
+        560,
+        1120
+      ]
+    },
+    "unityCollisionVertices": {
+      "min": [
+        -24.0,
+        -2.24,
+        -11.2
+      ],
+      "max": [
+        -8.0,
+        5.6,
+        5.96
+      ]
+    }
+  },
+  "water": [
+    {
+      "id": "water.laundry_pool.basin",
+      "sourceWaterBox": {
+        "xMin": -2400,
+        "xMax": -1800,
+        "zMin": -200,
+        "zMax": 1120,
+        "surfaceY": -135,
+        "properties": "0x00000101",
+        "bgCamIndex": 1,
+        "lightIndex": 1,
+        "room": 0,
+        "disabled": false
+      },
+      "unity": {
+        "x": [
+          -24.0,
+          -18.0
+        ],
+        "z": [
+          -11.2,
+          2.0
+        ],
+        "surfaceY": -1.35
+      },
+      "poolFloorY": [
+        -208,
+        -200
+      ],
+      "bankFloorY": [
+        -132,
+        -120
+      ],
+      "surfaceMesh": "room DL_008B58 at Y -135, two-layer scroll on segment 8",
+      "behavior": "UNKNOWN: gameplay decision (FULL_CITY_PLAN 5.5)"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "anchor.lp.spawn0_from_south",
+      "source": [
+        -1426,
+        -8,
+        397
+      ],
+      "unity": [
+        -14.26,
+        -0.08,
+        -3.97
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lp.spawn1_from_shop",
+      "source": [
+        -2121,
+        -120,
+        -49
+      ],
+      "unity": [
+        -21.21,
+        -1.2,
+        0.49
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lp.door_ta0",
+      "source": [
+        -2097,
+        -120,
+        -112
+      ],
+      "unity": [
+        -20.97,
+        -1.2,
+        1.12
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lp.bell_a11",
+      "source": [
+        -1961,
+        -123,
+        530
+      ],
+      "unity": [
+        -19.61,
+        -1.23,
+        -5.3
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "anchor.lp.bridge_crest",
+      "source": [
+        -2077,
+        -100,
+        584
+      ],
+      "unity": [
+        -20.77,
+        -1.0,
+        -5.84
+      ],
+      "status": "proposed"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "loc.laundry_pool.room_00",
+      "sourceRoom": "Z2_ALLEY_room_00",
+      "roomShape": "cullable, 19 entries",
+      "displayLists": 37,
+      "header": 0
+    }
+  ],
+  "components": [
+    {
+      "sourceKey": "Z2_ALLEY/h0/transition/ta00",
+      "actorId": "0x005",
+      "params": "0x0285",
+      "class": "door-transition",
+      "dls": [
+        "gameplay_keep:0x22B28 gDoorSkel",
+        "gameplay_keep:0x20BB8",
+        "gameplay_keep:0x20D00"
+      ],
+      "status": "selected",
+      "note": "rest pose approximated"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a11",
+      "actorId": "0x270",
+      "params": "0x000F",
+      "class": "static-mesh",
+      "dls": [
+        "object_cha:0x710",
+        "object_cha:0x958"
+      ],
+      "status": "selected",
+      "note": "rest pose"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a01",
+      "actorId": "0x039",
+      "params": "0x207F",
+      "class": "static-mesh",
+      "dls": [
+        "object_syokudai:0x870"
+      ],
+      "status": "selected",
+      "note": "unlit"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a07",
+      "actorId": "0x081",
+      "params": "0xA002",
+      "class": "static-mesh",
+      "dls": [
+        "object_kibako:0x1180"
+      ],
+      "status": "selected"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a13",
+      "actorId": "0x090",
+      "params": "0x0500",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_field_keep:0x78A0"
+      ],
+      "status": "selected",
+      "note": "yaw approximated"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a14",
+      "actorId": "0x090",
+      "params": "0x0C00",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_field_keep:0x78A0"
+      ],
+      "status": "selected",
+      "note": "yaw approximated"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a15",
+      "actorId": "0x090",
+      "params": "0x0C00",
+      "class": "static-mesh",
+      "dls": [
+        "gameplay_field_keep:0x78A0"
+      ],
+      "status": "selected",
+      "note": "yaw approximated"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a16",
+      "actorId": "0x19C",
+      "params": "0x207F",
+      "class": "static-mesh",
+      "dls": [
+        "object_obj_tokeidai:0xCF28",
+        "0xBEE8",
+        "0xE818",
+        "0xC368"
+      ],
+      "status": "selected",
+      "note": "visibility unverified"
+    },
+    {
+      "sourceKey": "Z2_ALLEY/h0/room_00/a03",
+      "actorId": "0x17C",
+      "params": "0x037F",
+      "class": "static-mesh",
+      "dls": [
+        "object_lodmoon:0x10E0",
+        "object_lodmoon:0x1158"
+      ],
+      "status": "selected",
+      "variant": "camera-relative",
+      "note": "special rule"
+    }
+  ],
+  "collisionOwnership": {
+    "room": "Z2_ALLEYCollisionHeader_0028A8 (400 polys, 1 water box)",
+    "actorDynapoly": [],
+    "actorCylinders": [
+      "a01 stand r12 h45",
+      "a07 r15 h30",
+      "a11 r10 h40"
+    ]
+  },
+  "portalIds": [
+    "portal.laundry_pool.south_clock_town",
+    "portal.laundry_pool.curiosity_shop"
+  ],
+  "materialBindings": null,
+  "cameraIds": [],
+  "routeIds": [],
+  "omissions": [
+    "a18 En_Minifrog",
+    "a04 En_Elforg",
+    "a05 En_Insect",
+    "a00 En_Fish children",
+    "water texture scroll",
+    "Link and Tatl"
+  ],
+  "excluded": {
+    "halfDayMask": [
+      "a02",
+      "a12",
+      "a19",
+      "a20",
+      "a21",
+      "a22",
+      "a23",
+      "a24",
+      "a25",
+      "a26",
+      "a27"
+    ],
+    "stateOrSchedule": [
+      "a06",
+      "a08",
+      "a09"
+    ],
+    "noGeometry": [
+      "a00 controller",
+      "a10",
+      "a17"
+    ]
+  },
+  "unsupported": [
+    "skeletal NPC and critter poses",
+    "door skeleton rest pose",
+    "two-layer texture scroll",
+    "bell swing",
+    "water box swim/dive behavior",
+    "moon 9000-unit rule unless implemented"
+  ],
+  "evidence": [
+    "docs/city/districts/laundry_pool.md"
+  ],
+  "readiness": {
+    "sourceInspection": "pass",
+    "objectExtraction": "not_run",
+    "import": "not_run",
+    "controllerTraversal": "not_run",
+    "editorRender": "not_run",
+    "packagedRender": "not_run",
+    "visualApproval": "not_run"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "shared/city/schema/portal.schema.json",
+  "title": "Directed portal record, schema 1 (PIPE-01 freeze, 2026-11-08)",
+  "description": "One record per directed portal in shared/city/portals.json (not yet generated; PORT-01 exports it from docs/city/PORTAL_REGISTER.md). Field meaning: docs/FULL_CITY_PLAN.md section 3.3. Unknown keys are rejected.",
+  "$defs": {
+    "hex": { "type": "string", "pattern": "^0x[0-9A-Fa-f]+$" },
+    "vec3": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+    "endpointId": { "type": "string", "pattern": "^(loc\\.[a-z][a-z0-9_]*|ext\\.[a-z][a-z0-9_]*)$" },
+    "result": { "type": "string", "enum": ["not_run", "pass", "fail", "blocked", "not_applicable"] }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "portalId", "mode", "from", "to", "sourceExit", "destinationEntrance", "trigger", "arrival", "conditions", "reverse", "activation", "results"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "portalId": { "type": "string", "pattern": "^portal\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(\\.[a-z0-9][a-z0-9_]*)?$" },
+    "mode": { "type": "string", "enum": ["district", "door", "room", "special", "external-boundary"] },
+    "from": { "$ref": "#/$defs/endpointId" },
+    "fromRoom": { "type": "string", "pattern": "^loc\\.[a-z][a-z0-9_]*\\.room_[0-9]{2}$" },
+    "to": { "$ref": "#/$defs/endpointId" },
+    "toRoom": { "type": "string", "pattern": "^loc\\.[a-z][a-z0-9_]*\\.room_[0-9]{2}$" },
+    "sourceExit": {
+      "type": "object", "additionalProperties": false, "required": ["symbol", "index", "value"],
+      "properties": {
+        "symbol": { "type": "string" }, "index": { "type": "integer", "minimum": 0 }, "value": { "$ref": "#/$defs/hex" },
+        "entranceTableIndex": { "$ref": "#/$defs/hex" }, "slot": { "type": "integer", "minimum": 0, "maximum": 31 }, "layer": { "type": "integer", "minimum": 0, "maximum": 15 },
+        "decodeCitation": { "type": "string" }
+      }
+    },
+    "destinationEntrance": {
+      "type": "object", "additionalProperties": false, "required": ["entrySymbol", "spawnIndex"],
+      "properties": { "entrySymbol": { "type": "string" }, "spawnIndex": { "type": "integer", "minimum": 0 }, "citation": { "type": "string" } }
+    },
+    "trigger": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "evidence"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["floor-polygons", "door-actor", "transition-actor", "actor-driven", "state-gated-surface", "external"] },
+        "surfaceType": { "type": "integer", "minimum": 0 },
+        "polygons": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+        "actor": { "type": "string" },
+        "departureBounds": { "type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": { "min": { "$ref": "#/$defs/vec3" }, "max": { "$ref": "#/$defs/vec3" } } },
+        "departureNormal": { "$ref": "#/$defs/vec3" },
+        "evidence": { "type": "string" }
+      }
+    },
+    "arrival": {
+      "type": "object", "additionalProperties": false, "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["source", "probed", "surveyed", "external", "unknown"] },
+        "feet": { "$ref": "#/$defs/vec3" }, "yaw": { "type": "number" }, "room": { "type": "integer", "minimum": 0 }, "startMode": { "$ref": "#/$defs/hex" },
+        "clearanceProbe": { "$ref": "#/$defs/result" }, "note": { "type": "string" }
+      }
+    },
+    "conditions": {
+      "type": "object", "additionalProperties": false, "required": ["status"],
+      "properties": {
+        "status": { "type": "string", "enum": ["none", "known", "unknown"] },
+        "openHours": { "type": "string" }, "days": { "type": "array", "items": { "type": "integer", "minimum": 1, "maximum": 3 } },
+        "flags": { "type": "array", "items": { "type": "string" } }, "form": { "type": "string", "enum": ["any", "human", "deku", "goron", "zora"] },
+        "rejection": { "type": "string" }, "citation": { "type": "string" }
+      }
+    },
+    "loadingPresentation": { "type": "string" },
+    "reverse": {
+      "type": "object", "additionalProperties": false, "required": ["kind"],
+      "properties": {
+        "kind": { "type": "string", "enum": ["portal", "one-way", "missing"] },
+        "portalId": { "type": "string", "pattern": "^portal\\.[a-z][a-z0-9_]*\\.[a-z][a-z0-9_]*(\\.[a-z0-9][a-z0-9_]*)?$" },
+        "reason": { "type": "string" }
+      }
+    },
+    "activation": { "type": "string", "enum": ["on-enter", "on-interact", "scripted"] },
+    "results": {
+      "type": "object", "additionalProperties": false, "required": ["sourceInspection", "traversal"],
+      "properties": { "sourceInspection": { "$ref": "#/$defs/result" }, "traversal": { "$ref": "#/$defs/result" }, "note": { "type": "string" } }
+    },
+    "unknowns": { "type": "array", "items": { "type": "string" } }
+  }
+}

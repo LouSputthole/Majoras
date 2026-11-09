@@ -474,7 +474,7 @@ To re-establish it (NOT run here; Blender/Unity are excluded from this packet): 
   ],
   "localExports": {
     "referenceJson": { "path": "Unity/Assets/LocalReference/SouthClockTown/reference.json", "sha256": "ada0fd31667547d4a57e0d14556fc68b97a52eaacda28cf58523a30640d0c9e5", "writtenLocal": "2026-11-08T11:35:21", "producedBy": "current committed scripts (inferred)" },
-    "textureSourcesJson": { "path": "Unity/Assets/LocalReference/SouthClockTown/texture-sources.json", "sha256": "f0db4d9f7806b5281004842cb2aec97c9114658a0887b12358298596a8887770" },
+    "textureSourcesJson": { "path": "Unity/Assets/LocalReference/SouthClockTown/texture-sources.json", "sha256": "f0db4d9f7806b5281004842cb2aec97c9114658a0887b12358298596a8887770", "writtenLocal": "2026-11-08T11:35:21", "producedBy": "current committed scripts (inferred)" },
     "unityReferenceScene": { "path": "Unity/Assets/LocalReference/SouthClockTown/Generated/SouthClockTown_RomReference.unity", "sha256": "408da692dd4addd73be050ff62cb77cec87a39ab63152e32b22c5ce3b519d7da", "writtenLocal": "2026-11-08T11:26:00", "producedBy": "earlier unrecorded export" }
   },
   "sourceFrame": { "units": "N64 world units", "up": "+Y", "sharedWithNorthWestEast": "INFERRED (PORTAL_REGISTER section 3.2), unverified" },
